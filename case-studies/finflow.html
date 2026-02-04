@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinFlow Case Study | Product Designer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="https://www.linkedin.com/in/ameliaruslim" target="_blank">LINKEDIN</a></li>
+            <li><a href="mailto:amelia.ruslim@gmail.com">EMAIL</a></li>
+        </ul>
+    </nav>
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="password-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h2>This case study is protected</h2>
+            <p>Please enter the password to view this project.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="btn-primary">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+            <a href="../index.html" class="back-link">&larr; Back to portfolio</a>
+        </div>
+    </div>
+
+    <!-- Protected Content -->
+    <main id="protected-content" class="case-study-page" style="display: none;">
+        <header class="case-study-header" style="background: linear-gradient(135deg, #e8847c 0%, #6b9e97 100%);">
+            <div class="header-content">
+                <span class="case-tag">Mobile App &bull; 2024</span>
+                <h1>FinFlow - Banking Reimagined</h1>
+                <p class="case-subtitle">Redesigning the mobile banking experience for Gen Z users</p>
+            </div>
+        </header>
+
+        <section class="case-overview">
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h3>Role</h3>
+                    <p>Lead Product Designer</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Team</h3>
+                    <p>2 Designers, 4 Engineers, 1 PM</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Timeline</h3>
+                    <p>4 months</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Impact</h3>
+                    <p>40% increase in DAU</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>The Challenge</h2>
+            <p>FinFlow, a digital-first bank, was struggling to engage their Gen Z user base. Despite competitive rates and features, their mobile app felt dated and didn't resonate with younger users who expected modern, intuitive experiences.</p>
+            <p>The company approached us to completely reimagine their mobile banking experience while maintaining trust and security - critical factors in financial products.</p>
+
+            <div class="highlight-box">
+                <h4>Key Problem Statement</h4>
+                <p>How might we create a mobile banking experience that feels fresh and engaging for Gen Z users while maintaining the trust and security they expect from a financial institution?</p>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Research & Discovery</h2>
+            <p>We began with extensive user research to understand the needs, behaviors, and pain points of our target audience.</p>
+
+            <h3>Research Methods</h3>
+            <ul>
+                <li>20+ user interviews with Gen Z banking customers</li>
+                <li>Competitive analysis of 15 fintech apps</li>
+                <li>Survey of 500+ respondents aged 18-27</li>
+                <li>Diary studies tracking banking behaviors over 2 weeks</li>
+            </ul>
+
+            <h3>Key Insights</h3>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <span class="insight-number">01</span>
+                    <h4>Visual Trust</h4>
+                    <p>Users associated modern, polished UI with security and reliability - contrary to traditional banking assumptions.</p>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-number">02</span>
+                    <h4>Micro-moments</h4>
+                    <p>Most banking interactions were quick balance checks and transfers, yet these took too many taps.</p>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-number">03</span>
+                    <h4>Financial Anxiety</h4>
+                    <p>Users wanted insights into their spending without feeling judged or overwhelmed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Design Process</h2>
+
+            <h3>Information Architecture</h3>
+            <p>We restructured the app around the most common user tasks, reducing the average task completion from 6 taps to 2.</p>
+            <div class="image-placeholder large">IA Diagram</div>
+
+            <h3>Visual Design</h3>
+            <p>We developed a fresh visual language that felt modern yet trustworthy, using a combination of bold gradients, clean typography, and thoughtful micro-interactions.</p>
+            <div class="image-placeholder large">Visual Design System</div>
+
+            <h3>Key Screens</h3>
+            <div class="screens-grid">
+                <div class="screen-item">
+                    <div class="image-placeholder">Home Dashboard</div>
+                    <p>Personalized dashboard showing balance, recent activity, and quick actions</p>
+                </div>
+                <div class="screen-item">
+                    <div class="image-placeholder">Insights</div>
+                    <p>Friendly spending insights without judgment</p>
+                </div>
+                <div class="screen-item">
+                    <div class="image-placeholder">Transfer</div>
+                    <p>Simplified transfer flow with smart suggestions</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Outcomes & Impact</h2>
+            <p>The redesigned app launched in Q3 2024 and exceeded all success metrics.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-value">40%</span>
+                    <span class="metric-label">Increase in Daily Active Users</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">65%</span>
+                    <span class="metric-label">Improvement in Task Completion</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">4.8</span>
+                    <span class="metric-label">App Store Rating (up from 3.2)</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">52%</span>
+                    <span class="metric-label">Increase in Feature Adoption</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Reflections</h2>
+            <p>This project reinforced the importance of challenging assumptions. Traditional banking design principles didn't resonate with our audience - they wanted modern experiences that felt native to the apps they use daily.</p>
+            <p>The biggest learning was finding the balance between innovation and trust. We pushed boundaries in visual design while ensuring core banking interactions remained familiar and secure.</p>
+        </section>
+
+        <nav class="case-navigation">
+            <a href="../index.html" class="nav-prev">&larr; All Projects</a>
+            <a href="workspace.html" class="nav-next">Next: WorkSpace &rarr;</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:amelia.ruslim@gmail.com">amelia.ruslim@gmail.com</a>
+        </div>
+    </footer>
+
+    <script src="../js/password.js"></script>
+    <script src="../js/triangles.js"></script>
+</body>
+</html>

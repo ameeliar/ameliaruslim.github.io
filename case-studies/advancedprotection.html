@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Protection | Product Designer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="https://www.linkedin.com/in/ameliaruslim" target="_blank">LINKEDIN</a></li>
+            <li><a href="mailto:amelia.ruslim@gmail.com">EMAIL</a></li>
+        </ul>
+    </nav>
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="password-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h2>This case study is protected</h2>
+            <p>Please enter the password to view this project.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="btn-primary">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+            <a href="../index.html" class="back-link">&larr; Back to portfolio</a>
+        </div>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav id="side-nav" class="side-nav" style="display: none;">
+        <a href="#context" class="side-nav-item" data-section="context">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Context</span>
+        </a>
+        <a href="#the-problem" class="side-nav-item" data-section="the-problem">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Problem</span>
+        </a>
+        <a href="#the-solution" class="side-nav-item" data-section="the-solution">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Solution</span>
+        </a>
+        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Impact</span>
+        </a>
+    </nav>
+
+    <!-- Protected Content -->
+    <main id="protected-content" class="case-study-page" style="display: none;">
+        <!-- Hero Section -->
+        <header class="case-study-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <h1>Protecting high risk users with Advanced Protection</h1>
+                    <div class="case-hero-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Company</span>
+                            <span class="meta-value">Google</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Senior Interaction Designer</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2020-2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    <img src="../images/advancedprotection-title.png" alt="Advanced Protection security icon">
+                </div>
+            </div>
+        </header>
+
+        <!-- Context Section: Intro -->
+        <section id="context" class="case-section case-section-full">
+            <span class="case-section-label">Context</span>
+            <h2>Advanced Protection is Google's strongest security program, built to protect users at <em>highest risk</em> of targeted attacks &ndash; such as journalists, politicians, and activists &ndash; particularly during critical elections.</h2>
+        </section>
+
+        <!-- Context Section: How it works -->
+        <section class="case-section case-section-two-col case-section-two-col-centered">
+            <div class="case-section-text">
+                <h3>How does it work?</h3>
+                <div class="solution-points">
+                    <div class="solution-point">
+                        <span class="solution-number">1</span>
+                        <div>
+                            <h3>When signing in</h3>
+                            <p>Users were required to use a physical security key to sign in to their account, the strongest form of authentication and the only one proven to be completely resistant to phishing attacks.</p>
+                        </div>
+                    </div>
+                    <div class="solution-point">
+                        <span class="solution-number">2</span>
+                        <div>
+                            <h3>While using your account</h3>
+                            <p>Additional layers of protection would be applied on the user's behalf, limiting third-party access to your data and blocking most downloads.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/security%20key.gif" alt="Advanced Protection Program overview" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- Problem Section: Intro -->
+        <section id="the-problem" class="case-section case-section-full case-section-intro">
+            <span class="case-section-label">The Problem</span>
+            <h2>An extremely high barrier to entry</h2>
+            <p class="case-intro-text">The requirement of 2 security keys to enroll in Advanced Protection resulted in a low number of organically enrolled users. To grow the user base, Advanced Protection relied on partnership programs (e.g. Defending Digital Campaigns) to fund and distribute security keys to specific populations.</p>
+        </section>
+
+        <!-- History Section: Title -->
+        <section class="case-section case-section-full case-section-intro">
+            <h3>A History in Advanced Protection's Enrollment</h3>
+        </section>
+
+        <!-- History Section: 2019 -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <h4>2019 | "Instant" enrollment</h4>
+                <p>The team's first attempt at lowering the barrier to entry was to offer eligible users a 14-day trial of Advanced Protection without a security key, giving users 2 weeks to purchase and set up a physical key.</p>
+                <p>Seems simple, right?</p>
+                <p>Wrong. <strong>97% of users dropped out</strong> from the 14-day trial, and a very few percent of them actually re-enrolled later with security keys.</p>
+                <p><em>This version was deprecated in early 2020.</em></p>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/instant-enrollment.png" alt="Advanced Protection instant enrollment flow from 2019" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- History Section: January 2020 One-Click -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <h4>January 2020 | "One-click" enrollment</h4>
+                <p>In January of 2020, six months after joining the team, I launched the "one-click" enrollment flow, providing users with the ability to enroll with a new phone-based "built-in" security key we simultaneously launched natively on Android and via the redesigned "Smart Lock" app on iOS.</p>
+            </div>
+            <div class="case-image-overlap">
+                <img src="../images/one-click-enrollment.png" alt="One-click enrollment flow" class="img-main zoomable-image">
+                <img src="../images/smart-lock.png" alt="Google Smart Lock app" class="img-overlay zoomable-image">
+            </div>
+        </section>
+
+        <!-- History Section: January 2020 Results -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <h4>January 2020 | "One-click" enrollment</h4>
+                <p>Enrollments increased by <strong>12x</strong> just 2 weeks post launch and we finally surpassed a long awaited 50k enrollment threshold with <strong>60k enrollments</strong> 1-month post launch.</p>
+                <p>However shortly after launch, we found that <strong>72%</strong> of our newly enrolled users were getting locked out of their accounts.</p>
+                <p><em>We paused this enrollment flow 3 months later and ultimately, deprecated it.</em></p>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/sundar-tweet.png" alt="Sundar Pichai tweet about Advanced Protection and enrollment chart showing launch spike" class="zoomable-image img-shrink-30">
+            </div>
+        </section>
+
+        <!-- The Goal Section -->
+        <section class="case-section case-section-full case-section-white">
+            <span class="case-section-label">The UX Proposal</span>
+            <h2>A revised goal</h2>
+            <p>After two unsuccessful attempts at increasing our user base, I went back to the drawing board and proposed a controversial new approach to Advanced Protection's enrollment &ndash; one without a security key requirement.</p>
+            <div class="goal-statement goal-statement-text">
+                <p>Lower Advanced Protection's high barrier to entry to <em>sustainably</em> increase enrollment rates, allowing Google to protect more users.</p>
+            </div>
+        </section>
+
+        <!-- The Solution: Guided Enrollment -->
+        <section id="the-solution" class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">The Proposed Solution</span>
+                <h2>A guided enrollment</h2>
+                <p>Working closely with my engineers to ensure we maintained a high level of security, I came up with a new proposal &ndash; a step-by-step, flexible enrollment journey allowing users to leverage non-security key authentication methods like Google Authenticator, which were more commonly used.</p>
+                <p>We'd also introduce a new, but more obtainable requirement of adding both a recovery email and phone number to relieve lock out concerns.</p>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/proposed-1.png" alt="The Advanced Protection Program guided enrollment flow showing recovery email step" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- The Solution: Win-Win Scenario -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">The Proposed Solution</span>
+                <h2>A win-win scenario</h2>
+                <p>To streamline the onboarding experience, any existing authentication methods (including their recovery email and phone number) would be automatically filled in for the user, allowing them to skip ahead whenever possible.</p>
+                <p>This design also improved security incrementally. Each step strengthened the user's account, so even if they dropped off before enrolling, their account would still be safer than when they started.</p>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/proposed-2.png" alt="Enrollment flow showing auto-filled recovery options and security key recommendation" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- The Solution: Final Review -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">The Proposed Solution</span>
+                <h2>A final review</h2>
+                <p>The last step before turning on Advanced Protection would be a quick review of additional changes to a user's account once enrolled, such as limiting account access on untrusted apps, and signing users out of some devices that haven't had any recent activity for security purposes.</p>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/ap-final-review.png" alt="Final review step showing app access changes before turning on Advanced Protection" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- The Solution: Confirmation -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">The Proposed Solution</span>
+                <h2>Clear confirmation and navigation to program settings</h2>
+                <p>Once enrolled, users land on a new Advanced Protection settings page where they can review the program's benefits and manage their enrollment.</p>
+                <p>I also introduced a branded progress indicator inspired by the program's new logo, including a blue arch over Google's signature shield, emphasizing Advanced Protection as an extra layer of security. These details reinforced a cohesive account security narrative throughout the experience.</p>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/ap-confirmation.png" alt="Enrollment confirmation and Advanced Protection settings page" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- The Solution: Leveraging Existing Tools -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">The Proposed Solution</span>
+                <h2>Leveraging existing security tools to further improve a user's security</h2>
+                <p>Since security keys would no longer be a requirement, this solution would personalize the users' security experience by recommending security keys to new users who didn't enroll with one via the Security Checkup.</p>
+                <p>We'd also leverage the Security Checkup to recommend enrolling into the program for users identified as higher risk. These users would see this recommendation either directly on the settings page at the Advanced Protection toggle, or in their advice cards in the checkup.</p>
+            </div>
+            <div class="case-image-pair">
+                <img src="../images/ap-security-checkup.png" alt="Security Checkup showing Advanced Protection recommendation" class="img-small zoomable-image">
+                <img src="../images/ap-extra-security.png" alt="Extra security recommendations" class="img-large with-shadow zoomable-image">
+            </div>
+        </section>
+
+        <!-- Project Outcomes Section -->
+        <section id="the-impact" class="case-section case-section-full case-section-white">
+            <div class="outcomes-layout">
+                <div class="outcomes-label">
+                    <span class="case-section-label">The Impact</span>
+                    <h2>Project outcomes</h2>
+                </div>
+                <div class="outcomes-content">
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">1</span>
+                        <div class="outcome-text">
+                            <p class="quote">After obtaining alignment with my product management and engineering partners, we brought the proposal to the Google Account Security team's cross-functional senior leadership. The concept was approved &ndash; a <em class="highlight">groundbreaking accomplishment</em> given that it went against the program's initial mission to provide unphishable protection to users.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">2</span>
+                        <div class="outcome-text">
+                            <p class="quote">While the full proposal was postponed due to resourcing, core principles I championed like flexible enrollment, recovery requirements, and personalized security recommendations, became foundational to how Google approaches account security today. The 2025 launch of passkey-based enrollment <em class="highlight">validated my thesis</em>: lower the barrier without compromising protection.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">3</span>
+                        <div class="outcome-text">
+                            <p class="quote">My journey in account security has taught me that we need to <strong>meet users where they are</strong> when trying to encourage their adoption of powerful and intimidating technology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="case-navigation">
+            <a href="security.html" class="nav-prev">&larr; Account Security</a>
+            <a href="../index.html" class="nav-next">All Projects &rarr;</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:amelia.ruslim@gmail.com">amelia.ruslim@gmail.com</a>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox -->
+    <div id="image-lightbox" class="image-lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-img">
+    </div>
+
+    <script src="../js/password.js"></script>
+    <script src="../js/triangles.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/sidenav.js"></script>
+</body>
+</html>

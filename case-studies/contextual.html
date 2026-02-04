@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contextual Targeting | Product Designer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="https://www.linkedin.com/in/ameliaruslim" target="_blank">LINKEDIN</a></li>
+            <li><a href="mailto:amelia.ruslim@gmail.com">EMAIL</a></li>
+        </ul>
+    </nav>
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="password-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h2>This case study is protected</h2>
+            <p>Please enter the password to view this project.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="btn-primary">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+            <a href="../index.html" class="back-link">&larr; Back to portfolio</a>
+        </div>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav id="side-nav" class="side-nav" style="display: none;">
+        <a href="#context" class="side-nav-item" data-section="context">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Context</span>
+        </a>
+        <a href="#defining-the-problem" class="side-nav-item" data-section="defining-the-problem">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Defining the Problem</span>
+        </a>
+        <a href="#the-solution" class="side-nav-item" data-section="the-solution">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Solution</span>
+        </a>
+        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Impact</span>
+        </a>
+    </nav>
+
+    <!-- Protected Content -->
+    <main id="protected-content" class="case-study-page" style="display: none;">
+        <!-- Hero Section -->
+        <header class="case-study-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <h1>Rebuilding the contextual targeting system</h1>
+                    <div class="case-hero-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Company</span>
+                            <span class="meta-value">The Trade Desk</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Staff Product Designer</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    <img src="../images/contextual-hero.png" alt="Contextual targeting interface">
+                </div>
+            </div>
+        </header>
+
+        <!-- Context Section -->
+        <section id="context" class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">Context</span>
+                <h2>What is The Trade Desk?</h2>
+                <p>The Trade Desk is a global advertising technology platform that helps brands and agencies buy digital ads across the internet.</p>
+                <p>Advertisers and agencies leverage our demand-side platform to buy digital advertising space in real-time across multiple channels (display, video, audio, native, and connected TV).</p>
+
+                <h2>...and what is the Contextual Marketplace?</h2>
+                <p>The Contextual Marketplace allows advertisers to target the most suitable contexts to show their ads, and avoid the offensive ones, ensuring ads appear in the right place, at the right moment.</p>
+                <p>This targeting tool has shown signs of growth as the advertising industry shifts towards more privacy-friendly practices, an alternative to identity-based advertising.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/contextual-kokai-highlight.png" alt="Kokai's Programmatic Table with Contextual highlighted" class="case-image-no-container zoomable-image">
+                <span class="image-caption">The Trade Desk's Kokai, launched in 2023</span>
+            </div>
+        </section>
+
+        <!-- Problem Section: Intro -->
+        <section id="defining-the-problem" class="case-section case-section-full case-section-intro">
+            <span class="case-section-label">Defining the Problem</span>
+            <h2>The problem, from the business lens</h2>
+            <p class="case-intro-text">When first onboarding to this project, the problem seemed straightforward from a business perspective. Two clear issues were outlined:</p>
+        </section>
+
+        <!-- Problem Section: Cards -->
+        <section class="case-section case-section-full">
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <span class="problem-number">1</span>
+                    <h3>Advertisers tend to only leverage one data provider per ad group</h3>
+                    <p>Each provider's data that is targeted is charged at full price. <strong>No boolean/dynamic logic</strong> provided in strategy building. Users need to include OR statements.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-number">2</span>
+                    <h3>Millions in revenue opportunity is missed</h3>
+                    <p>In 2024, The Trade Desk tripled the amount of contextual data providers on the platform. Certain providers are unfairly leveraged more than others.</p>
+                </div>
+            </div>
+
+            <div class="case-image-full case-image-no-shadow">
+                <img src="../images/contextual-adgroup.png" alt="Real ad group example where the advertiser has chosen to block multiple segments from only TTD's segment offerings" class="zoomable-image">
+                <span class="image-caption">Real ad group example where the advertiser has chosen to block multiple segments from only TTD's segment offerings</span>
+            </div>
+        </section>
+
+        <!-- Driving Clarity Section -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <h2>Driving clarity in ambiguity</h2>
+                <p>But the project started out with an overly simplified scope. What started as a simple "boolean logic feature" quickly revealed itself as a fundamental gap in how users approach contextual targeting.</p>
+
+                <h4>Stage 1 | Uncovering the Real Scope</h4>
+                <ul>
+                    <li>Conducted stakeholder alignment sessions across engineering, product, and data teams</li>
+                    <li>Recognized we were building an entirely <em>new user mental model</em>, not just a feature</li>
+                    <li><strong>Led project rescoping to avoid throwaway work</strong> and set realistic timelines</li>
+                </ul>
+
+                <h4>Stage 2 | Foundational Understanding</h4>
+                <ul>
+                    <li>Brought in UX researcher for foundational user interviews with key traders</li>
+                    <li>Facilitated working sessions with backend data team to understand technical constraints</li>
+                    <li><em>Aligned cross-functional team on core user problems</em> vs. surface-level requests</li>
+                </ul>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/contextual-flowchart.png" alt="User flow diagram showing contextual strategy building process" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- User Pain Points Section -->
+        <section class="case-section case-section-full case-section-white">
+            <h2>User pain points from UXR</h2>
+
+            <div class="pain-points-grid">
+                <div class="pain-point-card">
+                    <span class="pain-point-number">1</span>
+                    <h3>Reusable strategies</h3>
+                    <p>Users clone campaigns to avoid setting up targeting/blocking strategies over and over again— but this is fragile and highly error-prone.</p>
+                </div>
+                <div class="pain-point-card">
+                    <span class="pain-point-number">2</span>
+                    <h3>Strategy management</h3>
+                    <p>Contextual groups should be able to be used across multiple ad groups in a library at the advertiser-level.</p>
+                </div>
+                <div class="pain-point-card">
+                    <span class="pain-point-number">3</span>
+                    <h3>A need for more transparency</h3>
+                    <p>Pricing and metrics provided are opaque.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Might We Section -->
+        <section class="case-section case-section-full case-section-white">
+            <div class="hmw-layout">
+                <div class="hmw-label">
+                    <span class="case-section-label">The Problem</span>
+                    <h2>How might we...</h2>
+                </div>
+                <div class="hmw-list">
+                    <div class="hmw-item">
+                        <span class="hmw-number">1</span>
+                        <h3>Incorporate boolean logic to accommodate pricing concerns</h3>
+                    </div>
+                    <div class="hmw-item">
+                        <span class="hmw-number">2</span>
+                        <h3>Allow users to duplicate, maintain, and reuse targeting strategies</h3>
+                    </div>
+                    <div class="hmw-item">
+                        <span class="hmw-number">3</span>
+                        <h3>Translate complex backend data structures in a usable way</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Building Blocks Section -->
+        <section id="the-solution" class="case-section case-section-full case-section-white">
+            <div class="building-blocks-layout">
+                <div class="building-blocks-label">
+                    <span class="case-section-label">The Solution</span>
+                    <h2>Contextual building blocks</h2>
+                </div>
+                <div class="building-blocks-content">
+                    <div class="building-block">
+                        <div class="block-visual">
+                            <img src="../images/segment.png" alt="Segment icon">
+                        </div>
+                        <div class="block-text">
+                            <span class="block-scale">Most Granular</span>
+                            <h3>Segment ≈ custom category</h3>
+                            <p>Categories of URLs, app IDs, content signals, etc. by topic from 3rd party contextual data partners & in-house offerings</p>
+                        </div>
+                    </div>
+                    <div class="building-block">
+                        <div class="block-visual">
+                            <img src="../images/data group.png" alt="Data group icon">
+                        </div>
+                        <div class="block-text">
+                            <h3>Data group</h3>
+                            <p>Group of segments that are targeted or blocked within a contextual strategy.</p>
+                            <p>Data groups can be reused if they're saved and managed in the saved data group library at the advertiser-level.</p>
+                        </div>
+                    </div>
+                    <div class="building-block">
+                        <div class="block-visual">
+                            <img src="../images/contextual strategy.png" alt="Contextual strategy icon">
+                        </div>
+                        <div class="block-text">
+                            <span class="block-scale">Most Broad</span>
+                            <h3>Contextual strategy</h3>
+                            <p>Collection of targeted and/or blocked data groups combined into one strategy.</p>
+                            <p>Contextual strategies can be reused and managed in the contextual strategy library at the advertiser-level.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campaign Hierarchy Section -->
+        <section class="case-section case-section-two-col case-section-white">
+            <div class="case-section-text">
+                <h2>Contextual building blocks in the campaign hierarchy</h2>
+                <p>This is how these building blocks fit together in our campaign structure, with contextual strategies and data groups managed at the advertiser level alongside existing tools.</p>
+                <p>At the campaign level, each ad group connects to one contextual strategy. A single strategy can be shared across multiple ad groups and contains various data groups made up of targeting segments or custom categories.</p>
+            </div>
+            <div class="case-section-image">
+                <img src="../images/contextual-hierarchy.png" alt="Campaign hierarchy showing how contextual strategies, data groups, and segments connect" class="zoomable-image">
+            </div>
+        </section>
+
+        <!-- Prototype Section 1: Strategy Creation -->
+        <section class="case-section case-section-prototype case-section-white">
+            <div class="prototype-layout">
+                <div class="prototype-text">
+                    <h2>Contextual strategy creation</h2>
+                    <p class="prototype-context">@ the ad group level</p>
+                </div>
+                <div class="prototype-embed">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/7iCBbMUTGORcXL8bi28iM9/Untitled?node-id=0-17437&t=fbBIBaLObhBCMvNV-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A17437&hide-ui=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prototype Section 2: Applying Saved Strategy -->
+        <section class="case-section case-section-prototype case-section-white">
+            <div class="prototype-layout">
+                <div class="prototype-text">
+                    <h2>Applying and editing a saved strategy</h2>
+                    <p class="prototype-context">@ the ad group level</p>
+                </div>
+                <div class="prototype-embed">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/7iCBbMUTGORcXL8bi28iM9/Untitled?node-id=19-202257&t=3SfZxEn69PUAJLPG-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A202257&hide-ui=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prototype Section 3: Editing Saved Strategy -->
+        <section class="case-section case-section-prototype case-section-white">
+            <div class="prototype-layout">
+                <div class="prototype-text">
+                    <h2>Editing a saved strategy</h2>
+                    <p class="prototype-context">@ the advertiser level</p>
+                </div>
+                <div class="prototype-embed">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/7iCBbMUTGORcXL8bi28iM9/Untitled?node-id=19-201908&t=3SfZxEn69PUAJLPG-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A201908&hide-ui=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Outcomes Section -->
+        <section id="the-impact" class="case-section case-section-full case-section-white">
+            <div class="outcomes-layout">
+                <div class="outcomes-label">
+                    <span class="case-section-label">The Impact</span>
+                    <h2>Project outcomes</h2>
+                </div>
+                <div class="outcomes-content">
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">1</span>
+                        <div class="outcome-text">
+                            <p class="quote">"We cut setup time by <span class="highlight">40%</span> using reusable contextual strategies. It's become our go-to for privacy-first campaigns."</p>
+                            <p class="quote-attribution">- Fortune 500 client</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item outcome-metrics">
+                        <span class="outcome-number">2</span>
+                        <div class="outcome-text">
+                            <p class="metrics-intro">Since launching in June 2025:</p>
+                            <p class="metric"><span class="metric-arrow">&uarr;</span> <span class="highlight">30%+</span> in Contextual Strategies applied</p>
+                            <p class="metric"><span class="highlight">$20M</span> total spend, <em>on track to hit target by EOY</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="case-navigation">
+            <a href="../index.html" class="nav-prev">&larr; All Projects</a>
+            <a href="security.html" class="nav-next">Next: Account Security &rarr;</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:amelia.ruslim@gmail.com">amelia.ruslim@gmail.com</a>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox -->
+    <div id="image-lightbox" class="image-lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-img">
+    </div>
+
+    <script src="../js/password.js"></script>
+    <script src="../js/triangles.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/sidenav.js"></script>
+</body>
+</html>

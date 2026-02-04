@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Security | Product Designer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="https://www.linkedin.com/in/ameliaruslim" target="_blank">LINKEDIN</a></li>
+            <li><a href="mailto:amelia.ruslim@gmail.com">EMAIL</a></li>
+        </ul>
+    </nav>
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="password-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h2>This case study is protected</h2>
+            <p>Please enter the password to view this project.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="btn-primary">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+            <a href="../index.html" class="back-link">&larr; Back to portfolio</a>
+        </div>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav id="side-nav" class="side-nav" style="display: none;">
+        <a href="#context" class="side-nav-item" data-section="context">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Context</span>
+        </a>
+        <a href="#the-problem" class="side-nav-item" data-section="the-problem">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Problem</span>
+        </a>
+        <a href="#the-solution" class="side-nav-item" data-section="the-solution">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Solution</span>
+        </a>
+        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">The Impact</span>
+        </a>
+    </nav>
+
+    <!-- Protected Content -->
+    <main id="protected-content" class="case-study-page" style="display: none;">
+        <!-- Hero Section -->
+        <header class="case-study-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <h1>Simplifying account security</h1>
+                    <div class="case-hero-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Company</span>
+                            <span class="meta-value">Google</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Senior Interaction Designer</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2022-2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    <img src="../images/security-title.png" alt="Google Account security interface">
+                </div>
+            </div>
+        </header>
+
+        <!-- Context Section -->
+        <section id="context" class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">Context</span>
+                <h2>Google prides itself in being <em>a leader</em> in account security</h2>
+                <p>Google has invested heavily in security infrastructure, building industry-leading features to protect billions of users worldwide, as evidenced by the diverse security ecosystem. From Security Checkup to 2-Step Verification, Titan Security Keys to Advanced Protection Program &ndash; Google offers a comprehensive suite of security tools designed to keep accounts safe.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-ecosystem.png" alt="Collection of Google security features including Security Checkup, 2-Step Verification, Titan Security Key, and more" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="the-problem" class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">The Problem</span>
+                <h2>Google's Security Paradox</h2>
+                <p>Google offers industry-leading security features, but users struggle to understand and adopt them, making the ability to improve a user's account security <em>overwhelming</em> for most users.</p>
+                <div class="solution-points">
+                    <div class="solution-point">
+                        <span class="solution-number">1</span>
+                        <div>
+                            <h3>Unclear hierarchy</h3>
+                            <p>While Security Checkup provided tailored recommendations, the "Recent security events" card appeared inconsistently and offered <strong>no actionable insights</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="solution-point">
+                        <span class="solution-number">2</span>
+                        <div>
+                            <h3>Fragmented core features</h3>
+                            <p>Account access controls were split into two confusing sections: "Signing in to Google" and "Ways we can verify it's you." These appeared <strong>competitive rather than complementary</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="solution-point">
+                        <span class="solution-number">3</span>
+                        <div>
+                            <h3>No clear narrative</h3>
+                            <p>Users couldn't easily understand what to prioritize or how the features connected to their <strong>overall account security</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-settings-before.png" alt="Google Account Security settings page showing the fragmented layout" class="case-image-no-container zoomable-image">
+                <span class="image-caption">The Security Settings tab before the redesign</span>
+            </div>
+        </section>
+
+        <!-- User Pain Points Section -->
+        <section class="case-section case-section-full case-section-white">
+            <h2>User insights reinforce the concern</h2>
+
+            <div class="pain-points-grid">
+                <div class="pain-point-card">
+                    <span class="pain-point-number">1</span>
+                    <h3>Feeling vulnerable</h3>
+                    <p>"You never really know; <strong>you always have a feeling that there is somebody out there who could hack you</strong> or something."</p>
+                </div>
+                <div class="pain-point-card">
+                    <span class="pain-point-number">2</span>
+                    <h3>Overwhelming complexity</h3>
+                    <p>"<strong>[Account security] feels like work.</strong> Kind of like 'Inception' – you click on that, you then go deeper. I don't feel that I can go into it any further, because I'd get lost."</p>
+                </div>
+                <div class="pain-point-card">
+                    <span class="pain-point-number">3</span>
+                    <h3>Confusing language</h3>
+                    <p>"I'd have to just give up. When I read all these words, <strong>I don't really understand what I'm reading</strong>. There's lots of words."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secure by Default Section -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">Google's Account Security Initiative</span>
+                <h2>Ensuring users are <em>Secure by Default</em></h2>
+                <p>Google was preparing to auto-enroll all 2SV-capable accounts as part of a 'Secure by Default' initiative. This meant 4 billion users &ndash; the general population &ndash; would soon be automatically enrolled in 2-Step Verification.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-4billion.png" alt="Diagram showing 4 billion users in the general population with 2SV as minimum" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- How Might We Section -->
+        <section class="case-section case-section-full case-section-white">
+            <div class="hmw-layout">
+                <div class="hmw-label">
+                    <h2>How might we...</h2>
+                </div>
+                <div class="hmw-list">
+                    <div class="hmw-item">
+                        <span class="hmw-number">1</span>
+                        <h3>Make security simple</h3>
+                    </div>
+                    <div class="hmw-item">
+                        <span class="hmw-number">2</span>
+                        <h3>Prepare users for Secure by Default</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Goal Section -->
+        <section id="the-solution" class="case-section case-section-full case-section-white">
+            <span class="case-section-label">A UX Led Initiative</span>
+            <h2>The goal</h2>
+            <p>With engineering focused on authentication infrastructure and 2-Step Verification enrollment, I led a UX initiative to simplify how users understand and manage these foundational security features.</p>
+            <p class="goal-statement-text">Provide Google users with a <em>simple approach</em> to their Security Settings, clarifying our obscure security offerings with a clear <em>authentication</em> focus.</p>
+        </section>
+
+        <!-- The Proposed Solution Section -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">The Proposed Solution</span>
+                <h2>How you sign in to Google</h2>
+                <div class="solution-points">
+                    <div class="solution-point">
+                        <span class="solution-number">1</span>
+                        <p>More visual emphasis on Security Checkup, providing tailored security recommendations</p>
+                    </div>
+                    <div class="solution-point">
+                        <span class="solution-number">2</span>
+                        <p>Combined recovery options and authentication methods into one "How you sign in" card</p>
+                    </div>
+                    <div class="solution-point">
+                        <span class="solution-number">3</span>
+                        <p>"More sign-in options" CTA will lead to contextual education page</p>
+                    </div>
+                </div>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-solution.png" alt="New Security settings design showing the simplified How you sign in to Google card" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- Educational Content Section 1 -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <h2>Pushing boundaries with <em>educational content</em></h2>
+                <p>I championed this page design based on user research showing people wanted more context and education around security features. The mocks use placeholder images to rapidly validate information architecture with stakeholders before investing in detailed graphics. Working with my UX writing partner, I organized authentication methods by priority &ndash; most secure, convenient, and backup options &ndash; while prioritizing security over convenience despite technical complexity.</p>
+                <div class="solution-points">
+                    <div class="solution-point">
+                        <span class="solution-number">1</span>
+                        <p>A landing page for users to explore and learn more about the multitude of sign in options available</p>
+                    </div>
+                    <div class="solution-point">
+                        <span class="solution-number">2</span>
+                        <p>Minimum recommended methods for 2SV to be highlighted above</p>
+                    </div>
+                </div>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-education-1.png" alt="What sign-in options are right for you page showing recommended methods for 2-Step Verification" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- Educational Content Section 2 -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <p>The page was also designed with progressive disclosure to reduce cognitive load and encourage user engagement. When expanded, each section provides short summaries about the value of each method, plus educational links.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-education-2.png" alt="Sign-in options page with expanded sections showing progressive disclosure" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- Educational Content Section 3 -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <p>"Learn more" links open educational wizards that I previously designed for Google's Advanced Protection Program enrollment flow.</p>
+                <p>Educational wizards offer delightful educational moments within users' existing journeys, proven to enhance user trust compared to traditional Help Center articles that navigate users away and cause significant drop-off. My goal was to leverage these educational components across various security experiences to build a comprehensive system, repurposing proven patterns that keep users engaged in their current flow rather than losing them to external documentation.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-education-3.png" alt="Educational wizard showing how to sign in with security keys" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- P0 Launch Section -->
+        <section class="case-section case-section-two-col">
+            <div class="case-section-text">
+                <span class="case-section-label">What Was Immediately Launched</span>
+                <h2>The P0: 2SV Onboarding Entrypoint</h2>
+                <p>After socializing this concept across various PMs and engineering leads, it was overwhelmingly clear to the team and to leadership, the user benefit that these changes would provide. With Secure by Default's timeline quickly approaching, we knew that we needed to launch something quickly.</p>
+                <p>I collaborated with product and engineering partners to define a P0 MVP focused on the 2SV onboarding entry point &ndash; the core of my redesigned Security Settings tab. Together, we outlined a phased approach to incrementally roll out the guided experience and improve users' security states.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/security-p0.png" alt="P0 launch showing the 2SV onboarding entry point in Security Settings" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- Project Outcomes Section -->
+        <section id="the-impact" class="case-section case-section-full case-section-white">
+            <div class="outcomes-layout">
+                <div class="outcomes-label">
+                    <span class="case-section-label">The Impact</span>
+                    <h2>P0 project outcomes</h2>
+                </div>
+                <div class="outcomes-content">
+                    <p class="outcomes-timeframe">1-month post launch</p>
+                    <div class="outcome-item">
+                        <span class="outcome-number">1</span>
+                        <div class="outcome-text">
+                            <p class="metric"><span class="highlight">25%</span> increase in 2SV adoption</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">2</span>
+                        <div class="outcome-text">
+                            <p class="metric"><span class="highlight">40%</span> lift in users adding sign in methods</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="case-navigation">
+            <a href="../index.html" class="nav-prev">&larr; All Projects</a>
+            <a href="advancedprotection.html" class="nav-next">Next: Advanced Protection &rarr;</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:amelia.ruslim@gmail.com">amelia.ruslim@gmail.com</a>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox -->
+    <div id="image-lightbox" class="image-lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-img">
+    </div>
+
+    <script src="../js/password.js"></script>
+    <script src="../js/triangles.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/sidenav.js"></script>
+</body>
+</html>

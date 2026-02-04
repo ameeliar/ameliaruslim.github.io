@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart Case Study | Product Designer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="https://www.linkedin.com/in/ameliaruslim" target="_blank">LINKEDIN</a></li>
+            <li><a href="mailto:amelia.ruslim@gmail.com">EMAIL</a></li>
+        </ul>
+    </nav>
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="password-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h2>This case study is protected</h2>
+            <p>Please enter the password to view this project.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="btn-primary">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+            <a href="../index.html" class="back-link">&larr; Back to portfolio</a>
+        </div>
+    </div>
+
+    <!-- Protected Content -->
+    <main id="protected-content" class="case-study-page" style="display: none;">
+        <header class="case-study-header" style="background: linear-gradient(135deg, #f0a8a2 0%, #e8847c 100%);">
+            <div class="header-content">
+                <span class="case-tag">E-commerce &bull; 2023</span>
+                <h1>ShopSmart - Checkout Optimization</h1>
+                <p class="case-subtitle">Reducing cart abandonment through checkout flow redesign</p>
+            </div>
+        </header>
+
+        <section class="case-overview">
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h3>Role</h3>
+                    <p>Product Designer</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Team</h3>
+                    <p>1 Designer, 3 Engineers, 1 PM</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Timeline</h3>
+                    <p>3 months</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Impact</h3>
+                    <p>35% reduction in cart abandonment</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>The Challenge</h2>
+            <p>ShopSmart, a mid-size e-commerce platform, was experiencing a 72% cart abandonment rate - significantly higher than the industry average of 65%. Analytics showed users were dropping off throughout the checkout process, with the biggest leaks at shipping selection and payment entry.</p>
+            <p>The business was losing an estimated $2M annually to abandoned carts. We were brought in to diagnose the issues and redesign the checkout experience.</p>
+
+            <div class="highlight-box">
+                <h4>Key Problem Statement</h4>
+                <p>How might we reduce friction in the checkout process to recover lost revenue while maintaining trust and security?</p>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Research & Discovery</h2>
+            <p>We combined quantitative analytics with qualitative research to understand where and why users were abandoning their carts.</p>
+
+            <h3>Research Methods</h3>
+            <ul>
+                <li>Funnel analysis of 100K+ checkout sessions</li>
+                <li>Heat mapping and session recordings</li>
+                <li>15 usability testing sessions</li>
+                <li>Post-abandonment survey (500+ responses)</li>
+            </ul>
+
+            <h3>Key Insights</h3>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <span class="insight-number">01</span>
+                    <h4>Hidden Costs</h4>
+                    <p>47% of abandoners cited unexpected shipping costs. Final price wasn't visible until late in the flow.</p>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-number">02</span>
+                    <h4>Form Fatigue</h4>
+                    <p>Users faced 23 form fields across 4 pages. Many were redundant or could be auto-filled.</p>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-number">03</span>
+                    <h4>Trust Gaps</h4>
+                    <p>Users hesitated at payment entry due to lack of security indicators and unfamiliar payment UI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Design Process</h2>
+
+            <h3>Checkout Audit</h3>
+            <p>We mapped the existing 4-page checkout against best practices and identified 15 friction points. Key issues included late price revelation, mandatory account creation, and poor mobile experience.</p>
+            <div class="image-placeholder large">Checkout Audit Findings</div>
+
+            <h3>Redesign Strategy</h3>
+            <p>We consolidated the checkout into a single-page experience with smart defaults, early price transparency, and guest checkout option. The new design reduced form fields from 23 to 12.</p>
+            <div class="image-placeholder large">Before/After Comparison</div>
+
+            <h3>Key Improvements</h3>
+            <div class="screens-grid">
+                <div class="screen-item">
+                    <div class="image-placeholder">Price Transparency</div>
+                    <p>Running total with shipping visible from cart</p>
+                </div>
+                <div class="screen-item">
+                    <div class="image-placeholder">Smart Forms</div>
+                    <p>Address autocomplete and saved payment methods</p>
+                </div>
+                <div class="screen-item">
+                    <div class="image-placeholder">Trust Signals</div>
+                    <p>Security badges, reviews, and clear return policy</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>A/B Testing</h2>
+            <p>Given the revenue impact, we ran rigorous A/B tests before full rollout.</p>
+
+            <h3>Test Results</h3>
+            <div class="test-results">
+                <div class="test-item">
+                    <h4>Test 1: Single Page vs. Multi-Page</h4>
+                    <p>Single page checkout increased completion by 18%. Users appreciated seeing all information at once.</p>
+                    <span class="test-winner">Winner: Single Page</span>
+                </div>
+                <div class="test-item">
+                    <h4>Test 2: Guest Checkout Position</h4>
+                    <p>Prominent guest option above sign-in increased conversion by 12%. Account creation became post-purchase optional.</p>
+                    <span class="test-winner">Winner: Guest First</span>
+                </div>
+                <div class="test-item">
+                    <h4>Test 3: Shipping Price Visibility</h4>
+                    <p>Showing shipping estimate in cart (before checkout) reduced abandonment by 23%.</p>
+                    <span class="test-winner">Winner: Early Visibility</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Outcomes & Impact</h2>
+            <p>The redesigned checkout launched incrementally over 6 weeks, with continuous monitoring and iteration.</p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-value">35%</span>
+                    <span class="metric-label">Reduction in Cart Abandonment</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">$700K</span>
+                    <span class="metric-label">Recovered Annual Revenue</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">45%</span>
+                    <span class="metric-label">Faster Checkout Time</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">28%</span>
+                    <span class="metric-label">Increase in Mobile Conversion</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <h2>Reflections</h2>
+            <p>This project demonstrated the massive impact of removing friction from critical flows. Small changes - like showing shipping costs early or reducing one form field - had compounding effects on the bottom line.</p>
+            <p>The A/B testing approach was crucial for building stakeholder confidence. Rather than debating opinions, we let data guide decisions. This also taught me to advocate for experimentation infrastructure early in projects.</p>
+        </section>
+
+        <nav class="case-navigation">
+            <a href="workspace.html" class="nav-prev">&larr; WorkSpace</a>
+            <a href="../index.html" class="nav-next">All Projects &rarr;</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:amelia.ruslim@gmail.com">amelia.ruslim@gmail.com</a>
+        </div>
+    </footer>
+
+    <script src="../js/password.js"></script>
+    <script src="../js/triangles.js"></script>
+</body>
+</html>
