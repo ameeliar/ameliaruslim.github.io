@@ -12,6 +12,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
     <title>Account Security | Product Designer</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,15 +58,15 @@
         </a>
         <a href="#the-problem" class="side-nav-item" data-section="the-problem">
             <span class="side-nav-dot"></span>
-            <span class="side-nav-label">The Problem</span>
+            <span class="side-nav-label">Problem</span>
         </a>
         <a href="#the-solution" class="side-nav-item" data-section="the-solution">
             <span class="side-nav-dot"></span>
-            <span class="side-nav-label">The Solution</span>
+            <span class="side-nav-label">Solution</span>
         </a>
         <a href="#the-impact" class="side-nav-item" data-section="the-impact">
             <span class="side-nav-dot"></span>
-            <span class="side-nav-label">The Impact</span>
+            <span class="side-nav-label">Impact</span>
         </a>
     </nav>
 
@@ -207,72 +208,79 @@
             <p class="goal-statement-text">Provide Google users with a <em>simple approach</em> to their Security Settings, clarifying our obscure security offerings with a clear <em>authentication</em> focus.</p>
         </section>
 
-        <!-- The Proposed Solution Section -->
-        <section class="case-section case-section-two-col">
-            <div class="case-section-text">
-                <span class="case-section-label">The Proposed Solution</span>
-                <h2>How you sign in to Google</h2>
-                <div class="solution-points">
-                    <div class="solution-point">
-                        <span class="solution-number">1</span>
-                        <p>More visual emphasis on Security Checkup, providing tailored security recommendations</p>
-                    </div>
-                    <div class="solution-point">
-                        <span class="solution-number">2</span>
-                        <p>Combined recovery options and authentication methods into one "How you sign in" card</p>
-                    </div>
-                    <div class="solution-point">
-                        <span class="solution-number">3</span>
-                        <p>"More sign-in options" CTA will lead to contextual education page</p>
-                    </div>
-                </div>
-            </div>
-            <div class="case-image-with-caption">
-                <img src="../images/security-solution.png" alt="New Security settings design showing the simplified How you sign in to Google card" class="case-image-no-container zoomable-image">
-            </div>
-        </section>
-
-        <!-- Educational Content Section 1 -->
-        <section class="case-section case-section-two-col">
-            <div class="case-section-text">
-                <h2>Pushing boundaries with <em>educational content</em></h2>
-                <p>I championed this page design based on user research showing people wanted more context and education around security features. The mocks use placeholder images to rapidly validate information architecture with stakeholders before investing in detailed graphics. Working with my UX writing partner, I organized authentication methods by priority &ndash; most secure, convenient, and backup options &ndash; while prioritizing security over convenience despite technical complexity.</p>
-                <div class="solution-points">
-                    <div class="solution-point">
-                        <span class="solution-number">1</span>
-                        <p>A landing page for users to explore and learn more about the multitude of sign in options available</p>
-                    </div>
-                    <div class="solution-point">
-                        <span class="solution-number">2</span>
-                        <p>Minimum recommended methods for 2SV to be highlighted above</p>
+        <!-- Proposed Solution Segment with sticky prototype -->
+        <section class="case-section solution-segment">
+            <div class="solution-text-col">
+                <div class="solution-sub" id="solution-sub-1">
+                    <span class="case-section-label">The Proposed Solution</span>
+                    <h2>How you sign in to Google</h2>
+                    <div class="solution-points">
+                        <div class="solution-point">
+                            <span class="solution-number">1</span>
+                            <p>More visual emphasis on Security Checkup, providing tailored security recommendations</p>
+                        </div>
+                        <div class="solution-point">
+                            <span class="solution-number">2</span>
+                            <p>Combined recovery options and authentication methods into one "How you sign in" card</p>
+                        </div>
+                        <div class="solution-point">
+                            <span class="solution-number">3</span>
+                            <p>"More sign-in options" CTA will lead to contextual education page</p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="solution-sub" id="solution-sub-2">
+                    <h2>Pushing boundaries with <em>educational content</em></h2>
+                    <p>I championed this page design based on user research showing people wanted more context and education around security features. The mocks use placeholder images to rapidly validate information architecture with stakeholders before investing in detailed graphics. Working with my UX writing partner, I organized authentication methods by priority &ndash; most secure, convenient, and backup options &ndash; while prioritizing security over convenience despite technical complexity.</p>
+                    <div class="solution-points">
+                        <div class="solution-point">
+                            <span class="solution-number">1</span>
+                            <p>A landing page for users to explore and learn more about the multitude of sign in options available</p>
+                        </div>
+                        <div class="solution-point">
+                            <span class="solution-number">2</span>
+                            <p>Minimum recommended methods for 2SV to be highlighted above</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-sub" id="solution-sub-3">
+                    <p>The page was also designed with progressive disclosure to reduce cognitive load and encourage user engagement. When expanded, each section provides short summaries about the value of each method, plus educational links.</p>
+                </div>
+
+                <div class="solution-sub" id="solution-sub-4">
+                    <p>"Learn more" links open educational wizards that I previously designed for Google's Advanced Protection Program enrollment flow.</p>
+                    <p>Educational wizards offer delightful educational moments within users' existing journeys, proven to enhance user trust compared to traditional Help Center articles that navigate users away and cause significant drop-off. My goal was to leverage these educational components across various security experiences to build a comprehensive system, repurposing proven patterns that keep users engaged in their current flow rather than losing them to external documentation.</p>
+                </div>
             </div>
-            <div class="case-image-with-caption">
-                <img src="../images/security-education-1.png" alt="What sign-in options are right for you page showing recommended methods for 2-Step Verification" class="case-image-no-container zoomable-image">
+            <div class="solution-prototype-col">
+                <div class="prototype-frame-wrap">
+                    <iframe id="solution-prototype-iframe"
+                            src="../prototypes/google-security/google-security-v3-tour.html"
+                            title="Google Security interactive prototype"
+                            loading="lazy"></iframe>
+                    <a class="prototype-open-new"
+                       href="../prototypes/google-security/google-security-v3-tour.html"
+                       target="_blank" rel="noopener"
+                       aria-label="Open prototype in new window"
+                       title="Open in new window">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        </svg>
+                    </a>
+                </div>
+                <span class="image-caption">Interactive prototype of the redesigned Security Settings coded with Claude Code</span>
             </div>
         </section>
 
-        <!-- Educational Content Section 2 -->
-        <section class="case-section case-section-two-col">
-            <div class="case-section-text">
-                <p>The page was also designed with progressive disclosure to reduce cognitive load and encourage user engagement. When expanded, each section provides short summaries about the value of each method, plus educational links.</p>
-            </div>
-            <div class="case-image-with-caption">
-                <img src="../images/security-education-2.png" alt="Sign-in options page with expanded sections showing progressive disclosure" class="case-image-no-container zoomable-image">
-            </div>
-        </section>
-
-        <!-- Educational Content Section 3 -->
-        <section class="case-section case-section-two-col">
-            <div class="case-section-text">
-                <p>"Learn more" links open educational wizards that I previously designed for Google's Advanced Protection Program enrollment flow.</p>
-                <p>Educational wizards offer delightful educational moments within users' existing journeys, proven to enhance user trust compared to traditional Help Center articles that navigate users away and cause significant drop-off. My goal was to leverage these educational components across various security experiences to build a comprehensive system, repurposing proven patterns that keep users engaged in their current flow rather than losing them to external documentation.</p>
-            </div>
-            <div class="case-image-with-caption">
-                <img src="../images/security-education-3.png" alt="Educational wizard showing how to sign in with security keys" class="case-image-no-container zoomable-image">
-            </div>
-        </section>
+        <script>
+          window.addEventListener('message', function(e) {
+            if (!e.data || e.data.type !== 'scroll-to-sub') return;
+            var el = document.getElementById('solution-sub-' + e.data.sub);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+        </script>
 
         <!-- P0 Launch Section -->
         <section class="case-section case-section-two-col">
@@ -322,6 +330,8 @@
     <footer class="footer">
         <div class="footer-content">
             <a href="mailto:amelia.ruslim@gmail.com">amelia.ruslim@gmail.com</a>
+            <img class="footer-favicon" src="../images/favicon.svg" alt="">
+            <span class="footer-credit">Coded with Claude</span>
         </div>
     </footer>
 

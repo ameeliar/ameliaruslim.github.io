@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Account – Security</title>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Google+Sans+Text:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --blue: #0054D8;
+    --blue-light: #B9E8FF;
+    --blue-bg: #e8f0fe;
+    --blue-hover: #003da6;
+    --text-1: #202124;
+    --text-2: #5f6368;
+    --text-3: #80868b;
+    --border: #dadce0;
+    --bg: #fff;
+    --hover: #f1f3f4;
+    --green: #188038;
+    --green-icon: #34a853;
+    --yellow: #f9ab00;
+    --illus-bg: #e8eef7;
+    --radius: 8px;
+  }
+
+  html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: 'Google Sans Text', 'Roboto', sans-serif;
+    background: var(--bg); color: var(--text-1); min-height: 100vh;
+  }
+
+  /* ═══ ICON HELPERS ═══ */
+  .mi {
+    font-family: 'Material Icons Outlined'; font-size: 20px;
+    font-weight: normal; font-style: normal; line-height: 1;
+    letter-spacing: normal; text-transform: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    white-space: nowrap; direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    color: var(--text-2);
+  }
+  .mi-filled {
+    font-family: 'Material Icons'; font-size: 18px;
+    font-weight: normal; font-style: normal; line-height: 1;
+    letter-spacing: normal; text-transform: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px;
+    white-space: nowrap; direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══ TOP NAV ═══ */
+  .topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 24px; border-bottom: none;
+    position: sticky; top: 0; background: var(--bg); z-index: 100; height: 64px;
+  }
+  .topnav-left { display: flex; align-items: center; }
+  .glogo {
+    font-family: 'Google Sans', sans-serif; font-size: 22px; font-weight: 500;
+    letter-spacing: -0.5px; display: flex; cursor: pointer; user-select: none;
+  }
+  .glogo .c1 { color: #4285f4; } .glogo .c2 { color: #ea4335; }
+  .glogo .c3 { color: #fbbc04; } .glogo .c4 { color: #4285f4; }
+  .glogo .c5 { color: #34a853; } .glogo .c6 { color: #ea4335; }
+  .glogo-label {
+    font-family: 'Google Sans Text', sans-serif; font-size: 22px;
+    color: var(--text-2); margin-left: 6px; font-weight: 400;
+  }
+  .searchbox {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--hover); border-radius: 24px;
+    padding: 10px 20px; width: 540px; margin-left: 32px;
+  }
+  .searchbox .mi { font-size: 20px; }
+  .searchbox span { font-size: 16px; color: var(--text-2); font-family: 'Roboto', sans-serif; }
+  .topnav-right { display: flex; align-items: center; gap: 4px; }
+  .icon-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; border: none; background: transparent;
+    transition: background 0.15s;
+  }
+  .icon-btn:hover { background: var(--hover); }
+  .avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    overflow: hidden; cursor: pointer;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .apps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    width: 18px; height: 18px; gap: 2px;
+  }
+  .apps-grid span { width: 4px; height: 4px; border-radius: 50%; background: var(--text-2); }
+
+  /* ═══ M3 ROUNDED BUTTONS ═══ */
+  .btn-filled {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 0 24px; border-radius: 20px;
+    background: var(--blue); color: #fff;
+    font-family: 'Google Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    border: none; cursor: pointer;
+    transition: background 0.15s, box-shadow 0.2s;
+    letter-spacing: 0.1px; height: 40px;
+  }
+  .btn-filled:hover { background: var(--blue-hover); box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+
+  .btn-outlined {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 0 24px; border-radius: 20px;
+    border: 1px solid var(--border); background: var(--bg);
+    color: var(--blue); font-family: 'Google Sans', sans-serif;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    transition: background 0.15s; letter-spacing: 0.1px; height: 40px;
+  }
+  .btn-outlined:hover { background: #dff3ff; border-color: var(--blue-light); }
+
+  .btn-tonal {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 0 24px; border-radius: 20px;
+    border: none; background: #dff3ff;
+    color: var(--blue); font-family: 'Google Sans', sans-serif;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    transition: background 0.15s; letter-spacing: 0.1px; height: 40px;
+    position: relative; z-index: 1;
+  }
+  .btn-tonal:hover { background: #c5e4ff; }
+  .btn-tonal .mi {
+    font-size: 18px; color: var(--blue);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ═══ MODAL ═══ */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.4); z-index: 200;
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--bg); border-radius: 16px;
+    padding: 32px; max-width: 460px; width: 90%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  .modal h3 {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 18px; font-weight: 500; margin-bottom: 12px;
+  }
+  .modal p {
+    font-size: 14px; color: var(--text-2); line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .modal-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    margin-bottom: 24px;
+  }
+  .modal-card {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px 16px; display: flex; align-items: center;
+    gap: 12px; cursor: pointer; transition: background 0.12s;
+  }
+  .modal-card:hover { background: var(--hover); }
+  .modal-card img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+  .modal-card svg { flex-shrink: 0; }
+  .modal-card span {
+    font-size: 14px; font-weight: 500;
+    font-family: 'Google Sans', sans-serif;
+  }
+  .modal-footer {
+    display: flex; justify-content: space-between;
+  }
+  .modal-footer button {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Google Sans', sans-serif; font-size: 14px;
+    font-weight: 500; color: var(--blue); padding: 8px 20px;
+    border-radius: 20px; transition: background 0.15s;
+  }
+  .modal-footer button:hover { background: #dff3ff; }
+  .modal-illus {
+    display: flex; align-items: center;
+    justify-content: center; margin-bottom: 24px;
+  }
+  .modal-illus svg { max-width: 100%; height: auto; }
+  .page { display: none; } .page.active { display: block; }
+
+  /* ═══ SECURITY HOME ═══ */
+  .layout { display: flex; min-height: calc(100vh - 64px); }
+
+  .sidebar {
+    width: 260px; border-right: none;
+    padding: 8px 12px 8px 0; flex-shrink: 0;
+  }
+  .sb-item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 0 24px; height: 40px; font-size: 14px;
+    color: var(--text-1); cursor: pointer; border: none;
+    background: none; width: 100%; text-align: left;
+    font-family: 'Google Sans Text', 'Roboto', sans-serif;
+    transition: background 0.12s; border-radius: 0 20px 20px 0;
+  }
+  .sb-item:hover { background: var(--hover); }
+  .sb-item.active {
+    color: var(--blue); background: var(--blue-light);
+    font-weight: 500;
+  }
+  .sb-item .mi { font-size: 20px; color: inherit; }
+  .sb-divider { height: 1px; background: var(--border); margin: 8px 0; }
+
+  .main {
+    flex: 1; width: 58%; max-width: 58%;
+    margin: 0 auto; padding: 32px 40px 80px;
+  }
+  .main-title {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 30px; font-weight: 400; text-align: center;
+    margin-bottom: 4px;
+  }
+  .main-sub {
+    font-size: 14px; color: var(--text-2);
+    text-align: center; margin-bottom: 32px; line-height: 1.4;
+  }
+
+  /* ── Rec Banner ── */
+  .rec-banner {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px 28px;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 48px;
+  }
+  .rec-banner-text { flex: 1; }
+  .rec-banner-text h3 {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 16px; font-weight: 500; margin-bottom: 4px;
+  }
+  .rec-banner-text p {
+    font-size: 13px; color: var(--text-2); margin-bottom: 16px;
+  }
+  .rec-hero { max-height: 110px; flex-shrink: 0; }
+
+  /* ── Sections ── */
+  .sec-h {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 22px; font-weight: 400; margin-bottom: 8px;
+  }
+  .sec-p {
+    font-size: 14px; color: var(--text-2);
+    margin-bottom: 20px; line-height: 1.5; max-width: 580px;
+  }
+
+  /* ── Rows ── */
+  .card {
+    border: 1px solid var(--border); border-radius: var(--radius);
+    overflow: hidden; margin-bottom: 12px;
+  }
+  .row {
+    display: flex; align-items: center;
+    padding: 16px 24px; gap: 16px;
+    cursor: pointer; transition: background 0.12s;
+    border-bottom: 1px solid var(--border); min-height: 56px;
+  }
+  .row:last-child { border-bottom: none; }
+  .row:hover { background: var(--hover); }
+  .row-icon { display: flex; align-items: center; flex-shrink: 0; }
+  .row-icon .mi { font-size: 20px; }
+  .row-label { flex: 1; font-size: 14px; color: var(--text-1); }
+  .row-val {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 14px; color: var(--text-2); flex-shrink: 0;
+  }
+  .row-arrow { display: flex; align-items: center; flex-shrink: 0; }
+  .row-arrow .mi { font-size: 20px; color: var(--text-3); }
+
+  /* Status: filled icons, 18x18, dark grey text */
+  .status-on {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--text-2); font-size: 14px;
+  }
+  .status-on .mi-filled { color: var(--green-icon); }
+
+  .warn-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .warn-badge .mi-filled { color: var(--yellow); }
+
+  .status-off {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--text-2); font-size: 14px;
+  }
+  .status-off .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--text-3); flex-shrink: 0;
+  }
+
+  .more-wrap { display: flex; justify-content: flex-end; margin-bottom: 48px; }
+
+  /* ── Extra security icon circle ── */
+  .extra-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; background: var(--blue-light);
+  }
+  .extra-icon .mi { font-size: 20px; color: var(--blue); }
+  .extra-icon-img {
+    width: 36px; height: 36px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .extra-text {
+    flex: 1; min-width: 0;
+  }
+  .extra-title {
+    font-size: 14px; font-weight: 500; color: var(--text-1);
+    font-family: 'Google Sans', sans-serif;
+  }
+  .extra-sub { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+
+
+  /* ═══ SIGN-IN OPTIONS PAGE ═══ */
+  .opts-layout {
+    width: 58%; max-width: 58%; margin: 0 auto; padding: 0 24px 80px;
+  }
+  .pg-header {
+    display: flex; align-items: center; gap: 16px; padding: 12px 24px;
+    position: sticky; top: 64px; background: var(--bg); z-index: 90;
+    border-bottom: 1px solid transparent; transition: border-color 0.2s;
+  }
+  .pg-header.scrolled {
+    border-bottom-color: var(--border);
+  }
+  .back-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    cursor: pointer; border: none; background: none;
+    transition: background 0.15s;
+  }
+  .back-btn:hover { background: var(--hover); }
+  .back-btn .mi { font-size: 24px; color: var(--text-1); }
+  .pg-title {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 22px; font-weight: 400;
+  }
+
+  .hero {
+    background: #f8f9fa; border-radius: var(--radius);
+    height: 120px; display: flex; align-items: center;
+    justify-content: center; margin-bottom: 16px; overflow: hidden;
+  }
+  .hero svg { width: 100%; height: 100%; }
+  .hero-sub {
+    text-align: center; color: var(--text-2);
+    font-size: 14px; line-height: 1.5; margin-bottom: 36px;
+  }
+
+  /* ── Opt sections ── */
+  .opt { margin-bottom: 80px; }
+  .opt-head {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 8px 0 20px;
+  }
+  .opt-head.flip { flex-direction: row-reverse; }
+  .opt-illus {
+    width: 50%; min-width: 50%; height: 130px;
+    border-radius: var(--radius); overflow: hidden; flex-shrink: 0;
+    background: #f8f9fa;
+  }
+  .opt-illus svg { width: 100%; height: 100%; }
+  .opt-info h2 {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 22px; font-weight: 400;
+    margin-bottom: 8px; line-height: 1.3;
+  }
+  .opt-info p { font-size: 14px; color: var(--text-2); line-height: 1.5; }
+
+  .pill-wrap {
+    display: flex; justify-content: center; padding: 8px 0;
+    position: relative;
+  }
+  .pill-wrap::before {
+    content: ''; position: absolute; top: 50%; left: 0; right: 0;
+    height: 1px; background: #e8eaed; transform: translateY(-50%);
+  }
+  .opt.open .btn-tonal .mi { transform: rotate(90deg); }
+  .opt.open + .sep { display: none; }
+  .opt.open .pill-wrap { display: none; }
+
+  .opt-detail {
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+  .opt.open .opt-detail { max-height: 600px; opacity: 1; }
+
+  .opt-card {
+    border: 1px solid var(--border); border-radius: var(--radius);
+    overflow: hidden; margin-bottom: 8px;
+  }
+  .opt-row {
+    display: flex; align-items: center;
+    padding: 14px 20px; gap: 14px;
+    cursor: pointer; transition: background 0.12s;
+    border-bottom: 1px solid var(--border); min-height: 52px;
+  }
+  .opt-row:last-child { border-bottom: none; }
+  .opt-row:hover { background: var(--hover); }
+  .opt-row-icon { display: flex; align-items: center; flex-shrink: 0; }
+  .opt-row-icon .mi { font-size: 20px; color: var(--text-2); }
+  .opt-row-label { flex: 1; font-size: 14px; }
+  .opt-row-val {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 14px; color: var(--text-2); flex-shrink: 0;
+  }
+  .opt-row-arrow { display: flex; align-items: center; flex-shrink: 0; }
+  .opt-row-arrow .mi { font-size: 20px; color: var(--text-3); }
+
+  .info-link {
+    display: flex; align-items: center;
+    padding: 12px 20px; gap: 12px;
+    border: 1px solid var(--border); border-radius: var(--radius);
+    margin-bottom: 8px; cursor: pointer;
+    transition: background 0.12s; color: var(--text-1);
+  }
+  .info-link:hover { background: #dff3ff; }
+  .info-link .mi { font-size: 20px; color: var(--blue); }
+  .info-link span { flex: 1; font-size: 14px; }
+  .info-link .arr .mi { font-size: 20px; color: var(--blue); }
+
+  .phone-lbl {
+    padding: 14px 20px 4px; font-size: 14px; font-weight: 500;
+    font-family: 'Google Sans', sans-serif;
+  }
+  .phone-desc {
+    padding: 0 20px 10px; font-size: 12px;
+    color: var(--text-2); line-height: 1.5;
+  }
+
+  .sep { display: none; }
+
+  @media (max-width: 768px) {
+    .opt-head { flex-direction: column !important; gap: 14px; }
+    .opt-illus { width: 100%; min-width: 0; height: 100px; }
+    .sidebar { display: none; }
+    .main { width: 100%; max-width: 100%; padding: 24px 20px 60px; }
+    .searchbox { display: none; }
+    .opts-layout { width: 100%; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ TOP NAV ═══ -->
+<nav class="topnav">
+  <div class="topnav-left">
+    <div class="glogo" onclick="showPage('home')">
+      <span class="c1">G</span><span class="c2">o</span><span class="c3">o</span><span class="c4">g</span><span class="c5">l</span><span class="c6">e</span>
+    </div>
+    <span class="glogo-label">Account</span>
+    <div class="searchbox">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#5f6368"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <span style="font-size:14px">Search</span>
+    </div>
+  </div>
+  <div class="topnav-right">
+    <button class="icon-btn"><span class="mi">help_outline</span></button>
+    <button class="icon-btn">
+      <div class="apps-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </button>
+    <div class="avatar"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23c8a090'/%3E%3Cstop offset='100%25' stop-color='%23b08060'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' fill='url(%23bg)'/%3E%3Cellipse cx='32' cy='24' rx='12' ry='13' fill='%23e0c0a0'/%3E%3Cellipse cx='32' cy='58' rx='22' ry='20' fill='%23d0a080'/%3E%3C/svg%3E" alt="Profile"></div>
+  </div>
+</nav>
+
+
+<!-- ═══ PAGE 1: SECURITY HOME ═══ -->
+<div class="page active" id="page-home">
+  <div class="layout">
+    <aside class="sidebar">
+      <button class="sb-item"><span class="mi">home</span>Home</button>
+      <button class="sb-item"><span class="mi">person</span>Personal info</button>
+      <button class="sb-item"><span class="mi">tune</span>Data & personalization</button>
+      <button class="sb-item active"><span class="mi">shield</span>Security</button>
+      <button class="sb-item"><span class="mi">people</span>People & sharing</button>
+      <button class="sb-item"><span class="mi">payment</span>Payments & subscriptions</button>
+      <div class="sb-divider"></div>
+      <button class="sb-item"><span class="mi">help_outline</span>Help</button>
+      <button class="sb-item"><span class="mi">feedback</span>Send feedback</button>
+    </aside>
+
+    <main class="main">
+      <h1 class="main-title">Security</h1>
+      <p class="main-sub">Settings and recommendations to help keep your account secure</p>
+
+      <div class="rec-banner">
+        <div class="rec-banner-text">
+          <h3>You have security recommendations</h3>
+          <p>Recommended actions found in the Security Checkup</p>
+          <button class="btn-filled">Protect your account</button>
+        </div>
+        <img class="rec-hero" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAEMAr4DASIAAhEBAxEB/8QAHAABAAICAwEAAAAAAAAAAAAAAAIEAwUBBgcI/8QAPRAAAgIBAQUDCgQFBQADAQAAAAECAwQRBRIxUVITFSEGFDIzQWFxcpGhByJTsSM0NTbwJEJzgcFiY9Hh/8QAHAEBAQACAwEBAAAAAAAAAAAAAAEGBwIEBQMI/8QAMhEBAAEDAgMFBwUAAwEAAAAAAAECAxEEBQYSITEyQVFxExQzNGFywSI1gaGxI0KR8f/aAAwDAQACEQMRAD8A+ywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANfl2ztu7Cp/FgXXbWno5LUmmnwepRjgLd/NN6mJwyMWWsdZQKjZgrY+XCzwk92RZXiRQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbS4swyyqIvRzAzAweeUdY88o6wM4MHnlHWPPKOsDODB55R1jzyjrAzgweeUdY88o6wM4MHnlHWPPKOsDODB55R1jzyjrAzgweeUdY88o6wM4MHnlHWPPKOsDODB55R1jzyjrAzgweeUdY88o6wM4MHnlHWPPKOsDODB55R1jzyjrAzgweeUdY88o6wM4MHnlHWI5VDeimBnBwmmtU9TkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAk0k2+CAr51yqqfN8CvstQ1lNy/M/YYrZPKydF6KOZ40oveqejRUbQNJrxNfRmSre7cv+y9XZCxaxepMKrZGHCx70PyswRtvxpbtibiXMu2dUN6MdTFVk03x3ZrR8iozUX12r8r8TKULsNp79EtHyOKcudclC+L+IwNgCNdkLFrF6kiKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABxZ6DA1187MrI7OD0iuJlWz69PF+JDZnrrf89pcyLOyqcuRUV+76uY7vq5mPEzJ2Xbkl4M2A6in3fVzHd9XMuAZXCn3fVzHd9XMuAZMKfd9XMd31cy4Bkwp931cx3fVzLgGTCn3fVzHd9XMuAZMKfd9XMd31cy4Bkwp931cx3fVzLgGTCn3fVzHd9XMuAZMKfd9XMd31cy4Bkwp931cx3fVzLgGTCn3fVzHd9XMuAZMKfd9XMd31cy4Bkwp931czh7Pr08GXQMmGtqlPFyFXJ6xZsk9VqUtqJfwn7d4t1erj8BKJAAigAAAAAAAAAAAAAAAABxOShFyk/BAcg19mZbOTVMPBe0h2+XyLhMtmDWdvl8h2+XyGDLZlPaVzjDs48ZGDt8vkYZxyJWb8o6sRAtYtfZw19rMxT38rkFkWVv+LHw5lRZsrjNfmRWdd1D3qpaotQkpR1XAkBjozIzW5ctGL8OFi3qno/cRuohZ7nzMMZX4z8PzR5BUoXX40t2xNxLUXTlw4Js4rvpyI7s0teRkox66m5Q9pBUnj3Y736m2uRlx81N7tq3WXCvkYtdq4aPmMjPGSktU9Tk1tUrMW9VzesWbJPVakUAAAAAAAAAAAAAAAAAbSWraS95r8/bOz8KEp3ZEFurxSep87l2i3Ga5xDnRbruTimMtgDz7bH4j49SlDAoVz4KTbWhpMfy82tOxtt6ctTHNTxftlirl58+j2bXD2tuU80049XrgOjbK8v6LFGObSqnw1Tb1O14W1cHLhGVV8Xqva9D09DvWi10ZsXIn6eLoajb9Rpp/wCSleATTWqaYPUdII2egyRGz0GBR2X663/PaX5xU4uMlqmarFvVFtja11LHeEellmEhnqxaq570V4mco94R6WO8I9LGJVeBR7wj0sd4R6WMC8Cj3hHpY7wj0sYF4FHvCPSx3hHpYwLwKPeEeljvCPSxgXgUe8I9LHeEeljAvAo94R6WO8I9LGBeBR7wj0sd4R6WMC8Cj3hHpY7wj0sYF4FHvCPSx3hHpYwLwKPeEeljvCPSxgXgUe8I9LHeEeljAvAo94R6WO8I9LGBeBR7wj0sd4R6WMDnanCr5i3V6uPwNblZKvdaS00lqbKr1cfgESABFAAAAAAAAAAAAAAAACltST3YwT01ZdKG0/Tr+JYJWcWqNdSSXsMxGv0I/AkQDhtLi0iGRbGmqVkuCRot/O2hZJ1zca0/DxLgdgTT4NM5OuylnbOnGU5uUNfFam+xrVdTGxe1DAyGLJrjZU1JGUjZ6DINdgyes4exFoqYXrrf89pbOTiHDSfE5AFa3GT/ADQe6zirJtolu2LWPMtEZRjJaSWoVnpvrtWsWZDV2Y8q3v0ya9xOnNlFONqevMmDLnajUrK4rjqXqtezWvIoYkXkZDtl4pGxEgACKAAAAAABC62umDnZOMIr2t6EmYiMysRnsTB1ja3lrsnBcoqxzkuGi1Ok7Z/EDaWU5Qw15vHXwlF+LR4G4cTbfoo/VXzT5R1evpNj1mp6xTiPOXqmXn4mLByuvhFL/wCSOq7Z8v8AZ2Ipwxl21i8EmmkeV5m0c7LbeTkTsb8XqVTC9fx1fufp01PLHnPWWS6ThWzR1vVc3p2O07V8udsZqlGubohL/bF6nW8jJvyJb11spv4mIGH6rctVq5zermWR2NJY08YtUxAWMPiyuWMPizzrndfW53VkzUZN9Et6qyUX8TCD4UXKrc81M4l1JiJjEuy7N8stqYm6rJO6C/2t6Hb9leW+z8rdhf8AwrH7EtTysGS7fxduWj6c/NHlPV5ep2XSX+vLifo94xs3FyIp1XQlr70ZrPQZ4XibQzMSSlj5EoNcNDsmyvLjaFEVXlrt17ZSZnO38faS9MU6imaJ8+2GPanhu9R1tTzf677hxTts1Wpa3I8jrexPKXZ2RY96zccuaOyVzhZBSrnGSftT1M202t0+qp5rNcVR9GP3tNdsTi5TMG5HkNyPIkDtPgjuR5DcjyJACO5HkNyPIkAI7keQ3I8iQAjuR5DcjyJACO5HkNyPIkAI7keQ3I8iQAjuR5DcjyJACO5HkNyPIkAI7keQ3I8iQAjuR5DcjyJACO5HkNyPIkAI7keQ3I8iQAjuR5DcjyJACrmJJ16LT8xsavVx+Brs7jX8xsavVx+BJWEgARQAAAAAAAAAAAAAAAAobT9Ov4l8obT9Ov4lgldr9CPwJEa/Qj8Di96Uya5EGu23k0vGlWp/mMWxcrHpw92ctJalXZ2HXl5FvaN+DZfexcX2yf0OXREdr5eNdhzjGestPAnsbKpWNCpz0lqcLYuK+En9ChtPDrw7K3U3q2ToOxkbPQZxR6mHyo5s9BkVrcL11v8AntLZUwvXW/57S2cnEAAAAACll6WWxritWWb7FXW2yGzat6Tul/0FXMapVVKKRkAOKgAAAAAAAOJyUIOT4Jas8g/EHymys3aVmFjWuGPU3F6f7j1Pbk5V7KyJRej3H+x8/wCVOVmRZOT1bfiYBxzuVyxbo09uZjm6z6Qy3hbR0Xa6r1cZ5exjfjx8QAatZ2AAgAAAWMPiysWMKUdX+ZfU4191wud1aAB1XVAAAAADxXB6HafIzygvxMyGLfY5Uzeni+B1Y5Xg0/eehtu43tBqKbtqcY/t8NTpqNTbm3XHa90hJSgpLg1qiRV2U3LZ1DfHs1+xaP0Zar56Iq84asrp5apgMcra4vRyRhyrJOSqhxZkq2fFx1m/E+ji57erqHb1dRLu+nn9h3fTz+xMwYR7erqHb1dRLu+nn9h3fTz+wzBhHt6uodvV1Eu76ef2Hd9PP7DMGEe3q6h29XUS7vp5/Yd308/sMwYR7erqHb1dRLu+nn9h3fTz+wzBhHt6uodvV1Eu76ef2Hd9PP7DMGEe3q6h29XUS7vp5/Yd308/sMwYR7erqHb1dRLu+nn9h3fTz+wzBgjZCXoyRMr5GF2Ud+qT8DnEsdlfjxRUZwAAAAAAAVc7jX8xsavVx+Brs7jX8xsavVx+BJWEgARQAAAAAAAAAAAAAAAAobT9Ov4l8obT9Ov4lgldr9CPwOMj1M/gc1+hH4HF/qZ/Ag1GwP5i74sy7ftyK649i5Ja+LRX2LbXVkXdpNR8XxZtJ5OJOO7OyDXvZZ7UU/J+2+yuXauT97MflD6dXzf+GwrycOtaQshFe5mr25dXbZUq5qX5vYx4jdUeph8qObPQZxR6mHyo5s9BkVrcL11v+e0tlTC9db/ntLZycQAADg5MGXZuV6Li+AGGeuRkKuPBG0rioQUV7Crs6nchvyXiy4SVgABFAAAAAAAAUPKD+kZHyP8AY+f7fWy+J9AeUH9IyPkf7Hz/AG+tl8TVvH/zFn0n8M54S+Hc9YRABr9l4AAAAA0flvl34Pk5lZONNwshBtNHjNPlz5SKlSW0LU2ur/8Ah6/+I39pZv8AxS/Y+e6v5aPym1uCNFp7+gqqu0RVPN4wwDinU3rWqppoqmI5fCfq+kfwz2hlbS8mYZOZbKy1z0bbOznTvwf/ALPr+f8A8O4mtN+opt7leppjERUybbqpq0tEzPXAADyHcAAAC4oBcUWnvQPbNk/02j5F+xbKmyf6bR8i/Ytn6Y0vwaPSGp73xKvVTj/UofE2pqof1KHxNqfaXzhVz8yGK61Ja770RZhJTipL2mn8o/WY3zM2uN6mPwIrIDiTUYtvgjXyuuyLXGnwS9oGx1XNDVc0a/zXK/Wf1HmmV+s/qXCNhquaGq5o1/mmV+s/qPNMr9Z/UYGw1XNDVc0a/wA0yv1n9R5plfrP6jA2Gq5oarmjX+aZX6z+o80yv1n9RgbDVc0NVzRr/NMr9Z/UeaZX6z+owNhquaGq5o1/mmV+s/qPNMr9Z/UYF61rs5eK4Gtw/Wz+Jk80yf1n9SEcC6L1U9NfeIFnVc0NVzRg8zyP1H9R5nkfqP6lGfVc0cld4eSlqrNX8SNNs4WdlbxAtAAIq53Gv5jY1erj8DXZ3Gv5jY1erj8CSsJAAigAAAAAAAAAAAAAAABQ2n6dfxL5V2jU7KlKPGPiWBYr9XH4EmtVoyli5kdzcs8GvAz+dU9SJgVbdk4tk3Nx8X7iPcuJy+xc86p6kPOqepF6op9y4nL7Eqtk4tc1NR8V7i151T1IedU9SHUZktEkvYRs9BmPzqnqRgysyCg41+MmMDBhett/z2lsr4cHGDlLjIsFQAAHEmorVlSmLycnXx3ESzLHp2ceLLmFT2VS5viRWdJJaIBvRalR51Sk01Lw9xFWwYK8qmfCWhnTT4PUAAAAAAAACh5Qf0jI+R/sfP8Ab62XxPoDyg/pGR8j/Y+f7fWy+Jq3j/5iz6T+Gc8JfDuesIgA1+y8AAAAAdc/Eb+0s3/il+x891fy0flPoT8Rv7Szf+KX7Hz3V/LR+U2/wF+31fc11xd85T9v5fQ/4P8A9n1/P/4dxOnfg/8A2fX8/wD4dxNW8Rful/7pZVtnylv0AAeM7wAAAXFALii096B7Zsn+m0fIv2LZU2T/AE2j5F+xbP0xpfg0ekNT3viVeqnD+pQ+JtTVQ/qUPibU+0vnDTeUfrMb5mbXG9TH4Gr8ok3PH0Tfi+BtMf1MfgBDOemPIhsyKWMpLi+JLP8A5eQ2d/KQHgLABjndCMt1vxIrICnDJk8zs3pu89SzC2E5OMXq0BMAxyurU9xyWoGQFSjJlPIlCWiiveWK7YWNqL10AmAY3dXvOO8tUBkBTxsmU7pxnooos12QsT3XroBMAwyvhpJRktUBmBTxMpzcu0aSRarsjYtYvVASNdtRaWRkuJsTX7V9KJYSWWHjCL9xIjX6uPwJFRVzuNfzGxq9XH4GuzuNfzGxq9XH4ElYSABFAAAAAAAAAAAAAAAADDmWqqlt8XwMzei1Zq8mbyMncXoxLAhj0K1Oc/aZfM6ubM8YqMUkSK4q3mdXNjzOrmyyAK3mdXNjzOrmyyAK3mdXNk68euD1S1+JmAHByAAI2SUIOTJFPKm7LFVF+HtAlg1O652z4LgbMpLIpx61CHi/cQ87vl6FXh70RWwMcqKpcYJlPznLXGpHMM5qWlsHH/oYGS3Bqk9YflfuK+uRiy9somwqthYtYslKKktGtUMjFjXwujqn48jMa7Jpljz7WrVL2ouY1yurUlx9oVlABAAAFHbyb2TkJdD/AGPn+9ON00+KZ9D7Rgp4N8X+nL9j5+2rHc2jfHlI1rx/Z62rvrDNuEq+lyn0VgAa3ZkAAAAAOufiN/aWb/xS/Y+e6v5aPyn0J+I39pZv/FL9j57q/lo/Kbf4C/b6vua64u+cp+38vof8H/7Pr+f/AMO4nTvwf/s+v5//AA7iat4i/dL/AN0sq2z5S36AAPGd4AAA5XFfE4OYLWcUuLZae2B7ZslabNo+RfsWjBs9buDQv/rj+xnP0zp4xapj6Q1NdnNcz9VN/kz4Slw1NqmmtUUMilWR5NGKu3Kq/KlvL3n1cGynXCem/FPTgSS0WiNd51lfpxHnWV+nEYMrOf8Ay8hs7+UgUsjIyJ1tTgki7s7+UgPAWChtGNWu9vNT9xfMFuLXZZvy+ghWmUpb2ur1Nls2NWu8payIwx/9b4wW4WaMauqbnH2iZRnNbtGNSm5KWk+SNkV7MWudjsa1fIQS1ClLe11fjxNns6FUY6wlrJ8SFGP/AKme9Bbr4FnHx4Uybj7RMjMavPjXGxyhJ7/tRtCvLEqc5WNat+wQrURb3vFta8TbYEao1/w3rzMGNja3TU4flfAt49EKU1H2iUZXw8TUZqrjY3XJ6vibd+K0Ks8Stb89NW/YIVqoP82jbSfE3GFGuNX8N6oq4mLq5KyPHgXcemNMd2ImUhkNftX0omwNftX0oiCWWv1cfgSI1+rj8CRUVc7jX8xsavVx+Brs7jX8xsavVx+BJWEgARQAAAAAAAAAAAAAAOJNRi2/YBW2jd2dW6n4sr4UEo72qcmRjF5eS9fQRK7Ftpe9U21yKiyCtVkrXdsW6ywmmtU9So5AAAAAAAAAOH4AY8izs62/b7CjTGy2z8uur9pLJm7bd2PjyNniUKqteHix2Khj4dcFrNbz95ZUUloloclXOy6qKpazW9p4LU4qtELKa7F+aKZo9l7Tm8hq+aUW/Bs30JxnHejJNc0XsGvvx7KJdpS3pyLOHkK2Oj8JIsNarRmty63j3q2HgnxHajYzipRcXwZrqW8bLcH6L4Gwqmp1qS4Mp7Uj4Rml4piBeBjxp79MZc0ZCKAACF8d+mcOcWjwTyqp838oc2nps0+x78eKfiXiyx/Ka6co6K5uS96ME48szVo6LkeFX+sq4Uu8uoqo84dZABqhnwAAAAA0Pl3j3ZXk1l0UQc7J1tJJe48Sq8k9vuhRWz7m0uhn0WWMNeLMo2fiq9tGnm1RRFUTOerwN22K3r7kXaqpiYjDr34XYeTg+S0KMqqVdinruyWnsO1AGLa7V1azUV36oxNU5dzT2YsWqbceAADqPsAAAXtgUrI2zjUtaqU9GUTsHkHj9ttyuWmu40z0dose8a61bxnNUf8Ani6+suezsV1eUS9Upju1QivZFL7EzhcDk/R0RiMNVzOZAAVHAOQBhy1/BZm2a08WKT8URnFSi0yrXOzFsa0biyK2oKPeEeljvCPSxgyvAo94R6WO8I9LGDK8Cj3hHpY7wj0sYMrwKPeEeljvCPSxgyvAo94R6WO8I9LGDK8Cj3hHpY7wj0sYMrwKPeEeljvCPSxgyvAo94R6WO8I9LGDK8a/avjOKJPaC08IswQVl93aTWiXBCBah6EfgSODkqKudxr+Y2NXq4/A12dxr+Y2NXq4/AkrCQAIoAAAAAAAAAAAAAGPJTdE0uRkDWq0Ao7JaUHH26l4199FtNjtq8V7UZMfNjL8ti3ZFlGXIxa7fHTRlKdd+M/DWUTaJprVPVBpNaNajKqFV8J+DejMpHIwoy1lW92RW37qJbtibXMqLgMddsLF+VmQIAAAV8yzdhup+LM8morVlSmDyMhza/KgI7Ohv5Ck/Z4m3KGzEu0sL5JWGLMt7HGnZyRpNnYks+2V971jr4I2m2v6bb8CGw1phRHgIX7Jx5VtQWjKuxrrKcqWLY217NTeGllFR274CBujDmQ36JLQzI4n6D+BFVNlzbqcH/tMufBzx2orVlfZnpz+JfKjBgqUaEpJpmcAigAAHnn4wYHaUU5yTbrW59Wehms8p8GOfse6lxTai2v+keVvWijW6G5Z846esdjv7XqfdtVRc+rwEGTJqlRkTpmtJQejRjNCVUzTM0z2w2xExMZgABxUAAGm8ss67Z2wMnLx9O0rg2tTyOn8R/KKNSnF1ate89a8tcO/P8nsrFx471lkGkjxyryA8o3UoRx/FLpZsbhONqnR1e+cvNnx8mF8R1a6NRT7vzcuPDze1/h1tTJ2v5OQzMtp2OWj0OyHWfw12dlbL8moYuZDdtUtWtDsxgG8+y9/u+xxy56Y7MPd0PP7vRz9uOoADzHaAAAO/wD4YYcewsy2vF+CfwZ0KuErbI1wWspPRI9i8msCvZ+yKaILit56+8zngLQ1X9fN+Y/TRH9z2Mf4i1MWtN7OO2r/ABswAbnYEAAAAABw0nxWpyAI7kOiP0HZw6I/QkAI9nDoj9B2cOiP0JACPZw6I/QdnDoj9CQAj2cOiP0HZw6I/QkAI9nDoj9B2cOiP0JACPZw6I/QdnDoj9CQAj2cOiP0HZw6I/QkAI9nDoj9B2cOiP0JACO5DoRyvA5AAAAVc7jX8xsavVx+Brs7jX8xsavVx+BJWEgARQAAAAAAAAAAAAAAAAr5GLXatUtH7iwANb/qMV+2US1j5Vdq010fJmeSTWjWpUyMKMnv1vdkVFwjOEZrSSTNfDIux3uWxbjzL1N0LVrFoiqd+FKL36X/ANGOGRKEt22LRtDFdRXbFqS/7LlMMMZRktYvUkVbMe6h71b1XIRylutSWkkUcZljbVUOLL2JSqqVH2viU9n1Oy13T4ew2RJIa3FbrzZQftNkUNoQlCxXw4riW8e2NtSkn8RIo7ayafM7ad9b+nAx7JzMerFjGdkU/iZsrZONk3O2bnvPkytlbHxKKJWfxZaexMdBe7wxP1Y/U1c8ml7YVu+tzmYcLGwcq5VRrvjzbZsO4sPqs+pekDZUWwurU65JxftI5U9ymTOMTHhi0KqvXdXMq59rssVMPHmRU9lxe5Kb9vAumPHr7OqMORkJIAAAAAAaTWj8UAB49+JuxJ4O1p51cf4V73npwTOnnvnlTsqva2y7KJR1klrH4nhW0MS3BzLMa6LU4PRmnOL9n9y1Xtrcfor6/wAtkcPbj71p/Z1T+qn/ABgABiDIAAACxh8WVyxh8WcLndcLndWQAdZ1QAAADNh41uXkRoqi3KT0OVu3VcqiiiMzKVVRTGZdh8gdlvN2ksicda6mmenxSUUlwS0NJ5I7Phs7C7GK8dNXr7zeG/eGtoja9DTbq709Z9Wt9313veomqO7HSAAGQvLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVzuNfzGxq9XH4GuzuNfzGxq9XH4ElYSABFAAAAAAAAAAAAAAAPgBFziuLIu6tcZIxWxk+CZVtqtfCLCLryaVxmiLzMdcbI/U1VuPe+EJFa3EynwrmXA3VuXhzWk7IGvvuxqnv05CXu1NXbhZnspmVLdnZ74UWFiEy7ThbSjYlvNNc0bGE4zWsXqjodOLtaiacKLGteDRu9m35/CWNZBrmvATCxLsT4eJq8uMbspV1pe/QlK7LsW4oNa+3QsYWN2Ws5+MmTsGemCrrUUTAfAisdzrcXGbWjNYrXi3fklrF+wt5Nc3rpFs1uRj5D8Y1yLCNzRkV2paNa8jK0mtGtUdags2t+os/6LtN+bwVU18UMGW1rprg24Qim+SJSkorVvRGu7bOl4OCX/RysfJt9ZPRDAnlZev8ADp8ZMng427/Es8ZMyY+LXUtdNXzZnCgAIAAAAAAAAB0T8SPJiOZRLaOLB9tDxkl7V7TvZxOMZxcZJNNaNM6G5bfa3DT1WbsdJ/p29FrLmkvRdo8Hze04txktGuKB6J+Ifkj2bltHArbTes4pcDzvg9HxNHbptd7bb82bv8T5w2joddb1tqLlv/4AA813AsYfFlcsYfFnC53XC53VkAHWdUAOUm3olq2O0IxlKSjFat8EekeQXk75rQ8/Kj/Ekvyp+woeQfkvKyxZ+dBqK8YRaPQ9xRq3IrRJaJI2lwbwzNGNbqaev/WJ/wBYjvu7ROdPan1n8Ndhets/z2lsoxhk12ScIPx9xLezOj7GzmILgKe9mdH2G9mdH2AuAp72Z0fYb2Z0fYC4CnvZnR9hvZnR9gLgKe9mdH2G9mdH2AuAp72Z0fYb2Z0fYC4CnvZnR9hvZnR9gLgKe9mdH2G9mdH2AuAp72Z0fYb2Z0fYC4CnvZnR9hvZnR9gLgKe9mdH2G9mdH2AuAp72Z0fYb2Z0fYC4CnvZnR9hvZnR9gLgKe9mdH2G9mdH2AuAp72Z0fYb2Z0fYCWdxr+Y2NXq4/A1Uo5Nko78HonrwNrWtIJPkSVhIAEUAAAAAAAAAAAAAAAAAADRchouQADRckNFyQAHG6uSGi5I5ADRckAAAAADRcgAGi5IaLkgAGi5AAAAAAAAAAAAAAIucVxkjh3VLjNATBieTQuNsSLzMVcboAZbIRsg4TipRfFM878uvIvf383ZsPzcZQSO+vPw1xyIEZbSwNNJZNenvPO3La7G42pt3o/nxh3dDr7uiuc9uf483z3bXZVY67YOE4+Di+KInrflZsXYW1a5WVZVNV/saeif0PL9pbPvwb5Vz/PFPwmuDNP7zw5qtsqzMc1HnH5bE23eLGupxE4q8lQsYfFlcsYfFmN3O69S53VkAv7J2RnbTujDGpk4t+M9PBHzsWLl+uLdqmZmfCHTruU26eaucQpVwnbYq64uU5eCS9p6D5GeSPZyjmbQjq+MYNG48mfJXE2ZGNtsVZdp4t+K+52VJJaJaI2tw5wZTppjUazrV4R4Qw7dN+m5E2tP0jzRrhGuChCKSXBIkAbCiMdIYv2mi5DRcgChouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQ0XIABouQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHwAAr2Qk+EWYLKbXrpBl8Aw09mNe+FUivPDyXwokdgBcph1ezZ+Y9dMef0K9mzM58MWz6HcAMmHRrNk7RfDDs+hUytg7Qui4zwLJa+5HogONcU108tUZhaZmmeamcS8a2j5FbX3nPGwbvhpqVsTyT8ooyalsq9e9pf/AKe3Aw/W8E7fqrk10zNGfCMY/uJZDY4l1dq3yVYq+s9rz3yd8hpNxu2k9Gv9nimd6wcLGw6lXRVGKS46eJYB7e2bJo9to5bFPXz8ZeXq9wv6uc3J6eXgAA9Z0gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//2Q==" alt="Security recommendations" style="height: 110px;">
+      </div>
+
+      <h2 class="sec-h">How you sign in to Google</h2>
+      <p class="sec-p">Keep these settings up to date to ensure you can sign in to your Google Account. Google's security systems will surface the most suitable option every time you sign in.</p>
+
+      <div class="card">
+        <div class="row">
+          <div class="row-icon"><span class="mi">verified_user</span></div>
+          <div class="row-label">2-Step Verification</div>
+          <div class="row-val">
+            <span class="status-on"><span class="mi-filled">check_circle</span> On July 3, 2018</span>
+          </div>
+          <div class="row-arrow"><span class="mi">chevron_right</span></div>
+        </div>
+        <div class="row">
+          <div class="row-icon"><span class="mi">password</span></div>
+          <div class="row-label">Password</div>
+          <div class="row-val">Last changed: March 24, 2015</div>
+          <div class="row-arrow"><span class="mi">chevron_right</span></div>
+        </div>
+        <div class="row">
+          <div class="row-icon"><span class="mi">phone</span></div>
+          <div class="row-label">Recovery phone</div>
+          <div class="row-val">
+            <span class="warn-badge"><span class="mi-filled" style="color:var(--yellow)">error</span></span>
+            Add a mobile number
+          </div>
+          <div class="row-arrow"><span class="mi">chevron_right</span></div>
+        </div>
+        <div class="row">
+          <div class="row-icon"><span class="mi">mail</span></div>
+          <div class="row-label">Recovery email</div>
+          <div class="row-val">
+            <span class="warn-badge"><span class="mi-filled" style="color:var(--yellow)">error</span></span>
+            Add an email address
+          </div>
+          <div class="row-arrow"><span class="mi">chevron_right</span></div>
+        </div>
+        <div class="row">
+          <div class="row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#5f6368" xmlns="http://www.w3.org/2000/svg"><path d="M7 17C5.61667 17 4.4375 16.5125 3.4625 15.5375C2.4875 14.5625 2 13.3833 2 12C2 10.6167 2.4875 9.4375 3.4625 8.4625C4.4375 7.4875 5.61667 7 7 7H17C18.3833 7 19.5625 7.4875 20.5375 8.4625C21.5125 9.4375 22 10.6167 22 12C22 13.3833 21.5125 14.5625 20.5375 15.5375C19.5625 16.5125 18.3833 17 17 17H7ZM7 15H17C17.8333 15 18.5417 14.7083 19.125 14.125C19.7083 13.5417 20 12.8333 20 12C20 11.1667 19.7083 10.4583 19.125 9.875C18.5417 9.29167 17.8333 9 17 9H7C6.16667 9 5.45833 9.29167 4.875 9.875C4.29167 10.4583 4 11.1667 4 12C4 12.8333 4.29167 13.5417 4.875 14.125C5.45833 14.7083 6.16667 15 7 15ZM8.05 14.3L11.6 10.75L10.55 9.7L8.05 12.2L7.05 11.2L6 12.25L8.05 14.3Z"/></svg></div>
+          <div class="row-label">Google Prompt</div>
+          <div class="row-val">Apple iPhone XR</div>
+          <div class="row-arrow"><span class="mi">chevron_right</span></div>
+        </div>
+      </div>
+
+      <div class="more-wrap">
+        <button class="btn-outlined" onclick="showPage('options')">More sign-in options</button>
+      </div>
+
+      <h2 class="sec-h">Extra security for your account</h2>
+      <p class="sec-p">More protections against unwanted sign-ins, malicious websites, and risky apps</p>
+
+      <div class="card">
+        <div class="row">
+          <div class="extra-icon-img">
+            <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCACuAKQDASIAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAcCBAUGCAMB/8QANhAAAQMDAwIEAwQLAQAAAAAAAQACAwQFEQYSIQcxE0FRcSIyYQgUFdEjQlNigYKRssHh8ZL/xAAbAQEAAQUBAAAAAAAAAAAAAAAAAwECBAUGB//EACoRAAIBAwQCAAYCAwAAAAAAAAABAgMEEQUSITEGExQiMkFRsRZCYXGh/9oADAMBAAIRAxEAPwDstERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEQnAyreapazgHlAe5IHcrykqI2/rBY2erkccA8K3c4uPKrgpkyjq0DthUmuWMXxVwDJiu+irbWg98LEr6mAZuOoY7u4L1DgexWAa4jsveGrkaRk8KmBkzKK2gqmPHflXIORlUKhERAEREAREQBERAF8c4NGSvpOBkrG3KqDGO5wAMoCm43GOCNznPDQB5lRB1F6oQWud9JAx0r8cOZyrLqxrsU7XUVLIHOeNpweyiLTRZX6hj/EpSGuPJec+akjEsbOi+nOoJL5RxySRvbubn4gVuBcB5rW9Hi209sijoZWPIHkFmHPLisiFvJ98EUq8V1ye7pgCqHTZXiiyI28EQOtJnr4pVTZsd14KmV2xm5XeiD4wW+2SPeauggGZZGMH7xwvtLXU1SD4U0bvZ2VBHVzVVUHGnhe5mx2MtOPNaxovXldapQyR75A52SXOyt7DxSrVtvdB8/g1UvIYU7j1TXH5OqGOLTlpV9SVmDtctC0VrCkvNMwPlYJHfqrbWuBAc05HkuVuLapbzcKiwzoKNaFWO6DNha4OGQvqxtDUdmkrJAgjIWMTBERAEREARF8edrSfRAW1bNsaWg8qLOr2rjZLVmGXbK8lp5W93+ubBC6cnhq5n19cZtQ6mfQsLnMbIDge6vii1s+aL07UaquUldcWb4g/dnHkrfqjb7ZZL2Ire3YQ3hSc00+ltKnDWtklgGPXKgTUl0kute6okcXEEjn3XX+MaSrqr7ai+VHN6/qTtqeym+WSX0GvddV3mWnmd+ja3gfwU6N5AUL9BLK+lrX1r8lsjOM+ymlSeQev4xqmuEkW6S5u2Tn2FhtW36lsFAaqqdtbgnusyop+0lR1lXpmAUjnt2nLto7jK0NSTjHKNrFZeDVrj9orTlJUvhdUvy1xHBVpL9pHTL2FpqJMe61roXZNLXurmpbvSUxn8QtHiHBJyuhW9EdHvAc20UpH0C16uaiMz0QZyjqbqPaL/XSPpHvOXZ5XnR1sVS3LHZXRPUvpfpqwWKWopbRAH+G45aOy5r0JbRdbtUQGpbTgTuaA44810uleTXVOtGFRrYaPUdDoVISnBfMbbpzUFZZqhstM7btx5ro7pprGC+0rYXTb5WN+LnzUC3XRFVRMLoZHVDR5t5TRN1rNPXdrHtkYHyAHhdfq+n22q27nSa3Lo5zTbq40+uoVPpZ1s1xaQ4LK0E29gBPK1bTlzjulvjlZjhgz/RZqjkLJO68oqU3CTjLtHocJqSUkZpF8jOWAr6oi8IiIAvCrdtjI+i91YXJ+AEQI/wCqFyFBYKh+7GP9qHOkdGLtrKqq5hlmzcCeewK27r9cXR2+elDuHDt/BWvRSgbT2c1wbhzoXc/yqaKzwRyeDAdar+4TQUkJ+Fh2HHsVHumbcLrdW0z84dzwq9bV0lZqGrZIciOY4W8dG7Kypr4Kosz9V6xZKOn6fuXeDzmtKV/fYfSZMeh7THbLRC1o5AwthVEEYiibGOwVa4GtUdWbm/udlTgoRUUFitU0MVfa5YZWggxuHIz5LKqidgkjc0+YUTWSQ4t1JaJtIdQaa4wTSxwtmL3AOIC7O6S6sptSaXirmzNcXYHHsob606Ojr6KWZsWXBvooX0zr3UGh6YWehmdExh4ABWrrQ2szaUsnbeqDZ75Rz2+SpbvLC3HuuS+pPS2p0nXS3W3eMW7jJw4gc8rVptZ9S/v4ulPWYic4Pdw7t/VZ3UfV+536xvtlTO99S5gZ591G04kmUyQOg+qJ71BDbK+CMkgZLgCVvGpOn9FXTCdnwuDtw28LR/s1acqIrdTXSsZ+kwMnCnj2W8sbutbpODwau6t6dZ4kjBaGt0tqpjAdxGfMrbQcHIVlEfiCu1r76bqVXN9szbVKMNq+xmaJ+5gH0Vysfa3ZyFkFgsyUERFQqD2WKuROVlT2WKuQ5VUUZzp9omQirezy2ra+mjWxdPIZQOTC7+1az9oenLppJMcBq2LpfK2fQcUGeWwu/tU9P6kRz6Zz3fSXajrif2xU9dCaZn4FHNxuBCgPUALNSV4P7YqXeil+ZAyGgc8DOF6jqEJVNOxD7Y/R57p8owv5OX+f2Tme6+KmN4kYHjsVUuBOyCIiAxd9oWVdO5r2hwI5BUX3Tp9baqvMzqaLJ+imN7Q5pafNWBt7DPvVkoKRdGTRoLNI29lEIDRx4Ax2WGpum9qNxZKKSL5s9lL8lJG9m3A4+i8IKBkcm4eqp6ky5TZTp62QWu3spoI2sa3yCyKAYCKRLBGVR/OFeDsrOP5wrwdlhXXaMu36Zf2k/E5ZNYu0/O5ZQLCfZkoIiKhULH3FnZZBW1czczPoiBCnXe2ePY6mdrcuA/wtZ6HV7po5bc53yQu4/lKlnXlAK2yTxlu7PkoD0VWu07rmpbI0iNw2AHtzkKaLwRyWTU+otudQX6eRwx4kpI4Xnoq6C23WOpe7DWqSOsmnW1tLT3CB3G3edqhdjyxxbnGDheqaNdQubdJ/dYZ5vqdtO0ud0f8AaOxNIXBtwtEMrTncMrMqOejVcZ7XDCTnaz/CkZcZf0fTXlBHX2tT2UlIIiLDMgIiIAi+OcGjLjgK0mulvhOJauJh+pV0Yyl0ijkl2y8RWUd2tshwythcfoVdRyxyDLHh3skoSj2gpJ9M94Rlyul4wM4yvdayvLdIz6McRMha24JKyKtLeza3OFdrGZMgiIqFQqZW7mEKpEBgK+na7MTx8JXO3Waymz1/4nG0ta6Uc9vNdNXCHcC8LTdb6dpL7bHU9TFvLQSPdXxZa0RzpevpdS6ZlpXvDpGw7QPqoQ13Zn2K7upnMLc5K22Rtz0XqIYcWUrpeQAey3652y0a9tBq6WJv3sjAc4j0XQaLqatKm2f0s0mr6d8XTzH6kWfQus2bWyHDdnH9FMrXBzdw7KKLFY5dPQNa4AOaOSAvPUfUNlrpnQeKfEIw3B7Keq3fXL9fOSOmlZ263/Yku53ihoGnx5dpCwkWuLU+oMf3kYzhc93rWV1ucxJqMsPqsQy41bZPEa8bl09v4vFwzOXJo63kCUsRXB11S3WhqWB0Uu7hU1t3oaSMulm24XLlLrG/UrdsVSAPY/mvlZq++VbS2apDgfofzUP8Uqbvq4L/AORU8dckxay6iwU8T46OZrndsKHL3qi43KdznyPYATja8rCzyyTyGSQ5cV5+wJPoF0tjpNCzjwsv8mivNTq3Tw+jLW/UFwonh7ZZHkeryph6S6ruVy8b72wNjibkHOfJRFbNO1tfTCdmWtPq1XlFea2zvko6aQte74HY81z/AJNfWdOk6aSc3/w3Og2d06ik+I/s6MoNaW+ormUjJwXk4wtyox4rgRyFz/0j05cKysbcKnnDy7JHqV0baqbw4gSF5lJneIvoWhrAFWiKwuCIiAIiID49oc3BWJrqctJOMgrLqiWMSNwVVMEWdQdHU95oZJGMa2RreMDnKg+lqLxou7iMwzvhaSfp3XV9VTFhJDchahq7SlDeoHiVg3n0ar0y1o1Cx6ntmoqDwJ5YqaUsPc85wot6haJr2VLqikllrGOJcNvICyOsNBXWyTmqtUTzh2eSQlm1/dLa0Ut0ZG1o+Hnn/C2Wn6jUs5bo8o199YQu47ZcEXyWy607sS0UrceoVDjPH88Th7qbm37S14+KonaHn0aFQ7TOkq8l3jOIP7o/NdZbeVQ/ssHNV/GpJfI8kKNqcnG1ezBUSDMcDneyl86D0m07vEd/5/2jbTpO2OwZyAPVo/NZk/LaUV8ryY1Lxqq5fP0RTTW27VMjWsoJiCcEgLftKaEgbtrLlVCn287JPNZao1fYrUwiglY9/YZaFr1fddR6pmEcELfCPGWnHH8AtHe+V3FZbafBubTx2hRe6fJnNR6ho7dG6222njqMdnM81YaA0dWahvDqqqhfAwODhuHBW2dP+mQDI6m4seJPPPKmqw2aGjgZHFGAGjHZcrUqynLdJ5Z0UKaisJHnpeyQ26mZFHG0YABIC2djQ1uAqYmBjcBVqBskQREVCoREQBERAEREBS9jXDBCsaqjJO5nAWQRAa3XW+KdhZOzcFqV66fWGvY8/cm+IexKk18TXeQVvLRg9jhXbimDni79IKxlSZaExxs8hwsBfNHajstMZvvLQ0DPH/V07JQn3Wr9QLLJW2h0UURc4tI4Cu3FMHNulodQX6WSOnqvkcWnK25nTLUNWf09Qx2fX/q2To7outtNXVOqYJAHylw3D6qZ229ueAAjaKJEMaZ6R08EviXOFkw+mFIdn0haKDaKWkDMLboqIN7lXDImt8grXIuSLKioGxgDA2q/YxrBhoVSK3JUIiIAiIgCIiAIiIAiIgCIiAIiIAvhAPcAr6iA+BjB2a0ewX1EQBERAEREAREQBERAEREB/9k=" alt="Enhanced Safe Browsing" style="width:36px;height:36px;object-fit:contain;">
+          </div>
+          <div class="extra-text">
+            <div class="extra-title">Enhanced Safe Browsing</div>
+            <div class="extra-sub">Proactive and personalized protections</div>
+          </div>
+          <div class="row-val">
+            <span class="status-on"><span class="mi-filled">check_circle</span> On May 5, 2020</span>
+          </div>
+          <div class="row-arrow"><span class="mi">chevron_right</span></div>
+        </div>
+        <div class="row">
+          <div class="extra-icon-img">
+            <img src="data:image/png;base64,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" alt="Advanced Protection Program" style="width:36px;height:36px;object-fit:contain;">
+          </div>
+          <div class="extra-text">
+            <div class="extra-title">Advanced Protection Program</div>
+            <div class="extra-sub">Google's strongest account security</div>
+          </div>
+          <div class="row-val">
+            <span class="status-off"><span class="dot"></span> Off</span>
+          </div>
+          <div class="row-arrow"><span class="mi">chevron_right</span></div>
+        </div>
+      </div>
+
+
+    </main>
+  </div>
+</div>
+
+
+<!-- ═══ PAGE 2: SIGN-IN OPTIONS ═══ -->
+<div class="page" id="page-options">
+  <div class="pg-header">
+    <button class="back-btn" onclick="showPage('home')">
+      <span class="mi">arrow_back</span>
+    </button>
+    <h1 class="pg-title">What sign-in options are right for you?</h1>
+  </div>
+
+  <div class="opts-layout">
+
+    <div class="hero">
+      <svg viewBox="0 0 560 120" preserveAspectRatio="xMidYMid meet">
+        <rect width="560" height="120" rx="8" fill="#f8f9fa"/>
+        <!-- Phone with lock -->
+        <rect x="132" y="28" width="32" height="56" rx="5" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <rect x="137" y="38" width="22" height="34" rx="1" fill="#f1f3f4"/>
+        <circle cx="148" cy="78" r="2.5" fill="none" stroke="#dadce0" stroke-width="1"/>
+        <rect x="140" y="20" width="16" height="12" rx="3" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <rect x="145" y="16" width="6" height="6" rx="3" fill="none" stroke="#dadce0" stroke-width="1.5"/>
+        <circle cx="148" cy="26" r="1.5" fill="#dadce0"/>
+        <!-- Bell icon -->
+        <circle cx="108" cy="72" r="12" fill="none" stroke="#dadce0" stroke-width="1.5"/>
+        <path d="M104 74 L104 68 Q104 64 108 64 Q112 64 112 68 L112 74" fill="none" stroke="#bdc1c6" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="103" y1="74" x2="113" y2="74" stroke="#bdc1c6" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="108" cy="77" r="1.5" fill="#bdc1c6"/>
+        <!-- Central shield -->
+        <path d="M280 20 L264 29 L264 54 C264 69 271 79 280 84 C289 79 296 69 296 54 L296 29 Z" fill="#f1f3f4" stroke="#dadce0" stroke-width="1.5"/>
+        <path d="M273 50 L278 55 L289 42" stroke="#bdc1c6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Browser window -->
+        <rect x="380" y="26" width="64" height="50" rx="4" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <line x1="380" y1="38" x2="444" y2="38" stroke="#dadce0" stroke-width="1"/>
+        <circle cx="387" cy="32" r="1.5" fill="#dadce0"/>
+        <circle cx="393" cy="32" r="1.5" fill="#dadce0"/>
+        <circle cx="399" cy="32" r="1.5" fill="#dadce0"/>
+        <rect x="387" y="44" width="8" height="4" rx="1" fill="#e8eaed"/>
+        <rect x="398" y="44" width="36" height="4" rx="2" fill="#e8eaed"/>
+        <circle cx="403" cy="46" r="1" fill="#bdc1c6"/>
+        <circle cx="409" cy="46" r="1" fill="#bdc1c6"/>
+        <circle cx="415" cy="46" r="1" fill="#bdc1c6"/>
+        <circle cx="421" cy="46" r="1" fill="#bdc1c6"/>
+        <rect x="387" y="54" width="46" height="4" rx="2" fill="#e8eaed"/>
+        <rect x="387" y="63" width="30" height="4" rx="2" fill="#e8eaed"/>
+        <!-- Key icon -->
+        <circle cx="450" cy="72" r="9" fill="#f1f3f4" stroke="#dadce0" stroke-width="1.5"/>
+        <circle cx="450" cy="72" r="3.5" fill="#fff" stroke="#dadce0" stroke-width="1"/>
+        <rect x="457" y="70" width="14" height="4" rx="2" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+      </svg>
+    </div>
+    <p class="hero-sub">
+      There are many ways you can securely sign in to your Google account.<br>
+      Take a look at the options we have available for you.
+    </p>
+
+    <!-- Section 1: 2SV (always open) -->
+    <div class="opt open" id="opt-2sv">
+      <div class="opt-head flip">
+        <div class="opt-illus">
+          <svg viewBox="0 0 200 130"><rect width="200" height="130" rx="8" fill="#f8f9fa"/>
+            <!-- Shield with checkmark -->
+            <path d="M100 18 L78 28 L78 56 C78 74 88 86 100 92 C112 86 122 74 122 56 L122 28 Z" fill="#f1f3f4" stroke="#dadce0" stroke-width="1.5"/>
+            <path d="M91 52 L97 58 L111 42" stroke="#bdc1c6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Phone -->
+            <rect x="138" y="36" width="24" height="42" rx="4" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+            <rect x="142" y="44" width="16" height="24" rx="1" fill="#f1f3f4"/>
+            <circle cx="150" cy="73" r="2" fill="none" stroke="#dadce0" stroke-width="1"/>
+            <!-- Key -->
+            <circle cx="48" cy="56" r="9" fill="#f1f3f4" stroke="#dadce0" stroke-width="1.5"/>
+            <circle cx="48" cy="56" r="3.5" fill="#fff" stroke="#dadce0" stroke-width="1"/>
+            <rect x="55" y="54" width="14" height="4" rx="2" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+            <rect x="64" y="54" width="3" height="8" rx="1" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="opt-info">
+          <h2>Recommended for 2-Step Verification</h2>
+          <p>This info helps ensure you can always access your account when 2-Step Verification is on</p>
+        </div>
+      </div>
+      <div class="opt-detail">
+        <div class="opt-card">
+          <div class="opt-row">
+            <div class="opt-row-icon"><span class="mi">phone</span></div>
+            <div class="opt-row-label">Recovery phone</div>
+            <div class="opt-row-val"><span class="warn-badge"><span class="mi-filled" style="color:var(--yellow)">error</span></span> Add a mobile number</div>
+            <div class="opt-row-arrow"><span class="mi">chevron_right</span></div>
+          </div>
+          <div class="opt-row">
+            <div class="opt-row-icon"><span class="mi">mail</span></div>
+            <div class="opt-row-label">Recovery email</div>
+            <div class="opt-row-val"><span class="warn-badge"><span class="mi-filled" style="color:var(--yellow)">error</span></span> Add an email address</div>
+            <div class="opt-row-arrow"><span class="mi">chevron_right</span></div>
+          </div>
+          <div class="opt-row">
+            <div class="opt-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#5f6368" xmlns="http://www.w3.org/2000/svg"><path d="M7 17C5.61667 17 4.4375 16.5125 3.4625 15.5375C2.4875 14.5625 2 13.3833 2 12C2 10.6167 2.4875 9.4375 3.4625 8.4625C4.4375 7.4875 5.61667 7 7 7H17C18.3833 7 19.5625 7.4875 20.5375 8.4625C21.5125 9.4375 22 10.6167 22 12C22 13.3833 21.5125 14.5625 20.5375 15.5375C19.5625 16.5125 18.3833 17 17 17H7ZM7 15H17C17.8333 15 18.5417 14.7083 19.125 14.125C19.7083 13.5417 20 12.8333 20 12C20 11.1667 19.7083 10.4583 19.125 9.875C18.5417 9.29167 17.8333 9 17 9H7C6.16667 9 5.45833 9.29167 4.875 9.875C4.29167 10.4583 4 11.1667 4 12C4 12.8333 4.29167 13.5417 4.875 14.125C5.45833 14.7083 6.16667 15 7 15ZM8.05 14.3L11.6 10.75L10.55 9.7L8.05 12.2L7.05 11.2L6 12.25L8.05 14.3Z"/></svg></div>
+            <div class="opt-row-label">Google Prompt</div>
+            <div class="opt-row-val">Pixel 3</div>
+            <div class="opt-row-arrow"><span class="mi">chevron_right</span></div>
+          </div>
+        </div>
+        <div class="info-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#0054D8" xmlns="http://www.w3.org/2000/svg"><path d="M12 21L5 17.2V11.2L1 9L12 3L23 9V17H21V10.1L19 11.2V17.2L12 21ZM12 12.7L18.85 9L12 5.3L5.15 9L12 12.7ZM12 18.725L17 16.025V12.25L12 15L7 12.25V16.025L12 18.725Z"/></svg>
+          <span>How do you use these sign-in methods?</span>
+          <div class="arr"><span class="mi" style="color:var(--text-3)">chevron_right</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Section 2: Unphishable -->
+    <div class="opt" id="opt-unphish">
+      <div class="opt-head">
+        <div class="opt-illus">
+          <svg viewBox="0 0 200 130"><rect width="200" height="130" rx="8" fill="#f8f9fa"/>
+            <!-- Security key body -->
+            <rect x="42" y="44" width="80" height="42" rx="8" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+            <!-- Key ring hole -->
+            <circle cx="72" cy="65" r="12" fill="#f1f3f4" stroke="#dadce0" stroke-width="1.5"/>
+            <circle cx="72" cy="65" r="5" fill="#fff" stroke="#dadce0" stroke-width="1"/>
+            <!-- Key teeth -->
+            <rect x="82" y="63" width="28" height="4" rx="2" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+            <rect x="102" y="59" width="4" height="12" rx="1.5" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+            <!-- USB connector -->
+            <rect x="122" y="56" width="22" height="18" rx="3" fill="#e8eaed" stroke="#dadce0" stroke-width="1.5"/>
+            <rect x="127" y="61" width="3" height="8" rx="1" fill="#bdc1c6"/>
+            <rect x="133" y="61" width="3" height="8" rx="1" fill="#bdc1c6"/>
+            <!-- Lock badge -->
+            <rect x="34" y="28" width="18" height="15" rx="3" fill="#e8eaed" stroke="#dadce0" stroke-width="1.5"/>
+            <rect x="39" y="22" width="8" height="8" rx="4" fill="none" stroke="#dadce0" stroke-width="1.5"/>
+            <circle cx="43" cy="36" r="1.5" fill="#bdc1c6"/>
+          </svg>
+        </div>
+        <div class="opt-info">
+          <h2>Unphishable: a physical device only you have</h2>
+          <p>Signing in would require both your password and a physical security key, protecting your account even if your password gets stolen</p>
+        </div>
+      </div>
+      <div class="pill-wrap"><button class="btn-tonal" onclick="toggleOpt('opt-unphish')">See your options <span class="mi" style="color:var(--blue)">chevron_right</span></button></div>
+      <div class="opt-detail">
+        <div class="opt-card">
+          <div class="opt-row">
+            <div class="opt-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#5f6368" xmlns="http://www.w3.org/2000/svg"><path d="M14 1C14.55 1 15.0208 1.19583 15.4125 1.5875C15.8042 1.97917 16 2.45 16 3L16 6C16.55 6 17.0208 6.19583 17.4125 6.5875C17.8042 6.97917 18 7.45 18 8L18 21C18 21.55 17.8042 22.0208 17.4125 22.4125C17.0208 22.8042 16.55 23 16 23L8 23C7.45 23 6.97917 22.8042 6.5875 22.4125C6.19583 22.0208 6 21.55 6 21L6 8C6 7.45 6.19583 6.97917 6.5875 6.5875C6.97917 6.19583 7.45 6 8 6L8 3C8 2.45 8.19583 1.97917 8.5875 1.5875C8.97917 1.19583 9.45 1 10 1L14 1ZM12 11.5C11.1667 11.5 10.4583 11.7917 9.875 12.375C9.29167 12.9583 9 13.6667 9 14.5C9 15.3333 9.29167 16.0417 9.875 16.625C10.4583 17.2083 11.1667 17.5 12 17.5C12.8333 17.5 13.5417 17.2083 14.125 16.625C14.7083 16.0417 15 15.3333 15 14.5C15 13.6667 14.7083 12.9583 14.125 12.375C13.5417 11.7917 12.8333 11.5 12 11.5ZM14 3L10 3L10 6L14 6L14 3ZM16 8L8 8L8 21L16 21L16 8ZM12 13.5C12.2833 13.5 12.5208 13.5958 12.7125 13.7875C12.9042 13.9792 13 14.2167 13 14.5C13 14.7833 12.9042 15.0208 12.7125 15.2125C12.5208 15.4042 12.2833 15.5 12 15.5C11.7167 15.5 11.4792 15.4042 11.2875 15.2125C11.0958 15.0208 11 14.7833 11 14.5C11 14.2167 11.0958 13.9792 11.2875 13.7875C11.4792 13.5958 11.7167 13.5 12 13.5Z"/></svg></div>
+            <div class="opt-row-label">Security keys</div>
+            <div class="opt-row-val">2 security keys</div>
+            <div class="opt-row-arrow"><span class="mi">chevron_right</span></div>
+          </div>
+        </div>
+        <div class="info-link" onclick="openModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#0054D8" xmlns="http://www.w3.org/2000/svg"><path d="M12 21L5 17.2V11.2L1 9L12 3L23 9V17H21V10.1L19 11.2V17.2L12 21ZM12 12.7L18.85 9L12 5.3L5.15 9L12 12.7ZM12 18.725L17 16.025V12.25L12 15L7 12.25V16.025L12 18.725Z"/></svg>
+          <span>How to use security keys</span>
+          <div class="arr"><span class="mi" style="color:var(--text-3)">chevron_right</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Section 3: Convenient -->
+    <div class="opt" id="opt-phone">
+      <div class="opt-head">
+        <div class="opt-illus">
+          <svg viewBox="0 0 200 130"><rect width="200" height="130" rx="8" fill="#f8f9fa"/>
+            <!-- Phone -->
+            <rect x="72" y="14" width="56" height="102" rx="8" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+            <rect x="79" y="27" width="42" height="70" rx="2" fill="#f1f3f4"/>
+            <!-- Notification -->
+            <rect x="85" y="38" width="30" height="18" rx="4" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+            <circle cx="92" cy="47" r="3.5" fill="#fff" stroke="#dadce0" stroke-width="1"/>
+            <rect x="98" y="44" width="12" height="2" rx="1" fill="#dadce0"/>
+            <rect x="98" y="48" width="8" height="2" rx="1" fill="#dadce0"/>
+            <!-- Check mark -->
+            <path d="M94 72 L98 76 L106 66" stroke="#bdc1c6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Home bar -->
+            <rect x="90" y="104" width="20" height="3" rx="1.5" fill="#e8eaed"/>
+            <!-- Signal waves -->
+            <path d="M138 55 Q144 49 144 61" stroke="#dadce0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M144 49 Q152 40 152 66" stroke="#dadce0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M150 43 Q160 32 160 72" stroke="#dadce0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- Bell icon -->
+            <circle cx="52" cy="78" r="12" fill="none" stroke="#dadce0" stroke-width="1.5"/>
+            <path d="M48 80 L48 74 Q48 70 52 70 Q56 70 56 74 L56 80" fill="none" stroke="#bdc1c6" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="47" y1="80" x2="57" y2="80" stroke="#bdc1c6" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="52" cy="83" r="1.5" fill="#bdc1c6"/>
+          </svg>
+        </div>
+        <div class="opt-info">
+          <h2>Convenient: use your phone to sign in securely</h2>
+          <p>If your phone is always with you, it's the easiest sign-in method</p>
+        </div>
+      </div>
+      <div class="pill-wrap"><button class="btn-tonal" onclick="toggleOpt('opt-phone')">See your options <span class="mi" style="color:var(--blue)">chevron_right</span></button></div>
+      <div class="opt-detail">
+        <div class="opt-card">
+          <div class="phone-lbl">Sign in with your phone</div>
+          <div class="phone-desc">Google's security systems will surface the most suitable option every time you sign in</div>
+          <div class="opt-row">
+            <div class="opt-row-icon"><span class="mi">sms</span></div>
+            <div class="opt-row-label">SMS verification</div>
+            <div class="opt-row-val">(415) 555-1234</div>
+            <div class="opt-row-arrow"><span class="mi">chevron_right</span></div>
+          </div>
+          <div class="opt-row">
+            <div class="opt-row-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#5f6368" xmlns="http://www.w3.org/2000/svg"><path d="M2 7V2H7V4H4V7H2ZM2 22V17H4V20H7V22H2ZM17 22V20H20V17H22V22H17ZM20 7V4H17V2H22V7H20ZM17.5 17.5H19V19H17.5V17.5ZM17.5 14.5H19V16H17.5V14.5ZM16 16H17.5V17.5H16V16ZM14.5 17.5H16V19H14.5V17.5ZM13 16H14.5V17.5H13V16ZM16 13H17.5V14.5H16V13ZM14.5 14.5H16V16H14.5V14.5ZM13 13H14.5V14.5H13V13ZM19 5V11H13V5H19ZM11 13V19H5V13H11ZM11 5V11H5V5H11ZM9.5 17.5V14.5H6.5V17.5H9.5ZM9.5 9.5V6.5H6.5V9.5H9.5ZM17.5 9.5V6.5H14.5V9.5H17.5Z"/></svg></div>
+            <div class="opt-row-label">Authenticator app</div>
+            <div class="opt-row-val">Google Authenticator</div>
+            <div class="opt-row-arrow"><span class="mi">chevron_right</span></div>
+          </div>
+        </div>
+        <div class="info-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#0054D8" xmlns="http://www.w3.org/2000/svg"><path d="M12 21L5 17.2V11.2L1 9L12 3L23 9V17H21V10.1L19 11.2V17.2L12 21ZM12 12.7L18.85 9L12 5.3L5.15 9L12 12.7ZM12 18.725L17 16.025V12.25L12 15L7 12.25V16.025L12 18.725Z"/></svg>
+          <span>How to use your phone to sign in securely</span>
+          <div class="arr"><span class="mi" style="color:var(--text-3)">chevron_right</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- Section 4: Backup -->
+    <div class="opt" id="opt-backup">
+      <div class="opt-head">
+        <div class="opt-illus">
+          <svg viewBox="0 0 200 130"><rect width="200" height="130" rx="8" fill="#f8f9fa"/>
+            <!-- Document -->
+            <rect x="60" y="16" width="64" height="88" rx="4" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+            <!-- Fold corner -->
+            <path d="M104 16 L124 36 L104 36 Z" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+            <!-- Code lines -->
+            <rect x="72" y="46" width="26" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="102" y="46" width="12" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="72" y="55" width="18" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="94" y="55" width="18" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="72" y="64" width="30" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="72" y="73" width="22" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="98" y="73" width="14" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="72" y="82" width="16" height="3" rx="1.5" fill="#e8eaed"/>
+            <rect x="72" y="91" width="24" height="3" rx="1.5" fill="#e8eaed"/>
+            <!-- Grid / numpad -->
+            <rect x="140" y="42" width="28" height="28" rx="4" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+            <line x1="149" y1="42" x2="149" y2="70" stroke="#e8eaed" stroke-width="1"/>
+            <line x1="159" y1="42" x2="159" y2="70" stroke="#e8eaed" stroke-width="1"/>
+            <line x1="140" y1="51" x2="168" y2="51" stroke="#e8eaed" stroke-width="1"/>
+            <line x1="140" y1="61" x2="168" y2="61" stroke="#e8eaed" stroke-width="1"/>
+            <!-- Printer -->
+            <rect x="28" y="58" width="20" height="14" rx="3" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+            <rect x="31" y="50" width="14" height="10" rx="1" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+            <rect x="33" y="70" width="10" height="8" rx="1" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="opt-info">
+          <h2>For backup: printed sign-in codes</h2>
+          <p>Backup codes can be printed and entered when signing in, for example if you travel and Google wants to know it's really you</p>
+        </div>
+      </div>
+      <div class="pill-wrap"><button class="btn-tonal" onclick="toggleOpt('opt-backup')">See your options <span class="mi" style="color:var(--blue)">chevron_right</span></button></div>
+      <div class="opt-detail">
+        <div class="opt-card">
+          <div class="opt-row">
+            <div class="opt-row-icon"><span class="mi">pin</span></div>
+            <div class="opt-row-label">Backup code</div>
+            <div class="opt-row-val">No backup codes</div>
+            <div class="opt-row-arrow"><span class="mi">chevron_right</span></div>
+          </div>
+        </div>
+        <div class="info-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#0054D8" xmlns="http://www.w3.org/2000/svg"><path d="M12 21L5 17.2V11.2L1 9L12 3L23 9V17H21V10.1L19 11.2V17.2L12 21ZM12 12.7L18.85 9L12 5.3L5.15 9L12 12.7ZM12 18.725L17 16.025V12.25L12 15L7 12.25V16.025L12 18.725Z"/></svg>
+          <span>How to use printed sign-in codes</span>
+          <div class="arr"><span class="mi" style="color:var(--text-3)">chevron_right</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SECURITY KEYS MODAL ═══ -->
+<div class="modal-overlay" id="modal-keys" onclick="if(event.target===this)closeAllModals()">
+  <div class="modal">
+    <h3>How to sign in with security keys</h3>
+    <p>After entering your password, you'll need to use your key to complete the sign-in. Click the images to see how.</p>
+    <div class="modal-grid">
+      <div class="modal-card" onclick="openUsb()">
+        <img src="images/with USB.png" alt="With USB">
+        <span>With USB</span>
+      </div>
+      <div class="modal-card" onclick="openNfc()">
+        <img src="images/with NFC.png" alt="With NFC">
+        <span>With NFC</span>
+      </div>
+      <div class="modal-card" onclick="openBt()">
+        <img src="images/with bluetooth.png" alt="With Bluetooth">
+        <span>With Bluetooth</span>
+      </div>
+      <div class="modal-card" onclick="openPhone()">
+        <img src="images/with built-in key.png" alt="With phone's built-in key">
+        <span>With phone's<br>built-in key</span>
+      </div>
+    </div>
+    <div class="modal-footer" style="justify-content:flex-end;">
+      <button onclick="closeAllModals()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ USB DETAIL MODAL ═══ -->
+<div class="modal-overlay" id="modal-usb" onclick="if(event.target===this)closeAllModals()">
+  <div class="modal" style="max-width:540px;">
+    <h3>To sign in with your security key using USB</h3>
+    <div class="modal-illus">
+      <svg viewBox="0 0 280 140" width="280" height="140">
+        <!-- Laptop body -->
+        <rect x="40" y="20" width="140" height="90" rx="6" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <!-- Screen -->
+        <rect x="48" y="28" width="124" height="72" rx="2" fill="#f1f3f4"/>
+        <!-- Screen content: lock icon -->
+        <rect x="100" y="46" width="20" height="18" rx="3" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+        <rect x="105" y="38" width="10" height="10" rx="5" fill="none" stroke="#dadce0" stroke-width="1.5"/>
+        <circle cx="110" cy="56" r="2" fill="#bdc1c6"/>
+        <!-- Laptop base -->
+        <rect x="30" y="110" width="160" height="8" rx="3" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+        <!-- USB Key -->
+        <rect x="190" y="50" width="50" height="24" rx="5" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <circle cx="210" cy="62" r="6" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+        <circle cx="210" cy="62" r="2.5" fill="#fff" stroke="#dadce0" stroke-width="0.8"/>
+        <rect x="220" y="58" width="12" height="8" rx="2" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+        <!-- Arrow showing insertion -->
+        <path d="M195 42 L185 42 L190 36 Z" fill="#bdc1c6"/>
+        <line x1="190" y1="42" x2="190" y2="48" stroke="#bdc1c6" stroke-width="1.5"/>
+        <!-- USB port on laptop -->
+        <rect x="178" y="56" width="14" height="12" rx="1" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+      </svg>
+    </div>
+    <p style="font-size:15px; color:var(--text-1); line-height:1.6; margin-bottom:20px;">After you enter your email address and password to sign in, you'll be prompted to connect your security key.</p>
+    <ol style="padding-left:24px; margin-bottom:24px; color:var(--text-1); font-size:15px; line-height:1.8;">
+      <li style="margin-bottom:12px;">Insert your security key into a USB port on your computer.</li>
+      <li style="margin-bottom:12px;">If asked, tap the button or gold disc on your key.</li>
+      <li>You'll see a confirmation once your identity is verified.</li>
+    </ol>
+    <div class="modal-footer">
+      <button onclick="backToKeys('modal-usb')">Back</button>
+      <button onclick="closeAllModals()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ NFC DETAIL MODAL ═══ -->
+<div class="modal-overlay" id="modal-nfc" onclick="if(event.target===this)closeAllModals()">
+  <div class="modal" style="max-width:540px;">
+    <h3>To sign in with your security key using NFC</h3>
+    <div class="modal-illus">
+      <img src="images/NFC.gif" alt="How to sign in with NFC" style="max-width:100%; height:auto; border-radius:8px;">
+    </div>
+    <p style="font-size:15px; color:var(--text-1); line-height:1.6; margin-bottom:20px;">After you enter your email address and password to sign in, you'll be prompted to connect your security key.</p>
+    <ol style="padding-left:24px; margin-bottom:24px; color:var(--text-1); font-size:15px; line-height:1.8;">
+      <li style="margin-bottom:12px;">Hold your security key flat against the back of your phone, at the center of the top edge.</li>
+      <li>You'll see a checkmark on your phone's screen when it connects.</li>
+    </ol>
+    <div class="modal-footer">
+      <button onclick="backToKeys('modal-nfc')">Back</button>
+      <button onclick="closeAllModals()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ BLUETOOTH DETAIL MODAL ═══ -->
+<div class="modal-overlay" id="modal-bt" onclick="if(event.target===this)closeAllModals()">
+  <div class="modal" style="max-width:540px;">
+    <h3>To sign in with your security key using Bluetooth</h3>
+    <div class="modal-illus">
+      <svg viewBox="0 0 280 140" width="280" height="140">
+        <!-- Security key body -->
+        <rect x="60" y="44" width="70" height="36" rx="8" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <!-- Key ring hole -->
+        <circle cx="82" cy="62" r="8" fill="#f1f3f4" stroke="#dadce0" stroke-width="1"/>
+        <circle cx="82" cy="62" r="3.5" fill="#fff" stroke="#dadce0" stroke-width="0.8"/>
+        <!-- Button on key -->
+        <circle cx="114" cy="62" r="5" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+        <circle cx="114" cy="62" r="2" fill="#bdc1c6"/>
+        <!-- Bluetooth symbol -->
+        <path d="M160 50 L170 40 L165 40 L165 62 L170 62 L160 72 L170 82 L165 82 L165 62" stroke="#4285f4" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Bluetooth waves -->
+        <path d="M178 48 Q184 62 178 76" stroke="#93b8f7" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M185 42 Q193 62 185 82" stroke="#bdd0fa" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- Laptop -->
+        <rect x="198" y="36" width="56" height="42" rx="4" fill="#fff" stroke="#dadce0" stroke-width="1.2"/>
+        <rect x="203" y="41" width="46" height="28" rx="1" fill="#f1f3f4"/>
+        <!-- Laptop base -->
+        <rect x="194" y="78" width="64" height="5" rx="2" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+        <!-- Checkmark on laptop screen -->
+        <path d="M218 50 L224 56 L236 44" stroke="#34a853" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p style="font-size:15px; color:var(--text-1); line-height:1.6; margin-bottom:20px;">After you enter your email address and password to sign in, you'll be prompted to connect your security key via Bluetooth.</p>
+    <ol style="padding-left:24px; margin-bottom:24px; color:var(--text-1); font-size:15px; line-height:1.8;">
+      <li style="margin-bottom:12px;">Turn on your security key and make sure Bluetooth is enabled on your device.</li>
+      <li style="margin-bottom:12px;">Follow the on-screen instructions to pair your key if it's not already paired.</li>
+      <li>Press the button on your security key when prompted.</li>
+    </ol>
+    <div class="modal-footer">
+      <button onclick="backToKeys('modal-bt')">Back</button>
+      <button onclick="closeAllModals()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ PHONE BUILT-IN KEY MODAL ═══ -->
+<div class="modal-overlay" id="modal-phone" onclick="if(event.target===this)closeAllModals()">
+  <div class="modal" style="max-width:540px;">
+    <h3>To sign in using your phone's built-in security key</h3>
+    <div class="modal-illus">
+      <svg viewBox="0 0 280 140" width="280" height="140">
+        <!-- Phone -->
+        <rect x="70" y="10" width="56" height="100" rx="8" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <rect x="78" y="24" width="40" height="68" rx="2" fill="#f1f3f4"/>
+        <circle cx="98" cy="104" r="2.5" fill="none" stroke="#dadce0" stroke-width="1"/>
+        <!-- Shield on phone screen -->
+        <path d="M98 34 L86 40 L86 56 C86 66 91 72 98 76 C105 72 110 66 110 56 L110 40 Z" fill="#e8f5e9" stroke="#34a853" stroke-width="1.2"/>
+        <path d="M93 52 L96 55 L104 46" stroke="#34a853" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Laptop -->
+        <rect x="158" y="30" width="72" height="52" rx="5" fill="#fff" stroke="#dadce0" stroke-width="1.5"/>
+        <rect x="165" y="37" width="58" height="36" rx="2" fill="#f1f3f4"/>
+        <!-- Laptop base -->
+        <rect x="150" y="82" width="88" height="6" rx="3" fill="#e8eaed" stroke="#dadce0" stroke-width="1"/>
+        <!-- Laptop screen: "Confirm on phone" -->
+        <rect x="174" y="46" width="40" height="6" rx="2" fill="#dadce0"/>
+        <rect x="180" y="56" width="28" height="6" rx="2" fill="#e8eaed"/>
+        <!-- Connection line -->
+        <line x1="126" y1="60" x2="158" y2="60" stroke="#dadce0" stroke-width="1" stroke-dasharray="4,3"/>
+        <!-- Bluetooth symbol between -->
+        <path d="M140 52 L147 46 L143.5 46 L143.5 60 L147 60 L140 68 L147 74 L143.5 74 L143.5 60" stroke="#4285f4" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="scale(0.7) translate(58, 16)"/>
+      </svg>
+    </div>
+    <p style="font-size:15px; color:var(--text-1); line-height:1.6; margin-bottom:20px;">Your phone has a built-in security key that can be used as a second step to verify your identity when signing in.</p>
+    <ol style="padding-left:24px; margin-bottom:24px; color:var(--text-1); font-size:15px; line-height:1.8;">
+      <li style="margin-bottom:12px;">Make sure Bluetooth is turned on for both your phone and the device you're signing in on.</li>
+      <li style="margin-bottom:12px;">On the device you're signing in on, follow the on-screen instructions.</li>
+      <li>Check the notification on your phone and confirm the sign-in.</li>
+    </ol>
+    <div class="modal-footer">
+      <button onclick="backToKeys('modal-phone')">Back</button>
+      <button onclick="closeAllModals()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function openUsb() {
+    document.getElementById('modal-keys').classList.remove('active');
+    document.getElementById('modal-usb').classList.add('active');
+  }
+  function openNfc() {
+    document.getElementById('modal-keys').classList.remove('active');
+    document.getElementById('modal-nfc').classList.add('active');
+  }
+  function openBt() {
+    document.getElementById('modal-keys').classList.remove('active');
+    document.getElementById('modal-bt').classList.add('active');
+  }
+  function openPhone() {
+    document.getElementById('modal-keys').classList.remove('active');
+    document.getElementById('modal-phone').classList.add('active');
+  }
+  function backToKeys(fromId) {
+    document.getElementById(fromId).classList.remove('active');
+    document.getElementById('modal-keys').classList.add('active');
+  }
+  function closeAllModals() {
+    ['modal-keys', 'modal-usb', 'modal-nfc', 'modal-bt', 'modal-phone'].forEach(function(id) {
+      document.getElementById(id).classList.remove('active');
+    });
+    document.body.style.overflow = '';
+  }
+  function openModal() {
+    document.getElementById('modal-keys').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    closeAllModals();
+  }
+  function showPage(p) {
+    document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+    document.getElementById('page-' + (p === 'home' ? 'home' : 'options')).classList.add('active');
+    var sb = document.querySelector('.searchbox');
+    if (sb) sb.style.display = (p === 'home') ? '' : 'none';
+    window.scrollTo(0, 0);
+  }
+  function toggleOpt(id) {
+    var el = document.getElementById(id);
+    el.classList.toggle('open');
+    updateSeps();
+  }
+  function updateSeps() {
+    document.querySelectorAll('.sep').forEach(function(sep) {
+      var prev = sep.previousElementSibling;
+      var next = sep.nextElementSibling;
+      var hide = (prev && prev.classList.contains('open')) || (next && next.classList.contains('open'));
+      sep.style.display = hide ? 'none' : '';
+    });
+  }
+  // Hide seps on load for always-open sections
+  updateSeps();
+  // Show border on pg-header when scrolled
+  window.addEventListener('scroll', function() {
+    var h = document.querySelector('.pg-header');
+    if (h) h.classList.toggle('scrolled', window.scrollY > 10);
+  });
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeAllModals();
+  });
+</script>
+</body>
+</html>

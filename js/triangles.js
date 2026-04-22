@@ -388,11 +388,6 @@
             return;
         }
 
-        // Check if mobile
-        if (window.innerWidth <= 768) {
-            return;
-        }
-
         // Find the hero section to attach triangles to
         const heroSection = document.querySelector('.hero');
         if (!heroSection) {

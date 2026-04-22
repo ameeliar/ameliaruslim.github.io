@@ -48,9 +48,17 @@
 
     // Update active state based on scroll position
     function updateActiveSection() {
+        // Skip while protected content is still hidden — all sections would
+        // report offsetTop === 0 and the loop would end up marking the last one active.
+        const protectedContentEl = document.getElementById('protected-content');
+        if (protectedContentEl && protectedContentEl.style.display === 'none') {
+            navItems.forEach(item => item.classList.remove('active'));
+            return;
+        }
+
         const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-        let currentSection = sections[0]?.id;
+        let currentSection = null;
 
         sections.forEach(({ id, element }) => {
             const sectionTop = element.offsetTop;
