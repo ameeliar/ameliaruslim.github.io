@@ -2055,9 +2055,11 @@ a.case-study-card {
         /* Extra horizontal padding to keep content clear of fixed global nav */
         --content-padding-x: 9rem;
     }
+}
 
+@media (max-width: 768px) {
     .side-nav {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -2341,6 +2343,11 @@ a.case-study-card {
 }
 
 @media (max-width: 768px) {
+    /* Match the About page's mobile content width everywhere */
+    :root {
+        --content-padding-x: var(--spacing-lg);
+    }
+
     /* Mobile: Nav moves to top, stacked horizontally */
     .navbar {
         position: relative;
