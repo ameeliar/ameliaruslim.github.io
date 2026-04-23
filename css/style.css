@@ -1843,10 +1843,14 @@ a.case-study-card {
 }
 
 .prototype-layout {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: var(--spacing-3xl);
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: stretch;
+}
+
+.prototype-layout .image-caption {
+    margin-top: calc(-1 * var(--spacing-lg) + var(--spacing-sm));
 }
 
 .prototype-text h2 {
@@ -2346,6 +2350,12 @@ a.case-study-card {
     /* Match the About page's mobile content width everywhere */
     :root {
         --content-padding-x: var(--spacing-lg);
+    }
+
+    /* Case study content sections: stack image BELOW text on mobile */
+    .case-section-image,
+    .case-hero-image {
+        order: 0;
     }
 
     /* Mobile: Nav moves to top, stacked horizontally */

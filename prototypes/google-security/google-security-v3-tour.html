@@ -58,7 +58,7 @@
   .topnav {
     display: flex; align-items: center; justify-content: space-between;
     padding: 8px 24px; border-bottom: none;
-    position: sticky; top: 0; background: var(--bg); z-index: 100; height: 64px;
+    position: sticky; top: 0; background: var(--bg); z-index: 10000; height: 64px;
   }
   .topnav-left { display: flex; align-items: center; }
   .glogo {
@@ -140,15 +140,28 @@
   /* ═══ MODAL ═══ */
   .modal-overlay {
     display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.4); z-index: 200;
+    background: rgba(0,0,0,0.4); z-index: 10001;
     align-items: center; justify-content: center;
   }
   .modal-overlay.active { display: flex; }
   .modal {
+    position: relative;
     background: var(--bg); border-radius: 16px;
     padding: 32px; max-width: 460px; width: 90%;
+    max-height: 90vh; overflow-y: auto;
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   }
+  .modal-close {
+    display: none;
+    position: absolute; top: 12px; right: 12px;
+    width: 40px; height: 40px;
+    background: none; border: none;
+    cursor: pointer; color: var(--text-1);
+    padding: 0; line-height: 1;
+    border-radius: 50%;
+  }
+  .modal-close:hover { background: var(--hover); }
+  .modal-close .mi { font-size: 24px; }
   .modal h3 {
     font-family: 'Google Sans', sans-serif;
     font-size: 18px; font-weight: 500; margin-bottom: 12px;
@@ -336,7 +349,7 @@
   }
   .pg-header {
     display: flex; align-items: center; gap: 16px; padding: 12px 24px;
-    position: sticky; top: 64px; background: var(--bg); z-index: 90;
+    position: sticky; top: 64px; background: var(--bg); z-index: 9999;
     border-bottom: 1px solid transparent; transition: border-color 0.2s;
   }
   .pg-header.scrolled {
@@ -458,13 +471,13 @@
   .tour-ring.tour-hidden { opacity: 0; animation: none; }
   .tour-ring {
     border-radius: 8px; z-index: 9999;
-    box-shadow: 0 0 0 2px rgba(19,111,100,1);
-    animation: tour-pulse 1.8s infinite;
+    box-shadow: 0 0 0 2px rgba(32,158,140,1);
+    animation: tour-pulse 1.3s infinite;
   }
   @keyframes tour-pulse {
-    0%   { box-shadow: 0 0 0 2px rgba(19,111,100,1), 0 0 0 0   rgba(19,111,100,0.6); }
-    70%  { box-shadow: 0 0 0 2px rgba(19,111,100,1), 0 0 0 18px rgba(19,111,100,0); }
-    100% { box-shadow: 0 0 0 2px rgba(19,111,100,1), 0 0 0 0   rgba(19,111,100,0); }
+    0%   { box-shadow: 0 0 0 2px rgba(32,158,140,1), 0 0 0 0   rgba(32,158,140,0.6); }
+    70%  { box-shadow: 0 0 0 2px rgba(32,158,140,1), 0 0 0 18px rgba(32,158,140,0); }
+    100% { box-shadow: 0 0 0 2px rgba(32,158,140,1), 0 0 0 0   rgba(32,158,140,0); }
   }
   .tour-tooltip {
     pointer-events: auto; background: #fff; border-radius: 12px;
@@ -506,7 +519,7 @@
       display: flex; flex-direction: row; width: 100%; padding: 0;
       overflow-x: auto; overflow-y: hidden;
       border-bottom: 1px solid var(--border);
-      position: sticky; top: 64px; background: var(--bg); z-index: 90;
+      position: sticky; top: 64px; background: var(--bg); z-index: 9999;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
@@ -563,6 +576,54 @@
       grid-column: 3; grid-row: 1 / span 2;
       align-self: center;
     }
+
+    /* Sign-in options page: stack status beneath label, caret right-centered */
+    .opt-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      column-gap: 12px; row-gap: 2px;
+      align-items: center;
+    }
+    .opt-row-icon {
+      grid-column: 1; grid-row: 1 / span 2;
+      align-self: center;
+    }
+    .opt-row-label {
+      grid-column: 2; grid-row: 1;
+    }
+    .opt-row-val {
+      grid-column: 2; grid-row: 2;
+      justify-self: start;
+    }
+    .opt-row-arrow {
+      grid-column: 3; grid-row: 1 / span 2;
+      align-self: center;
+    }
+
+    /* Security keys modal: fullscreen on mobile with X close in top-right */
+    .modal-overlay.active {
+      align-items: stretch;
+      justify-content: stretch;
+      z-index: 10001;
+    }
+    .modal {
+      width: 100vw !important;
+      max-width: 100% !important;
+      height: 100vh;
+      max-height: 100vh;
+      border-radius: 0;
+      padding: 56px 20px 24px;
+    }
+    .modal-close { display: inline-flex !important; align-items: center; justify-content: center; }
+    .modal-grid { gap: 10px; }
+    .modal-card { padding: 14px 12px; gap: 10px; }
+    .modal-card img { width: 28px; height: 28px; }
+    .modal-card span { font-size: 13px; }
+  }
+
+  @media (max-width: 420px) {
+    /* Very narrow: stack the options */
+    .modal-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -985,6 +1046,7 @@
 <!-- ═══ SECURITY KEYS MODAL ═══ -->
 <div class="modal-overlay" id="modal-keys" onclick="if(event.target===this)closeAllModals()">
   <div class="modal">
+    <button class="modal-close" aria-label="Close" onclick="closeAllModals()"><span class="mi">close</span></button>
     <h3>How to sign in with security keys</h3>
     <p>After entering your password, you'll need to use your key to complete the sign-in. Click the images to see how.</p>
     <div class="modal-grid">
@@ -1015,6 +1077,7 @@
 <!-- ═══ USB DETAIL MODAL ═══ -->
 <div class="modal-overlay" id="modal-usb" onclick="if(event.target===this)closeAllModals()">
   <div class="modal" style="max-width:540px;">
+    <button class="modal-close" aria-label="Close" onclick="closeAllModals()"><span class="mi">close</span></button>
     <h3>To sign in with your security key using USB</h3>
     <div class="modal-illus">
       <svg viewBox="0 0 280 140" width="280" height="140">
@@ -1057,6 +1120,7 @@
 <!-- ═══ NFC DETAIL MODAL ═══ -->
 <div class="modal-overlay" id="modal-nfc" onclick="if(event.target===this)closeAllModals()">
   <div class="modal" style="max-width:540px;">
+    <button class="modal-close" aria-label="Close" onclick="closeAllModals()"><span class="mi">close</span></button>
     <h3>To sign in with your security key using NFC</h3>
     <div class="modal-illus">
       <img src="images/NFC.gif" alt="How to sign in with NFC" style="max-width:100%; height:auto; border-radius:8px;">
@@ -1077,6 +1141,7 @@
 <!-- ═══ BLUETOOTH DETAIL MODAL ═══ -->
 <div class="modal-overlay" id="modal-bt" onclick="if(event.target===this)closeAllModals()">
   <div class="modal" style="max-width:540px;">
+    <button class="modal-close" aria-label="Close" onclick="closeAllModals()"><span class="mi">close</span></button>
     <h3>To sign in with your security key using Bluetooth</h3>
     <div class="modal-illus">
       <svg viewBox="0 0 280 140" width="280" height="140">
@@ -1119,6 +1184,7 @@
 <!-- ═══ PHONE BUILT-IN KEY MODAL ═══ -->
 <div class="modal-overlay" id="modal-phone" onclick="if(event.target===this)closeAllModals()">
   <div class="modal" style="max-width:540px;">
+    <button class="modal-close" aria-label="Close" onclick="closeAllModals()"><span class="mi">close</span></button>
     <h3>To sign in using your phone's built-in security key</h3>
     <div class="modal-illus">
       <svg viewBox="0 0 280 140" width="280" height="140">
@@ -1347,9 +1413,8 @@
       };
       el.addEventListener('click', tourHandler, { once: true });
       positionTour();
-      if (tourRaf) cancelAnimationFrame(tourRaf);
-      var loop = function() { positionTour(); tourRaf = requestAnimationFrame(loop); };
-      tourRaf = requestAnimationFrame(loop);
+      // Re-position after any accordion transition finishes (targets can shift)
+      [100, 300, 500].forEach(function(ms) { setTimeout(positionTour, ms); });
       document.getElementById('tour-ring').classList.remove('tour-hidden');
     });
   }
@@ -1364,6 +1429,8 @@
       if (window.getComputedStyle(anc).position === 'fixed') { isFixed = true; break; }
       anc = anc.parentElement;
     }
+    // Raise tour above fullscreen modal overlays when highlighting a target inside one
+    document.getElementById('tour-root').style.zIndex = isFixed ? '10002' : '';
     var top = isFixed ? r.top : r.top + window.scrollY;
     var left = isFixed ? r.left : r.left + window.scrollX;
     var el = document.getElementById('tour-ring');
