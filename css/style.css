@@ -43,6 +43,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -54,6 +56,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Ensure main content stays above triangle background */
@@ -287,6 +291,8 @@ p {
     padding: var(--spacing-xl) var(--content-padding-x) var(--spacing-3xl);
     max-width: var(--max-width);
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section-title {
@@ -2461,6 +2467,11 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
 
     .card-content {
         padding: var(--spacing-lg);
+    }
+
+    .hero-name {
+        font-size: 36px;
+        word-break: break-word;
     }
 
     .skills-grid,
