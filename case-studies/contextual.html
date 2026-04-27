@@ -98,17 +98,21 @@
             </div>
         </header>
 
-        <!-- Context Section -->
+        <!-- Context: The Trade Desk + The Contextual Marketplace -->
         <section id="context" class="case-section case-section-two-col case-section-two-col-centered">
             <div class="case-section-text">
                 <span class="case-section-label">Context</span>
                 <h2>What is The Trade Desk?</h2>
-                <p>The Trade Desk is a global advertising technology platform that helps brands and agencies buy digital ads across the internet.</p>
-                <p>Advertisers and agencies leverage our demand-side platform to buy digital advertising space in real-time across multiple channels (display, video, audio, native, and connected TV).</p>
+                <p>A demand-side platform that allows advertisers and ad agencies to buy digital advertising space in real-time across multiple channels (display, video, audio, native, and connected TV).</p>
+                <p>Some of our key advertisers include Coca-Cola, Walmart, and Publicis.</p>
 
-                <h2>...and what is the Contextual Marketplace?</h2>
-                <p>The Contextual Marketplace allows advertisers to target the most suitable contexts to show their ads, and avoid the offensive ones, ensuring ads appear in the right place, at the right moment.</p>
-                <p>This targeting tool has shown signs of growth as the advertising industry shifts towards more privacy-friendly practices, an alternative to identity-based advertising.</p>
+                <h2>Contextual targeting</h2>
+                <p>Contextual targeting ensures that ads appear in the right place, at the right moment.</p>
+                <ul class="contextual-target-block">
+                    <li><strong class="ctx-target">Target:</strong> "Show my ad on pages about outdoor travel"</li>
+                    <li><strong class="ctx-block">Block:</strong> "Don't show my ad near content about terrorism"</li>
+                </ul>
+                <p>Contextual targeting is increasingly important with the ad industry <strong>shifting towards more privacy-friendly practices</strong>, an alternative to identity-based advertising.</p>
             </div>
             <div class="case-image-with-caption">
                 <img src="../images/contextual-kokai-highlight.png" alt="Kokai's Programmatic Table with Contextual highlighted" class="case-image-no-container zoomable-image">
@@ -116,31 +120,86 @@
             </div>
         </section>
 
-        <!-- Problem Section: Intro -->
-        <section id="defining-the-problem" class="case-section case-section-full case-section-intro">
-            <span class="case-section-label">Defining the Problem</span>
-            <h2>The problem, from the business lens</h2>
-            <p class="case-intro-text">When first onboarding to this project, the problem seemed straightforward from a business perspective. Two clear issues were outlined:</p>
-        </section>
-
-        <!-- Problem Section: Cards -->
-        <section class="case-section case-section-full">
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <span class="problem-number">1</span>
-                    <h3>Advertisers tend to only leverage one data provider per ad group</h3>
-                    <p>Each provider's data that is targeted is charged at full price. <strong>No boolean/dynamic logic</strong> provided in strategy building. Users need to include OR statements.</p>
+        <!-- Defining the Problem: scrollytelling segment with sticky diagram -->
+        <section id="defining-the-problem" class="case-section ctx-defining-section">
+            <div class="ctx-defining-grid">
+                <div class="ctx-defining-text-col">
+                    <div class="ctx-defining-block case-section-text">
+                        <span class="case-section-label">Defining the Problem</span>
+                        <h2>The Contextual Marketplace structure</h2>
+                        <h4>Data providers</h4>
+                        <p>Companies that analyze web content, classifying pages into segments based on topic ("Sports" or "Finance"), brand safety levels ("Low Risk for Violence"), or sentiment.</p>
+                        <h4>Advertisers</h4>
+                        <p>Select segments from data providers to target or block in their campaigns and ad groups.</p>
+                    </div>
+                    <div class="ctx-defining-block case-section-text" id="ctx-problem-block">
+                        <span class="case-section-label">From the business lens</span>
+                        <h2>The initial problem</h2>
+                        <h4>Issue 1</h4>
+                        <p>Segments across providers may contain some overlapping content.</p>
+                        <h4>Issue 2</h4>
+                        <p>Advertisers are charged in full per provider, regardless whether 1 or 10 segments were chosen.</p>
+                    </div>
                 </div>
-                <div class="problem-card">
-                    <span class="problem-number">2</span>
-                    <h3>Millions in revenue opportunity is missed</h3>
-                    <p>In 2024, The Trade Desk tripled the amount of contextual data providers on the platform. Certain providers are unfairly leveraged more than others.</p>
+                <div class="ctx-defining-diagram-col">
+                    <div class="ctx-flow ctx-flow--scrollytelling">
+                        <div class="ctx-providers">
+                            <div class="ctx-provider ctx-provider--a">Data<br>Provider A</div>
+                            <div class="ctx-provider ctx-provider--b">Data<br>Provider B</div>
+                            <div class="ctx-provider ctx-provider--ttd">The Trade<br>Desk</div>
+                        </div>
+                        <div class="ctx-segments">
+                            <div class="ctx-col">
+                                <div class="ctx-segment ctx-segment--a" style="--shift-x:60%;--shift-y:0%">Segment A</div>
+                                <div class="ctx-segment ctx-segment--a" style="--shift-x:0;--shift-y:0">Segment B</div>
+                                <div class="ctx-segment ctx-segment--a" style="--shift-x:30%;--shift-y:0">Segment C</div>
+                            </div>
+                            <div class="ctx-col">
+                                <div class="ctx-segment ctx-segment--b" style="--shift-x:-40%;--shift-y:0">Segment 1</div>
+                                <div class="ctx-segment ctx-segment--b" style="--shift-x:30%;--shift-y:0">Segment 2</div>
+                                <div class="ctx-segment ctx-segment--b" style="--shift-x:-20%;--shift-y:0">Segment 3</div>
+                            </div>
+                            <div class="ctx-col">
+                                <div class="ctx-segment ctx-segment--ttd" style="--shift-x:-30%;--shift-y:30%">Segment X</div>
+                                <div class="ctx-segment ctx-segment--ttd" style="--shift-x:0;--shift-y:0">Segment Y</div>
+                                <div class="ctx-segment ctx-segment--ttd" style="--shift-x:-20%;--shift-y:0">Segment Z</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="case-image-full case-image-no-shadow">
-                <img src="../images/contextual-adgroup.png" alt="Real ad group example where the advertiser has chosen to block multiple segments from only TTD's segment offerings" class="zoomable-image">
-                <span class="image-caption">Real ad group example where the advertiser has chosen to block multiple segments from only TTD's segment offerings</span>
+        <!-- The Initial Problem (continued) -->
+        <section class="case-section case-section-two-col case-section-two-col-centered">
+            <div class="case-section-text">
+                <h2>The initial problem <em>continued</em>...</h2>
+                <h4>Issue 3</h4>
+                <p>The platform's inability to allow for building strategies with dynamic logic enforced a <em>very narrow reach</em>.</p>
+                <h4>Issue 4</h4>
+                <p><strong><em>Millions</em> in revenue opportunity is missed.</strong></p>
+                <ul>
+                    <li>In 2024, The Trade Desk tripled the amount of contextual data providers on the platform</li>
+                    <li>Certain providers are unfairly leveraged more than others</li>
+                </ul>
+            </div>
+            <div class="ctx-venn-wrap">
+                <img class="ctx-venn-img" src="../images/and%20logic.png" alt="AND logic Venn diagram showing three overlapping segments where content must match all categories">
+            </div>
+        </section>
+
+        <!-- The Proposed Solution -->
+        <section class="case-section case-section-full ctx-proposed-section">
+            <h2>The proposed solution</h2>
+            <p>The solution asked of me was to incorporate this dynamic targeting logic, where advertisers would apply both AND and OR logic to the segments they wanted to target and/or block in their contextual strategies.</p>
+            <p>Being new to the team, this sounded like a straightforward task that I'd be able to complete quickly with the existing patterns we had, as well as some initial patterns that another team focusing on Audience-based targeting was working on in parallel.</p>
+            <div class="ctx-venn-pair">
+                <img class="ctx-venn-img" src="../images/and%20logic.png" alt="AND logic Venn diagram showing three overlapping segments where content must match all categories">
+                <svg class="ctx-venn-arrow" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <line x1="10" y1="20" x2="80" y2="20" stroke="#2D5A50" stroke-width="1.5"/>
+                    <polygon points="78,12 92,20 78,28" fill="#2D5A50"/>
+                </svg>
+                <img class="ctx-venn-img" src="../images/or%20logic.png" alt="OR logic Venn diagram with three overlapping segments inside a dashed boundary, allowing content to match any category">
             </div>
         </section>
 
@@ -150,21 +209,29 @@
                 <h2>Driving clarity in ambiguity</h2>
                 <p>But the project started out with an overly simplified scope. What started as a simple "boolean logic feature" quickly revealed itself as a fundamental gap in how users approach contextual targeting.</p>
 
-                <h4>Stage 1 | Uncovering the Real Scope</h4>
-                <ul>
-                    <li>Conducted stakeholder alignment sessions across engineering, product, and data teams</li>
-                    <li>Recognized we were building an entirely <em>new user mental model</em>, not just a feature</li>
-                    <li><strong>Led project rescoping to avoid throwaway work</strong> and set realistic timelines</li>
-                </ul>
+                <div class="ctx-stage">
+                    <h4 class="ctx-stage-title">
+                        <span class="ctx-stage-label">Stage 1</span>
+                        Rescoping project phases
+                    </h4>
+                    <ul>
+                        <li>Share out initial boolean logic mocks</li>
+                        <li>Meeting with xFN stakeholders</li>
+                    </ul>
+                </div>
 
-                <h4>Stage 2 | Foundational Understanding</h4>
-                <ul>
-                    <li>Brought in UX researcher for foundational user interviews with key traders</li>
-                    <li>Facilitated working sessions with backend data team to understand technical constraints</li>
-                    <li><em>Aligned cross-functional team on core user problems</em> vs. surface-level requests</li>
-                </ul>
+                <div class="ctx-stage">
+                    <h4 class="ctx-stage-title">
+                        <span class="ctx-stage-label">Stage 2</span>
+                        Understanding Phase 1
+                    </h4>
+                    <ul>
+                        <li>Initiated foundational UXR</li>
+                        <li>Working session with back-end data team</li>
+                    </ul>
+                </div>
             </div>
-            <div class="case-section-image">
+            <div class="case-section-image case-section-image-below">
                 <img src="../images/contextual-flowchart.png" alt="User flow diagram showing contextual strategy building process" class="zoomable-image">
             </div>
         </section>
@@ -365,5 +432,22 @@
     <script src="../js/triangles.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/sidenav.js"></script>
+    <script>
+      (function () {
+        var trigger = document.getElementById('ctx-problem-block');
+        var diagram = document.querySelector('.ctx-flow--scrollytelling');
+        if (!trigger || !diagram || !('IntersectionObserver' in window)) return;
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              diagram.classList.add('in-problem-state');
+            } else {
+              diagram.classList.remove('in-problem-state');
+            }
+          });
+        }, { threshold: 0.4 });
+        obs.observe(trigger);
+      })();
+    </script>
 </body>
 </html>
