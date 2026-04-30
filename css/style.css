@@ -1109,6 +1109,21 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     border-radius: 50%;
 }
 
+/* Numbered UXR pushback list — show numeric markers only, no bullet dots */
+.case-section ol.ctx-pushback-list {
+    list-style: decimal outside;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+.case-section ol.ctx-pushback-list li {
+    padding-left: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+.case-section ol.ctx-pushback-list li::before {
+    content: none;
+}
+
 /* Highlight Box */
 .highlight-box {
     background: var(--color-mint);
