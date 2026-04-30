@@ -467,6 +467,19 @@ a[href="case-studies/security.html"] .card-image {
 }
 .ctx-venn-arrow { width: 70px; height: auto; flex-shrink: 0; }
 
+.impact-tldr-block {
+    margin-bottom: calc(var(--spacing-3xl) * 2);
+    padding-bottom: var(--spacing-3xl);
+}
+.impact-tldr-block p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--spacing-md);
+}
+.impact-tldr-block p:last-child { margin-bottom: 0; }
+.impact-tldr-block strong { font-weight: 700; color: var(--color-text); }
+
 /* Driving-clarity stage blocks */
 .ctx-stage { margin-top: var(--spacing-lg); }
 .ctx-stage-label {
@@ -1050,6 +1063,15 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     margin: 0 auto;
     padding: var(--spacing-3xl) var(--content-padding-x);
 }
+
+.case-section.case-section-tight-top {
+    padding-top: 0;
+}
+
+.case-section.case-section-tight-bottom {
+    padding-bottom: 0;
+}
+
 
 .case-section h2 {
     margin-bottom: var(--spacing-md);
@@ -1904,16 +1926,37 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
 
 /* Building Blocks Layout */
 .building-blocks-layout {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: var(--spacing-3xl);
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
 }
 
 .building-blocks-label h2 {
     font-family: 'Jost', 'Futura', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
+    margin: 0;
+}
+
+.building-blocks-intro {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.building-blocks-followup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.building-blocks-followup p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
 }
 
 .building-blocks-content {
@@ -1938,6 +1981,10 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
 .block-visual img {
     width: 48px;
     height: auto;
+}
+
+.block-visual-segment img {
+    width: 28px;
 }
 
 .block-text {
@@ -2049,10 +2096,26 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     margin-bottom: var(--spacing-xs);
 }
 
+.prototype-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
 .prototype-context {
     font-size: 0.875rem;
     color: var(--color-text-muted);
     margin: 0;
+}
+
+.prototype-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: var(--spacing-md) 0 0;
 }
 
 .prototype-embed {

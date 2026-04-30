@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
 </head>
 <body>
@@ -52,6 +52,10 @@
 
     <!-- Side Navigation -->
     <nav id="side-nav" class="side-nav" style="display: none;">
+        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Impact</span>
+        </a>
         <a href="#context" class="side-nav-item" data-section="context">
             <span class="side-nav-dot"></span>
             <span class="side-nav-label">Context</span>
@@ -63,10 +67,6 @@
         <a href="#the-solution" class="side-nav-item" data-section="the-solution">
             <span class="side-nav-dot"></span>
             <span class="side-nav-label">Solution</span>
-        </a>
-        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
-            <span class="side-nav-dot"></span>
-            <span class="side-nav-label">Impact</span>
         </a>
     </nav>
 
@@ -98,188 +98,163 @@
             </div>
         </header>
 
-        <!-- Context: The Trade Desk + The Contextual Marketplace -->
-        <section id="context" class="case-section case-section-two-col case-section-two-col-centered">
-            <div class="case-section-text">
-                <span class="case-section-label">Context</span>
-                <h2>What is The Trade Desk?</h2>
-                <p>A demand-side platform that allows advertisers and ad agencies to buy digital advertising space in real-time across multiple channels (display, video, audio, native, and connected TV).</p>
-                <p>Some of our key advertisers include Coca-Cola, Walmart, and Publicis.</p>
-
-                <h2>Contextual targeting</h2>
-                <p>Contextual targeting ensures that ads appear in the right place, at the right moment.</p>
-                <ul class="contextual-target-block">
-                    <li><strong class="ctx-target">Target:</strong> "Show my ad on pages about outdoor travel"</li>
-                    <li><strong class="ctx-block">Block:</strong> "Don't show my ad near content about terrorism"</li>
-                </ul>
-                <p>Contextual targeting is increasingly important with the ad industry <strong>shifting towards more privacy-friendly practices</strong>, an alternative to identity-based advertising.</p>
+        <!-- Project Outcomes (moved to top) -->
+        <section id="the-impact" class="case-section case-section-full case-section-white">
+            <div class="impact-tldr-block">
+                <span class="case-section-label">tl;dr</span>
+                <h2>Two weeks in, I rescoped the project...</h2>
+                <p>I joined the contextual targeting team to ship what was framed as a straightforward feature: add boolean logic (AND/OR) to how advertisers combine targeting segments. Existing patterns from a parallel audience-targeting effort meant this looked like a fast win.</p>
+                <p>Two weeks of stakeholder conversations and foundational user research later, I'd reframed it. The "boolean logic feature" wasn't the problem — it was a symptom. The real gap was that advertisers had no durable way to build, reuse, or understand contextual strategies on the platform. Shipping the original brief would have been a band-aid on a load-bearing wall.</p>
+                <p>This case study walks through how I got there, what I designed instead, and what shipped.</p>
             </div>
-            <div class="case-image-with-caption">
-                <img src="../images/contextual-kokai-highlight.png" alt="Kokai's Programmatic Table with Contextual highlighted" class="case-image-no-container zoomable-image">
-                <span class="image-caption">The Trade Desk's Kokai, launched in 2023</span>
-            </div>
-        </section>
-
-        <!-- Defining the Problem: scrollytelling segment with sticky diagram -->
-        <section id="defining-the-problem" class="case-section ctx-defining-section">
-            <div class="ctx-defining-grid">
-                <div class="ctx-defining-text-col">
-                    <div class="ctx-defining-block case-section-text">
-                        <span class="case-section-label">Defining the Problem</span>
-                        <h2>The Contextual Marketplace structure</h2>
-                        <p>The marketplace consists of various data providers, including our own in-house TTD data, which offers segments of classified content by topic, brand safety, or sentiment, that advertisers can choose from to target or block within their ad campaigns or ad groups.</p>
-                        <h4>Data providers</h4>
-                        <p>Companies that analyze web content, classifying pages into segments based on topic ("Sports" or "Finance"), brand safety levels ("Low Risk for Violence"), or sentiment.</p>
-                        <h4>Advertisers</h4>
-                        <p>Select segments from data providers to target or block in their campaigns and ad groups.</p>
-                    </div>
-                    <div class="ctx-defining-block case-section-text" id="ctx-problem-block">
-                        <span class="case-section-label">From the business lens</span>
-                        <h2>The initial problem</h2>
-                        <h4>Issue 1</h4>
-                        <p>Segments across providers may contain some overlapping content.</p>
-                        <h4>Issue 2</h4>
-                        <p>Advertisers are charged in full per provider, regardless whether 1 or 10 segments were chosen.</p>
-                    </div>
+            <span class="case-section-label">The Impact</span>
+            <div class="outcomes-layout">
+                <div class="outcomes-label">
+                    <h2>Project outcomes</h2>
                 </div>
-                <div class="ctx-defining-diagram-col">
-                    <div class="ctx-flow ctx-flow--scrollytelling">
-                        <div class="ctx-providers">
-                            <div class="ctx-provider ctx-provider--a">Data<br>Provider A</div>
-                            <div class="ctx-provider ctx-provider--b">Data<br>Provider B</div>
-                            <div class="ctx-provider ctx-provider--ttd">The Trade<br>Desk</div>
+                <div class="outcomes-content">
+                    <div class="outcome-item">
+                        <span class="outcome-number">1</span>
+                        <div class="outcome-text">
+                            <p class="metric">Surpassed <span class="highlight">$50M</span> total spend target in Contextual Targeting by the end of 2025 by <span class="highlight">$5M</span></p>
                         </div>
-                        <div class="ctx-segments">
-                            <div class="ctx-col">
-                                <div class="ctx-segment ctx-segment--a" style="--shift-x:60%;--shift-y:0%">Segment A</div>
-                                <div class="ctx-segment ctx-segment--a" style="--shift-x:0;--shift-y:0">Segment B</div>
-                                <div class="ctx-segment ctx-segment--a" style="--shift-x:30%;--shift-y:0">Segment C</div>
-                            </div>
-                            <div class="ctx-col">
-                                <div class="ctx-segment ctx-segment--b" style="--shift-x:-40%;--shift-y:0">Segment 1</div>
-                                <div class="ctx-segment ctx-segment--b" style="--shift-x:30%;--shift-y:0">Segment 2</div>
-                                <div class="ctx-segment ctx-segment--b" style="--shift-x:-20%;--shift-y:0">Segment 3</div>
-                            </div>
-                            <div class="ctx-col">
-                                <div class="ctx-segment ctx-segment--ttd" style="--shift-x:-30%;--shift-y:30%">Segment X</div>
-                                <div class="ctx-segment ctx-segment--ttd" style="--shift-x:0;--shift-y:0">Segment Y</div>
-                                <div class="ctx-segment ctx-segment--ttd" style="--shift-x:-20%;--shift-y:0">Segment Z</div>
-                            </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">2</span>
+                        <div class="outcome-text">
+                            <p class="metric">Reduced contextual strategy setup time by <span class="highlight">40%</span> with the creation of reusable strategies</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">3</span>
+                        <div class="outcome-text">
+                            <p class="metric"><span class="highlight">&uarr; 50%+</span> in Contextual Strategies applied</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">4</span>
+                        <div class="outcome-text">
+                            <p class="metric">Successfully led design across 1 PM, 7 engineers, 2 UX partners (content and research)</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The Initial Problem (continued) -->
-        <section class="case-section case-section-two-col case-section-two-col-centered">
-            <div class="case-section-text">
-                <h2>The initial problem <em>continued</em>...</h2>
-                <h4>Issue 3</h4>
-                <p>The platform's inability to allow for building strategies with dynamic logic enforced a <em>very narrow reach</em>.</p>
-                <h4>Issue 4</h4>
-                <p><strong><em>Millions</em> in revenue opportunity is missed.</strong></p>
-                <ul>
-                    <li>In 2024, The Trade Desk tripled the amount of contextual data providers on the platform</li>
-                    <li>Certain providers are unfairly leveraged more than others</li>
-                </ul>
-            </div>
-            <div class="ctx-venn-wrap">
-                <img class="ctx-venn-img" src="../images/and%20logic.png" alt="AND logic Venn diagram showing three overlapping segments where content must match all categories">
-            </div>
-        </section>
-
-        <!-- The Proposed Solution -->
-        <section class="case-section case-section-full ctx-proposed-section">
-            <h2>The proposed solution</h2>
-            <p>The solution asked of me was to incorporate this dynamic targeting logic, where advertisers would apply both AND and OR logic to the segments they wanted to target and/or block in their contextual strategies.</p>
-            <p>Being new to the team, this sounded like a straightforward task that I'd be able to complete quickly with the existing patterns we had, as well as some initial patterns that another team focusing on Audience-based targeting was working on in parallel.</p>
-            <div class="ctx-venn-pair">
-                <img class="ctx-venn-img" src="../images/and%20logic.png" alt="AND logic Venn diagram showing three overlapping segments where content must match all categories">
-                <svg class="ctx-venn-arrow" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <line x1="10" y1="20" x2="80" y2="20" stroke="#2D5A50" stroke-width="1.5"/>
-                    <polygon points="78,12 92,20 78,28" fill="#2D5A50"/>
-                </svg>
-                <img class="ctx-venn-img" src="../images/or%20logic.png" alt="OR logic Venn diagram with three overlapping segments inside a dashed boundary, allowing content to match any category">
-            </div>
-        </section>
-
-        <!-- Driving Clarity Section -->
-        <section class="case-section case-section-two-col case-section-two-col-centered">
-            <div class="case-section-text">
-                <h2>Driving clarity in ambiguity</h2>
-                <p>But the project started out with an overly simplified scope. What started as a simple "boolean logic feature" quickly revealed itself as a fundamental gap in how users approach contextual targeting.</p>
-
-                <div class="ctx-stage">
-                    <h4 class="ctx-stage-title">
-                        <span class="ctx-stage-label">Stage 1</span>
-                        Rescoping project phases
-                    </h4>
-                    <ul>
-                        <li>Share out initial boolean logic mocks</li>
-                        <li>Meeting with xFN stakeholders</li>
-                    </ul>
+        <!-- Context: TTD + Marketplace + Inherited Problem + Proposed Solution -->
+        <section id="context">
+            <!-- Context intro: TTD + Kokai -->
+            <div class="case-section case-section-two-col case-section-two-col-centered">
+                <div class="case-section-text">
+                    <span class="case-section-label">Context</span>
+                    <p><em>The Trade Desk</em> is a demand-side platform that allows advertisers like Coca-Cola and Walmart to purchase digital ad inventory across display, video, audio, CTV, and native channels.</p>
+                    <p><em>Contextual targeting</em> is one of many ways advertisers decide where their ads should and shouldn't run (e.g., "show ads on outdoor travel pages" / "block ads near terrorism content"). It's a growing strategic priority for the industry as third-party identifiers get deprecated.</p>
                 </div>
-
-                <div class="ctx-stage">
-                    <h4 class="ctx-stage-title">
-                        <span class="ctx-stage-label">Stage 2</span>
-                        Understanding Phase 1
-                    </h4>
-                    <ul>
-                        <li>Initiated foundational UXR</li>
-                        <li>Working session with back-end data team</li>
-                    </ul>
+                <div class="case-image-with-caption">
+                    <img src="../images/contextual-kokai-highlight.png" alt="Kokai's Programmatic Table with Contextual highlighted" class="case-image-no-container zoomable-image">
+                    <span class="image-caption">The Trade Desk's Kokai, launched in 2023</span>
                 </div>
             </div>
-            <div class="case-section-image case-section-image-below">
-                <img src="../images/contextual-flowchart.png" alt="User flow diagram showing contextual strategy building process" class="zoomable-image">
-            </div>
-        </section>
 
-        <!-- User Pain Points Section -->
-        <section class="case-section case-section-full case-section-white">
-            <h2>User pain points from UXR</h2>
-
-            <div class="pain-points-grid">
-                <div class="pain-point-card">
-                    <span class="pain-point-number">1</span>
-                    <h3>Reusable strategies</h3>
-                    <p>Users clone campaigns to avoid setting up targeting/blocking strategies over and over again— but this is fragile and highly error-prone.</p>
-                </div>
-                <div class="pain-point-card">
-                    <span class="pain-point-number">2</span>
-                    <h3>Strategy management</h3>
-                    <p>Contextual groups should be able to be used across multiple ad groups in a library at the advertiser-level.</p>
-                </div>
-                <div class="pain-point-card">
-                    <span class="pain-point-number">3</span>
-                    <h3>A need for more transparency</h3>
-                    <p>Pricing and metrics provided are opaque.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- How Might We Section -->
-        <section class="case-section case-section-full case-section-white">
-            <div class="hmw-layout">
-                <div class="hmw-label">
-                    <span class="case-section-label">The Problem</span>
-                    <h2>How might we...</h2>
-                </div>
-                <div class="hmw-list">
-                    <div class="hmw-item">
-                        <span class="hmw-number">1</span>
-                        <h3>Incorporate boolean logic to accommodate pricing concerns</h3>
+            <!-- Marketplace structure + Inherited problem space with scrollytelling -->
+            <div class="case-section ctx-defining-section">
+                <div class="ctx-defining-grid">
+                    <div class="ctx-defining-text-col">
+                        <div class="ctx-defining-block case-section-text">
+                            <h2>The Contextual Marketplace structure</h2>
+                            <p>The marketplace consists of various data providers, including our own in-house TTD data, which offers segments of classified content by topic, brand safety, or sentiment, that advertisers can choose from to target or block within their ad campaigns or ad groups.</p>
+                            <h4>Data providers</h4>
+                            <p>Companies that analyze web content, classifying pages into segments based on topic ("Sports" or "Finance"), brand safety levels ("Low Risk for Violence"), or sentiment.</p>
+                            <h4>Advertisers</h4>
+                            <p>Select segments from data providers to target or block in their campaigns and ad groups.</p>
+                        </div>
+                        <div class="ctx-defining-block case-section-text" id="ctx-problem-block">
+                            <h2>The inherited problem space</h2>
+                            <p>When I joined, the team had identified four issues with how the contextual marketplace worked:</p>
+                            <h4>Issue 1</h4>
+                            <p>Overlapping segments across data providers.</p>
+                            <h4>Issue 2</h4>
+                            <p>Advertisers are charged in full per provider, regardless whether 1 or 10 segments were chosen.</p>
+                        </div>
                     </div>
-                    <div class="hmw-item">
-                        <span class="hmw-number">2</span>
-                        <h3>Allow users to duplicate, maintain, and reuse targeting strategies</h3>
+                    <div class="ctx-defining-diagram-col">
+                        <div class="ctx-flow ctx-flow--scrollytelling">
+                            <div class="ctx-providers">
+                                <div class="ctx-provider ctx-provider--a">Data<br>Provider A</div>
+                                <div class="ctx-provider ctx-provider--b">Data<br>Provider B</div>
+                                <div class="ctx-provider ctx-provider--ttd">The Trade<br>Desk</div>
+                            </div>
+                            <div class="ctx-segments">
+                                <div class="ctx-col">
+                                    <div class="ctx-segment ctx-segment--a" style="--shift-x:60%;--shift-y:0%">Segment A</div>
+                                    <div class="ctx-segment ctx-segment--a" style="--shift-x:0;--shift-y:0">Segment B</div>
+                                    <div class="ctx-segment ctx-segment--a" style="--shift-x:30%;--shift-y:0">Segment C</div>
+                                </div>
+                                <div class="ctx-col">
+                                    <div class="ctx-segment ctx-segment--b" style="--shift-x:-40%;--shift-y:0">Segment 1</div>
+                                    <div class="ctx-segment ctx-segment--b" style="--shift-x:30%;--shift-y:0">Segment 2</div>
+                                    <div class="ctx-segment ctx-segment--b" style="--shift-x:-20%;--shift-y:0">Segment 3</div>
+                                </div>
+                                <div class="ctx-col">
+                                    <div class="ctx-segment ctx-segment--ttd" style="--shift-x:-30%;--shift-y:30%">Segment X</div>
+                                    <div class="ctx-segment ctx-segment--ttd" style="--shift-x:0;--shift-y:0">Segment Y</div>
+                                    <div class="ctx-segment ctx-segment--ttd" style="--shift-x:-20%;--shift-y:0">Segment Z</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hmw-item">
-                        <span class="hmw-number">3</span>
-                        <h3>Translate complex backend data structures in a usable way</h3>
-                    </div>
+                </div>
+            </div>
+
+            <!-- The Inherited Problem Space (continued) -->
+            <div class="case-section case-section-two-col case-section-two-col-centered">
+                <div class="case-section-text">
+                    <h2>The inherited problem space <em>continued</em>...</h2>
+                    <h4>Issue 3</h4>
+                    <p>Inability to add dynamic targeting logic &rarr; narrow reach.</p>
+                    <h4>Issue 4</h4>
+                    <p><strong>Tens of millions</strong> in revenue opportunity unrealized as TTD tripled the number of contextual data providers in 2024.</p>
+                </div>
+                <div class="ctx-venn-wrap">
+                    <img class="ctx-venn-img" src="../images/and%20logic.png" alt="AND logic Venn diagram showing three overlapping segments where content must match all categories">
+                </div>
+            </div>
+
+            <!-- Proposed solution -->
+            <div class="case-section case-section-full ctx-proposed-section">
+                <h2>The proposed solution</h2>
+                <p>The solution asked of me was to incorporate this dynamic targeting logic, where advertisers would apply both AND and OR logic to the segments they wanted to target and/or block in their contextual strategies.</p>
+                <div class="ctx-venn-pair">
+                    <img class="ctx-venn-img" src="../images/and%20logic.png" alt="AND logic Venn diagram showing three overlapping segments where content must match all categories">
+                    <svg class="ctx-venn-arrow" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <line x1="10" y1="20" x2="80" y2="20" stroke="#2D5A50" stroke-width="1.5"/>
+                        <polygon points="78,12 92,20 78,28" fill="#2D5A50"/>
+                    </svg>
+                    <img class="ctx-venn-img" src="../images/or%20logic.png" alt="OR logic Venn diagram with three overlapping segments inside a dashed boundary, allowing content to match any category">
+                </div>
+            </div>
+        </section>
+
+        <!-- Defining the Problem: Why I pushed back -->
+        <section id="defining-the-problem">
+            <div class="case-section case-section-full case-section-tight-bottom">
+                <span class="case-section-label">Defining the Problem</span>
+                <h2>Why I pushed back</h2>
+                <p>Starting with stakeholder conversations across PM, the backend data team, and the parallel audience-targeting effort, I started to rethink the initial brief. My discussion with engineering immediately highlighted that our data model only supported to a single-use targeting flow. Adding AND/OR logic would technically work, but every campaign would have to rebuild the same logic from scratch.</p>
+                <p>Foundational UXR with seven advertisers confirmed this. Three patterns became evident at the end of our sessions:</p>
+                <ol class="ctx-pushback-list">
+                    <li>Advertisers were cloning campaigns to avoid rebuilding strategies and copy their targeting setup. This was fragile and error-prone. One trader described maintaining a personal spreadsheet to track which campaigns used which segment combinations.</li>
+                    <li>Strategies needed to live above the campaign. Advertisers thought in terms of brand-safe contexts (e.g., "our automotive evergreen strategy"), not individual campaign setups. The platform forced them to recreate the same strategy per ad group, with no way to update centrally when a data provider changed.</li>
+                    <li>Pricing and overlap were opaque. Advertisers couldn't see when segments from different providers covered the same content, and they were charged per provider regardless of how many segments they used. Without transparency, they couldn't make informed tradeoffs, so they defaulted to whichever provider their account team mentioned first.</li>
+                </ol>
+            </div>
+            <div class="case-section case-section-two-col case-section-two-col-centered case-section-tight-top">
+                <div class="case-section-text">
+                    <p>Boolean logic alone wouldn't resolve these concerns. We needed a way to make strategies reusable, manageable, and transparent, with boolean logic as one capability within them. I socialized this concept with my PM and engineering leads, including a working session with the data team to confirm feasibility and accuracy and ultimately, obtained alignment to expand the scope.</p>
+                </div>
+                <div class="case-image-with-caption">
+                    <img src="../images/contextual-flowchart.png" alt="User flow diagram showing contextual strategy building process" class="case-image-no-container zoomable-image">
+                    <span class="image-caption">A flowchart I created to brainstorm the reframed problem</span>
                 </div>
             </div>
         </section>
@@ -291,9 +266,10 @@
                     <span class="case-section-label">The Solution</span>
                     <h2>Contextual building blocks</h2>
                 </div>
+                <p class="building-blocks-intro">Working with my PM, engineering lead, and content writer, I defined three objects and the relationships between them.</p>
                 <div class="building-blocks-content">
                     <div class="building-block">
-                        <div class="block-visual">
+                        <div class="block-visual block-visual-segment">
                             <img src="../images/segment.png" alt="Segment icon">
                         </div>
                         <div class="block-text">
@@ -324,32 +300,39 @@
                         </div>
                     </div>
                 </div>
+                <div class="building-blocks-followup">
+                    <p>The alignment on these building blocks required broader horizontal alignment across other product teams, like retail and data measurement, to ensure we were using this naming structure consistently from a hierarchy standpoint. I led working sessions with design and PM counterparts to compare the objects we were working with and agree on shared principles. This naming structure became a shared pattern that other teams would adopt.</p>
+                </div>
             </div>
         </section>
 
         <!-- Campaign Hierarchy Section -->
         <section class="case-section case-section-full case-section-white">
             <div class="case-section-text">
-                <h2>Contextual building blocks in the campaign hierarchy</h2>
-                <p>This is how these building blocks fit together in our campaign structure, with contextual strategies and data groups managed at the advertiser level alongside existing tools.</p>
-                <p>At the campaign level, each ad group connects to one contextual strategy. A single strategy can be shared across multiple ad groups and contains various data groups made up of targeting segments or custom categories.</p>
+                <h2>How these building blocks fit in the campaign hierarchy</h2>
+                <p>Each ad group connects to a single contextual strategy. A strategy contains targeted and blocked data groups. Data groups contain segments.</p>
             </div>
             <div class="case-image-full case-image-no-shadow">
                 <img src="../images/contextual-hierarchy.png" alt="Campaign hierarchy showing how contextual strategies, data groups, and segments connect" class="zoomable-image">
             </div>
         </section>
 
+        <!-- Prototypes Header -->
+        <section class="case-section case-section-full case-section-white case-section-tight-bottom">
+            <h2>Three flows for three pain points</h2>
+        </section>
+
         <!-- Prototype Section 1: Strategy Creation -->
-        <section class="case-section case-section-prototype case-section-white">
+        <section class="case-section case-section-prototype case-section-white case-section-tight-top">
             <div class="prototype-layout">
                 <div class="prototype-text">
-                    <h2>Contextual strategy creation</h2>
-                    <p class="prototype-context">@ the ad group level</p>
+                    <h4 class="prototype-title">Contextual strategy creation @ the ad group level</h4>
+                    <p class="prototype-description">This flow walks through a user creating a new strategy from scratch, bypassing the contextual strategy library. The user is also creating a new data group from scratch and then saving it to the library for reuse at a later point. They are reusing an existing blocking data group from the library.</p>
+                    <p class="prototype-description">Click to walk through the flow.</p>
                 </div>
                 <div class="prototype-embed">
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/7iCBbMUTGORcXL8bi28iM9/Untitled?node-id=0-17437&t=fbBIBaLObhBCMvNV-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A17437&hide-ui=1" allowfullscreen></iframe>
                 </div>
-                <span class="image-caption">Click to walk through the flow</span>
             </div>
         </section>
 
@@ -357,13 +340,13 @@
         <section class="case-section case-section-prototype case-section-white">
             <div class="prototype-layout">
                 <div class="prototype-text">
-                    <h2>Applying and editing a saved strategy</h2>
-                    <p class="prototype-context">@ the ad group level</p>
+                    <h4 class="prototype-title">Applying and editing a saved strategy @ the ad group level</h4>
+                    <p class="prototype-description">This flow walks through adding a strategy from the library and then editing it by deleting a data group. Editing shared strategies will impact all other ad groups where this strategy is already applied. A warning interstitial is provided to users to alert them of this change.</p>
+                    <p class="prototype-description">Click to walk through the flow.</p>
                 </div>
                 <div class="prototype-embed">
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/7iCBbMUTGORcXL8bi28iM9/Untitled?node-id=19-202257&t=3SfZxEn69PUAJLPG-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A202257&hide-ui=1" allowfullscreen></iframe>
                 </div>
-                <span class="image-caption">Click to walk through the flow</span>
             </div>
         </section>
 
@@ -371,43 +354,17 @@
         <section class="case-section case-section-prototype case-section-white">
             <div class="prototype-layout">
                 <div class="prototype-text">
-                    <h2>Editing a saved strategy</h2>
-                    <p class="prototype-context">@ the advertiser level</p>
+                    <h4 class="prototype-title">Editing a saved strategy @ the advertiser level</h4>
+                    <p class="prototype-description">This flow walks through making changes to a strategy at the advertiser level via the Contextual strategy library. Again, an interstitial warning is provided to alert users where these changes will be applied at the ad group level.</p>
+                    <p class="prototype-description">Click to walk through the flow.</p>
                 </div>
                 <div class="prototype-embed">
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/7iCBbMUTGORcXL8bi28iM9/Untitled?node-id=19-201908&t=3SfZxEn69PUAJLPG-9&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A201908&hide-ui=1" allowfullscreen></iframe>
                 </div>
-                <span class="image-caption">Click to walk through the flow</span>
             </div>
         </section>
 
         <!-- Project Outcomes Section -->
-        <section id="the-impact" class="case-section case-section-full case-section-white">
-            <div class="outcomes-layout">
-                <div class="outcomes-label">
-                    <span class="case-section-label">The Impact</span>
-                    <h2>Project outcomes</h2>
-                </div>
-                <div class="outcomes-content">
-                    <div class="outcome-item outcome-quote">
-                        <span class="outcome-number">1</span>
-                        <div class="outcome-text">
-                            <p class="quote">"We cut setup time by <span class="highlight">40%</span> using reusable contextual strategies. It's become our go-to for privacy-first campaigns."</p>
-                            <p class="quote-attribution">- Fortune 500 client</p>
-                        </div>
-                    </div>
-                    <div class="outcome-item outcome-metrics">
-                        <span class="outcome-number">2</span>
-                        <div class="outcome-text">
-                            <p class="metrics-intro">Since launching in June 2025:</p>
-                            <p class="metric"><span class="metric-arrow">&uarr;</span> <span class="highlight">30%+</span> in Contextual Strategies applied</p>
-                            <p class="metric"><span class="highlight">$20M</span> total spend, <em>on track to hit target by EOY</em></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Navigation -->
         <nav class="case-navigation">
             <a href="../index.html" class="nav-prev">&larr; All Projects</a>
