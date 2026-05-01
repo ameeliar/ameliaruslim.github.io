@@ -480,6 +480,26 @@ a[href="case-studies/security.html"] .card-image {
 .impact-tldr-block p:last-child { margin-bottom: 0; }
 .impact-tldr-block strong { font-weight: 700; color: var(--color-text); }
 
+/* Learnings & Reflections */
+.ctx-reflections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+.ctx-reflection-item h2 {
+    font-family: 'Jost', 'Futura', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 0 0 var(--spacing-sm);
+}
+.ctx-reflection-item p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
 /* Driving-clarity stage blocks */
 .ctx-stage { margin-top: var(--spacing-lg); }
 .ctx-stage-label {
