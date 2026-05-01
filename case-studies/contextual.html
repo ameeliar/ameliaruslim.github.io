@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
     <title>Contextual Targeting - Amelia Ruslim | Product Designer</title>
-    <link rel="stylesheet" href="../css/style.css?v=20260430-4">
+    <link rel="stylesheet" href="../css/style.css?v=20260430-5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -137,6 +137,12 @@
                     </div>
                     <div class="outcome-item">
                         <span class="outcome-number">4</span>
+                        <div class="outcome-text">
+                            <p class="metric">Cross-team adoption of building block hierarchy solution</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">5</span>
                         <div class="outcome-text">
                             <p class="metric">Successfully led design across 1 PM, 7 engineers, 2 UX partners (content and research)</p>
                         </div>
@@ -323,7 +329,7 @@
                     </div>
                 </div>
                 <div class="building-blocks-followup">
-                    <p>The alignment on these building blocks required broader horizontal alignment across other product teams, like retail and data measurement, to ensure we were using this naming structure consistently from a hierarchy standpoint. I led working sessions with design and PM counterparts to compare the objects we were working with and agree on shared principles. This naming structure became a shared pattern that other teams would adopt.</p>
+                    <p>The alignment on these building blocks required broader horizontal alignment across other product teams, like retail and data measurement, to ensure we were using this naming structure consistently from a hierarchy standpoint. I led working sessions with design and PM counterparts to compare the objects we were working with and agree on shared principles. This naming structure became a shared pattern that other teams have adopted.</p>
                 </div>
             </div>
         </section>
@@ -332,7 +338,7 @@
         <section class="case-section case-section-full case-section-white">
             <div class="case-section-text">
                 <h2>How these building blocks fit in the campaign hierarchy</h2>
-                <p>Each ad group connects to a single contextual strategy. A strategy contains targeted and blocked data groups. Data groups contain segments.</p>
+                <p>Each ad group connects to a single contextual strategy. A strategy contains targeted and blocked data groups. Data groups contain segments. We shipped this as an upgrade path so existing campaigns kept working with no disruption to active spend.</p>
             </div>
             <div class="case-image-full case-image-no-shadow">
                 <img src="../images/contextual-hierarchy.png" alt="Campaign hierarchy showing how contextual strategies, data groups, and segments connect" class="zoomable-image">
@@ -341,7 +347,7 @@
 
         <!-- Prototypes Header -->
         <section class="case-section case-section-full case-section-white case-section-tight-bottom">
-            <h2>Three flows for three pain points</h2>
+            <h2>Applying the building blocks to the design</h2>
         </section>
 
         <!-- Prototype Section 1: Strategy Creation -->
@@ -349,7 +355,7 @@
             <div class="prototype-layout">
                 <div class="prototype-text">
                     <h4 class="prototype-title">Contextual strategy creation @ the ad group level</h4>
-                    <p class="prototype-description">This flow walks through a user creating a new strategy from scratch, bypassing the contextual strategy library. The user is also creating a new data group from scratch and then saving it to the library for reuse at a later point. They are reusing an existing blocking data group from the library.</p>
+                    <p class="prototype-description">This flow walks through an advertiser creating a new strategy from scratch within an ad group (most granular level). The building blocks are shown entirely in context to the ad group here and you'll see that users are encouraged to leverage existing objects from their respective libraries to simplify their workflows. It also demonstrates how an advertiser might save a data group they've just created for reuse later on, all within the context of their strategy creation.</p>
                     <p class="prototype-description">Click to walk through the flow.</p>
                 </div>
                 <div class="prototype-embed">
@@ -363,7 +369,7 @@
             <div class="prototype-layout">
                 <div class="prototype-text">
                     <h4 class="prototype-title">Applying and editing a saved strategy @ the ad group level</h4>
-                    <p class="prototype-description">This flow walks through adding a strategy from the library and then editing it by deleting a data group. Editing shared strategies will impact all other ad groups where this strategy is already applied. A warning interstitial is provided to users to alert them of this change.</p>
+                    <p class="prototype-description">This flow walks through an advertiser adding an existing strategy from the library to their ad group. When strategies are added from the library, the badge next to the strategy name will callout how many ad groups currently have it in use. This is an important metric for advertisers to take note of when they want to make edits. Any edit to a shared strategy will impact the other ad groups also leveraging it. Because of this, a warning interstitial alerts is provided before users move to the editing modal.</p>
                     <p class="prototype-description">Click to walk through the flow.</p>
                 </div>
                 <div class="prototype-embed">
@@ -377,7 +383,7 @@
             <div class="prototype-layout">
                 <div class="prototype-text">
                     <h4 class="prototype-title">Editing a saved strategy @ the advertiser level</h4>
-                    <p class="prototype-description">This flow walks through making changes to a strategy at the advertiser level via the Contextual strategy library. Again, an interstitial warning is provided to alert users where these changes will be applied at the ad group level.</p>
+                    <p class="prototype-description">This flow walks through an advertiser making changes to an existing strategy from the Contextual Marketplace experience at the advertiser (highest) level. At this level of hierarchy, the advertiser can access all strategies, data groups, and custom categories that are saved within their domain &mdash; which serves as a management experience for all of their contextual objects.</p>
                     <p class="prototype-description">Click to walk through the flow.</p>
                 </div>
                 <div class="prototype-embed">
@@ -391,7 +397,7 @@
             <span class="case-section-label">Learnings &amp; reflections</span>
             <div class="ctx-reflections">
                 <div class="ctx-reflection-item">
-                    <h2>The first two weeks are always problem definition, even when the brief seems clear.</h2>
+                    <h2>The first two weeks of any project serve to define the problem, even when the brief seems clear.</h2>
                     <p>I now spend my first two weeks on any new project looking at the brief from every angle and ensuring that it reflects the user needs. The extra time spent upfront is small in comparison to the potential cost of solutioning and shipping a solution to the wrong problem.</p>
                 </div>
                 <div class="ctx-reflection-item">
