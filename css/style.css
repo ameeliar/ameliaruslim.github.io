@@ -1136,6 +1136,11 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     gap: var(--spacing-md);
     margin: var(--spacing-md) 0 var(--spacing-lg);
 }
+.ctx-pushback-list .outcome-text h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 var(--spacing-xs) 0;
+}
 .ctx-pushback-list .outcome-text p {
     font-size: 0.9375rem;
     line-height: 1.6;
