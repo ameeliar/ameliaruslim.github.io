@@ -1129,19 +1129,18 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     border-radius: 50%;
 }
 
-/* Numbered UXR pushback list — show numeric markers only, no bullet dots */
-.case-section ol.ctx-pushback-list {
-    list-style: decimal outside;
-    padding-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+/* UXR pushback list — circular numbered badges matching project outcomes */
+.ctx-pushback-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0 var(--spacing-lg);
 }
-.case-section ol.ctx-pushback-list li {
-    padding-left: var(--spacing-xs);
+.ctx-pushback-list .outcome-text p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
     color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
-}
-.case-section ol.ctx-pushback-list li::before {
-    content: none;
+    margin: 0;
 }
 
 /* Highlight Box */
