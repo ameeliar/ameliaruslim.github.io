@@ -54,10 +54,10 @@ function initPage() {
         if (gate) gate.style.display = 'flex';
         if (content) content.style.display = 'none';
 
-        // Focus on password input
+        // Focus on password input (preventScroll so inline gate doesn't yank the page)
         const input = document.getElementById('password-input');
         if (input) {
-            setTimeout(() => input.focus(), 100);
+            setTimeout(() => input.focus({ preventScroll: true }), 100);
         }
     }
 }

@@ -947,6 +947,12 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     background: var(--color-bg);
 }
 
+.password-gate.password-gate-inline {
+    min-height: 0;
+    padding: var(--spacing-3xl) var(--spacing-lg);
+    background: transparent;
+}
+
 .password-container {
     max-width: 400px;
     width: 100%;

@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <title>Amelia Ruslim | Product Designer</title>
-    <link rel="stylesheet" href="css/style.css?v=20260430-6">
+    <link rel="stylesheet" href="css/style.css?v=20260504-1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,42 +42,61 @@
         <section class="work-section">
             <h2 class="section-title">Selected Work</h2>
 
-            <div class="case-studies-grid">
-                <a href="case-studies/contextual.html" class="case-study-card">
-                    <div class="card-image">
-                        <img src="images/contextual-title.png" alt="Contextual targeting system">
-                        <span class="protected-badge">Password Protected</span>
+            <!-- Password Gate -->
+            <div id="password-gate" class="password-gate password-gate-inline">
+                <div class="password-container">
+                    <div class="password-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
                     </div>
-                    <div class="card-content">
-                        <span class="card-tag">B2B</span>
-                        <h3>Rebuilding the contextual targeting system</h3>
-                        <p>@ The Trade Desk</p>
-                    </div>
-                </a>
+                    <h2>Selected work is password protected</h2>
+                    <p>Please enter the password to view case studies.</p>
+                    <form id="password-form" onsubmit="return checkPassword(event)">
+                        <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                        <button type="submit" class="btn-primary">Unlock</button>
+                    </form>
+                    <p id="error-message" class="error-message"></p>
+                </div>
+            </div>
 
-                <a href="case-studies/security.html" class="case-study-card">
-                    <div class="card-image">
-                        <img src="images/security-title.svg" alt="Account security">
-                        <span class="protected-badge">Password Protected</span>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">B2C</span>
-                        <h3>Simplifying account security</h3>
-                        <p>@ Google</p>
-                    </div>
-                </a>
+            <!-- Protected Content -->
+            <div id="protected-content" style="display: none;">
+                <div class="case-studies-grid">
+                    <a href="case-studies/contextual.html" class="case-study-card">
+                        <div class="card-image">
+                            <img src="images/contextual-title.png" alt="Contextual targeting system">
+                            </div>
+                        <div class="card-content">
+                            <span class="card-tag">B2B</span>
+                            <h3>Rebuilding the contextual targeting system</h3>
+                            <p>@ The Trade Desk</p>
+                        </div>
+                    </a>
 
-                <a href="case-studies/advancedprotection.html" class="case-study-card">
-                    <div class="card-image">
-                        <img src="images/advancedprotection-title.png" alt="Advanced Protection">
-                        <span class="protected-badge">Password Protected</span>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">B2C</span>
-                        <h3>Protecting high risk users with Advanced Protection</h3>
-                        <p>@ Google</p>
-                    </div>
-                </a>
+                    <a href="case-studies/security.html" class="case-study-card">
+                        <div class="card-image">
+                            <img src="images/security-title.svg" alt="Account security">
+                            </div>
+                        <div class="card-content">
+                            <span class="card-tag">B2C</span>
+                            <h3>Simplifying account security</h3>
+                            <p>@ Google</p>
+                        </div>
+                    </a>
+
+                    <a href="case-studies/advancedprotection.html" class="case-study-card">
+                        <div class="card-image">
+                            <img src="images/advancedprotection-title.png" alt="Advanced Protection">
+                            </div>
+                        <div class="card-content">
+                            <span class="card-tag">B2C</span>
+                            <h3>Protecting high risk users with Advanced Protection</h3>
+                            <p>@ Google</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -90,6 +109,7 @@
         </div>
     </footer>
 
+    <script src="js/password.js"></script>
     <script src="js/triangles.js"></script>
 </body>
 </html>
