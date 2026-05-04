@@ -2196,6 +2196,61 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     gap: var(--spacing-md);
 }
 
+.three-years-layout {
+    margin-top: var(--spacing-3xl);
+}
+
+.three-years-title {
+    font-family: 'Jost', 'Futura', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 var(--spacing-lg);
+}
+
+.three-years-content {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.three-years-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.three-years-text p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.three-years-text strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.three-years-decisions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.three-years-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .three-years-content {
+        grid-template-columns: 1fr;
+    }
+}
+
 .outcomes-timeframe {
     font-size: 0.875rem;
     color: var(--color-text-muted);
