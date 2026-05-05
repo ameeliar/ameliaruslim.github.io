@@ -2212,7 +2212,11 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
 }
 
 .three-years-layout {
-    margin-top: var(--spacing-3xl);
+    margin-top: var(--spacing-xs);
+}
+
+.three-years-layout + .outcomes-layout {
+    margin-top: calc(var(--spacing-3xl) * 2);
 }
 
 .three-years-title {
