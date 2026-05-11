@@ -340,6 +340,16 @@ a.case-study-card {
     cursor: pointer;
 }
 
+.wip-tag {
+    color: var(--color-text-muted);
+    font-weight: inherit;
+    font-style: italic;
+}
+
+.wip-eyebrow {
+    margin-bottom: var(--spacing-sm);
+}
+
 .card-image {
     position: relative;
     overflow: hidden;
