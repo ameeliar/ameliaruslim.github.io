@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EGNG0CPLR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-4EGNG0CPLR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <title>OpenPass - Amelia Ruslim | Product Designer</title>
+    <link rel="stylesheet" href="../css/style.css?v=20260520-1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="https://www.linkedin.com/in/ameliaruslim" target="_blank">LINKEDIN</a></li>
+            <li><a href="mailto:hello@ameliar.com">EMAIL</a></li>
+        </ul>
+    </nav>
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="password-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h2>This case study is protected</h2>
+            <p>Please enter the password to view this project.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="btn-primary">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+            <a href="../index.html" class="back-link">&larr; Back to portfolio</a>
+        </div>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav id="side-nav" class="side-nav" style="display: none;">
+        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Impact</span>
+        </a>
+        <a href="#context" class="side-nav-item" data-section="context">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Context</span>
+        </a>
+        <a href="#the-problem" class="side-nav-item" data-section="the-problem">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Problem</span>
+        </a>
+        <a href="#the-solution" class="side-nav-item" data-section="the-solution">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Solution</span>
+        </a>
+        <a href="#learnings" class="side-nav-item" data-section="learnings">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Learnings &amp; reflections</span>
+        </a>
+    </nav>
+
+    <!-- Protected Content -->
+    <main id="protected-content" class="case-study-page" style="display: none;">
+        <!-- Hero Section -->
+        <header class="case-study-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <h1>Designing trust into a consumer identity product</h1>
+                    <div class="case-hero-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Company</span>
+                            <span class="meta-value">The Trade Desk</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Staff Product Designer</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2024 &ndash; present</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    <img src="../images/OpenPass-title.png" alt="OpenPass consumer identity product">
+                </div>
+            </div>
+        </header>
+
+        <!-- Impact (tl;dr + framework + project outcomes) -->
+        <section id="the-impact" class="case-section case-section-full case-section-white">
+            <div class="impact-tldr-block">
+                <span class="case-section-label tldr-label">tl;dr</span>
+                <p>OpenPass is The Trade Desk's consumer authentication product - a privacy-focused single sign-on for the open internet. As the lead Staff Designer on the team, I led the redesign of the sign-in experience around three core decisions: introducing a dedicated consent screen, neutralizing the OpenPass brand in favor of publisher trust signals, and designing partnership-flexible identity patterns that scale across publishers. The work drove a <strong>25% increase in new sign-ups</strong>, a <strong>96.5% consent rate</strong> within 24 hours of the consent screen launch, and a <strong>25x lift in sign-up and sign-in rates</strong> on co-branded publisher partnerships.</p>
+            </div>
+            <span class="case-section-label">The Impact</span>
+            <div class="op-framework-block">
+                <h2 class="three-years-title">A trust-first design framework</h2>
+                <p>When I joined the OpenPass team, the product was struggling to hit its adoption goals. Users were dropping off in the sign-up flow, leadership investment was wavering, and the brand was unfamiliar to the consumers it depended on.</p>
+                <p>I reframed how the team approached user trust at every step of the authentication flow with a new framework that was consent-forward, publisher-co-branded, and partnership-flexible. The framework continues to shape the product as it evolves.</p>
+            </div>
+
+            <div class="outcomes-layout op-outcomes-tight">
+                <div class="outcomes-label">
+                    <h2>Project outcomes</h2>
+                </div>
+                <div class="outcomes-content">
+                    <div class="outcome-item">
+                        <span class="outcome-number">1</span>
+                        <div class="outcome-text">
+                            <p class="metric"><span class="highlight">25%</span> increase in new sign-ups across the product after the new design framework launched.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">2</span>
+                        <div class="outcome-text">
+                            <p class="metric"><span class="highlight">96.5%</span> user consent within 24 hours of the dedicated consent screen launch - validating that users will engage with identity systems when those systems are honest about what they're asking for.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">3</span>
+                        <div class="outcome-text">
+                            <p class="metric"><span class="highlight">25x</span> lift in sign-up and sign-in rates on Ultimate Guitar's co-branded experience, validating the shift toward publisher-led branding.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">4</span>
+                        <div class="outcome-text">
+                            <p class="metric">A <span class="highlight">flexible identity pattern</span> that scales across publisher partnerships with different constraints - establishing OpenPass as a platform, not just a product.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Context -->
+        <section id="context" class="case-section case-section-two-col case-section-two-col-centered">
+            <div class="case-section-text">
+                <span class="case-section-label">Context</span>
+                <h2>OpenPass and the open internet</h2>
+                <p>OpenPass is The Trade Desk's solution to the future of authenticated, consent-driven advertising on the open web.</p>
+                <p>With third-party cookies going away and privacy legislation tightening, the open internet's advertising model increasingly depends on consumers being willing to authenticate. OpenPass provides consumers with a privacy-focused single sign-on (SSO) experience with more transparent control over their identity while enabling publishers to maintain the relevance their businesses depend on.</p>
+                <p>OpenPass aims to be the leading SSO, converting the 98% of unauthenticated internet traffic into authenticated, consent-given traffic, integrated with paywall-enabled publishers by 2028.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/openpass-quickauth-login.png" alt="OpenPass QuickAuth login experience" class="case-image-no-container zoomable-image">
+            </div>
+        </section>
+
+        <!-- Problem -->
+        <section id="the-problem" class="case-section case-section-two-col case-section-two-col-centered case-section-tight-bottom">
+            <div class="case-section-text">
+                <span class="case-section-label">The Problem</span>
+                <h2>An unknown brand asking for trust</h2>
+                <p>OpenPass was launched in 2023 and was an unfamiliar brand to the majority of the general public. As the product asked users to authenticate, share their email, and consent to data usage, users were hesitant to trust a brand they had never heard of before.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/Original-OP.png" alt="The original OpenPass sign-in experience" class="case-image-no-container zoomable-image">
+                <span class="image-caption">The original OpenPass sign-in screen</span>
+            </div>
+        </section>
+
+        <section class="case-section case-section-full case-section-tight-top">
+            <div class="solution-points">
+                <div class="solution-point">
+                    <span class="solution-number">1</span>
+                    <div>
+                        <h3>Low sign-up rates and high drop-off</h3>
+                        <p>Drop-off at the sign-in step was high, and the product was struggling to hit adoption goals.</p>
+                    </div>
+                </div>
+                <div class="solution-point">
+                    <span class="solution-number">2</span>
+                    <div>
+                        <h3>Wary leadership confidence</h3>
+                        <p>Partnership opportunities were endless, but executive confidence in the product was inconsistent. Leadership consistently pushed to cut steps and clicks from the sign-in flow based on the assumption that less friction would mean higher conversion.</p>
+                    </div>
+                </div>
+                <div class="solution-point">
+                    <span class="solution-number">3</span>
+                    <div>
+                        <h3>A misframed design question</h3>
+                        <p>The team was looking at the problem as a design friction perspective when it was really a trust issue. The underlying design question wasn't "how do we reduce friction?" It was "why should I trust this brand with my information?"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution -->
+        <section id="the-solution" class="case-section case-section-two-col case-section-two-col-centered case-section-tight-bottom">
+            <div class="case-section-text">
+                <span class="case-section-label">The Solution</span>
+                <h2>Decision 1: Designing consent into the sign-in flow</h2>
+                <p>A consistent ask from leadership was to cut back on steps and clicks. The thinking was intuitive: every additional step increases drop-off, so reducing steps should increase conversion, but I knew this wasn't the real issue.</p>
+                <p>Users were dropping off in part because the sign-in screen included dense legal copy that disclosed how OpenPass authenticated users and what publishers would receive. Partners had been asking us to truncate or minimize the copy, but doing so would erode the consent and transparency the product depended on.</p>
+                <p>After back-and-forth with Legal, I proposed an alternative: instead of compressing the legal text, introduce a dedicated consent screen after OTP authentication. This would simplify the sign-in screen and provide a clearer avenue for users to make an explicit, informed choice.</p>
+                <p>While this added a step, it shifted the design from "users skip through dense legal text" to "users make an explicit consent decision."</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/OP-Consent.png" alt="The new dedicated consent screen after OTP authentication" class="case-image-no-container zoomable-image">
+                <span class="image-caption">The dedicated consent screen, introduced after OTP authentication</span>
+            </div>
+        </section>
+
+        <section class="case-section case-section-full case-section-tight-top">
+            <h3>The outcome</h3>
+            <p>Within 24 hours of the consent screen going live, <strong>96.5% of users consented</strong> after completing OTP authentication. The result reframed how the team thought about user trust and resolved the internal debate about whether to cut steps. The relationship between friction and conversion turned out to be more nuanced than the prevailing assumption.</p>
+        </section>
+
+        <section class="case-section case-section-full case-section-tight-bottom">
+            <h2>Decision 2: Neutralizing the OpenPass brand to amplify publisher trust</h2>
+            <p>Users authenticating with OpenPass were accessing content from publishers they were familiar with - a music site, a real estate platform, a media brand. It was the OpenPass brand that was unfamiliar.</p>
+            <figure class="op-before-after">
+                <img src="../images/OP-Before%2BAfter.png" alt="Before and after comparison: OpenPass-led sign-in vs. publisher-led, neutralized OpenPass branding" class="zoomable-image">
+                <figcaption class="image-caption">Before &mdash; OpenPass-led sign-in &nbsp;|&nbsp; After &mdash; publisher-led, neutralized OpenPass branding</figcaption>
+            </figure>
+            <p>The original sign-in screen gave OpenPass and the publisher roughly equal visual weight, which created cognitive friction at the moment of trust. The user's question: <em>why should I trust this brand with my information?</em> was being answered with two brand identities competing for attention, neither one fully familiar.</p>
+            <p>Working closely with our UX VP, I decided to neutralize the OpenPass visual identity to lean on the trust already established with the publisher's branding. OpenPass branding would then move below the email input to a more subtle, "Powered by OpenPass" lockup.</p>
+            <h3>The new pattern</h3>
+            <ul>
+                <li>Publisher branding and color palette take primary visual weight</li>
+                <li>OpenPass's identity reduces to a "Powered by OpenPass" label</li>
+                <li>Standard, universally understood CTAs (bright blue buttons) replace OpenPass-branded styling</li>
+                <li>The publisher's logo anchors the experience</li>
+            </ul>
+            <p>This was a deliberate tradeoff: we were giving up brand visibility to gain user trust. The hypothesis was that users would authenticate more confidently when the experience felt like a natural extension of the publisher they were already engaging with.</p>
+            <p>After review and unanimous approval from leadership, the newly styled experience launched at the end of Q2 2025.</p>
+        </section>
+
+        <section class="case-section case-section-two-col case-section-two-col-centered case-section-tight-top op-section-top-align">
+            <div class="case-section-text">
+                <h3>The validation</h3>
+                <p>In September 2024, we tested a co-branded version of the sign-up flow with <strong>Ultimate Guitar</strong>, a major music publisher. The result was a <strong>25x lift in sign-up and sign-in rates</strong> on Ultimate Guitar's website compared to the original OpenPass-led design - validating that in consumer authentication, the recognized brand carries the trust signal. The identity provider's job is to be present, honest, and out of the way.</p>
+            </div>
+            <div class="case-image-with-caption op-image-small">
+                <img src="../images/Ultimate%20Guitar%20A%20-%20Login%201.png" alt="The Ultimate Guitar co-branded OpenPass sign-in experience" class="case-image-no-container zoomable-image">
+                <span class="image-caption">Ultimate Guitar's co-branded OpenPass sign-in flow</span>
+            </div>
+        </section>
+
+        <section class="case-section case-section-full case-section-tight-bottom">
+            <h2>Decision 3: Designing partnership-flexible identity patterns</h2>
+            <p>OpenPass's value depends on broad publisher adoption, which means designing identity patterns that work across many partner contexts. Each publisher comes with its own constraints - existing user bases, legacy authentication flows, brand guidelines, varying tolerance for change.</p>
+            <p>The challenge was to build a system flexible enough to accommodate these differences without losing the user trust signals that the product depends on, such as consent, transparency, and publisher-led branding.</p>
+        </section>
+
+        <section class="case-section case-section-full case-section-tight-top op-zillow-wrap">
+            <h3>The Zillow migration</h3>
+            <figure class="op-float-image">
+                <img src="../images/OP%2BZillow%20Migration%20consent.png" alt="The Zillow + OpenPass migration consent modal" class="zoomable-image">
+                <figcaption class="image-caption">The combined OTP-and-consent modal designed for Zillow's migration</figcaption>
+            </figure>
+            <p>Zillow approached the partnership with a specific constraint: they wanted minimum changes to their existing sign-in experience. Their users were accustomed to a password-based flow, and Zillow was wary of disrupting it.</p>
+            <p>A separate consent page hadn't been proposed for this partnership initially. But the trust and transparency requirements that drove the consent design at OpenPass still applied and Zillow's users still needed to understand what they were agreeing to when their account was migrated to OpenPass.</p>
+            <p>With this in mind, I designed a flexible pattern that respected Zillow's "minimum changes" constraint while preserving the trust posture:</p>
+            <ul>
+                <li>Users sign in to Zillow as usual, using their existing password</li>
+                <li>Users not yet migrated are presented with a combined OTP-and-consent screen via a single modal that handles both authentication and disclosure</li>
+                <li>Users already migrated to OpenPass sign in via OTP without re-consenting</li>
+                <li>The "Powered by OpenPass" label remains present but unobtrusive, maintaining the publisher-led branding</li>
+            </ul>
+            <p>This pattern became a template for similar partnerships where publishers wanted minimum disruption to existing user experiences. It also gave OpenPass a flexible system for handling the messy middle of identity migration: users who haven't yet been migrated, users who have been, and users who are partway through.</p>
+            <p>The goal for the Zillow initiative was to establish flexible identity patterns per partnership while maintaining a consistent trust framework, turning the product into a platform with principled patterns rather than a series of one-off integrations.</p>
+        </section>
+
+        <!-- Learnings & Reflections -->
+        <section id="learnings" class="case-section case-section-full">
+            <span class="case-section-label">Learnings &amp; reflections</span>
+            <div class="ctx-reflections">
+                <div class="ctx-reflection-item">
+                    <h2>Consumer authentication is a trust problem dressed as a UX problem.</h2>
+                    <p>The 96.5% consent rate after adding a step was the clearest validation that users are willing to engage with identity systems when the systems are honest about what they're asking for. While the instinct to reduce friction was reasonable, the real problem proved to be user trust. Trust is built by giving users meaningful agency, not by removing the moments where that agency would be exercised.</p>
+                </div>
+                <div class="ctx-reflection-item">
+                    <h2>Sometimes the right design move is to take up less space.</h2>
+                    <p>Giving up OpenPass's brand visibility to amplify the publisher's was counterintuitive. While every product team wants its identity to be present and recognizable, in a context where users are looking for a familiar trust signal, the unfamiliar brand creates noise, not value. The 25x lift on Ultimate Guitar's co-branded experience showed how much that single reframe was worth.</p>
+                </div>
+                <div class="ctx-reflection-item">
+                    <h2>A design framework outlasts any single launch.</h2>
+                    <p>I've since transitioned to an advisory role on the project as TTD's investment in OpenPass has evolved. The consent-forward, publisher-co-branded, partnership-flexible design framework I built continues to shape the product. This is the kind of contribution I want to keep making: designing the patterns and principles that persist regardless of what the team builds next.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="case-navigation">
+            <a href="advancedprotection.html" class="nav-prev">&larr; Advanced Protection</a>
+            <a href="ai-workflows.html" class="nav-next">Next: AI Workflows &rarr;</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:hello@ameliar.com">hello@ameliar.com</a>
+            <img class="footer-favicon" src="../images/favicon.svg" alt="">
+            <span class="footer-credit">Coded with Claude</span>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox -->
+    <div id="image-lightbox" class="image-lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-img">
+    </div>
+
+    <script src="../js/password.js"></script>
+    <script src="../js/triangles.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/sidenav.js"></script>
+</body>
+</html>
