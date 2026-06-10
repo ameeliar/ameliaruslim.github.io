@@ -182,12 +182,12 @@
                     <p>Chat-based AI experiences have become the default, but for specific, workflow-oriented tasks, they may not be the most efficient pattern. Open-ended natural language inputs introduce too many degrees of freedom and can distract from the task at hand. Structured AI tooling often serves users better with its constrained inputs, clear paths, and predictable outputs. The input panel approach in this workflow was a small version of that bet.</p>
                 </div>
                 <div class="ctx-reflection-item">
-                    <h2>Designing for model confidence without showing the score.</h2>
-                    <p>Most AI recommendations are presented with uniform certainty, regardless of how confident the underlying model actually is. The design question shouldn't be about whether to show uncertainty, it should be about how to match user trust to what the model is actually doing, without undermining the recommendation itself. Confidence scores are useful, but they place cognitive load onto the user. In this workflow, we used the model's confidence to sort recommendations, surfacing the highest-confidence outputs first, without exposing the underlying scores. The model's confidence shaped the experience without becoming a cognitive burden.</p>
-                </div>
-                <div class="ctx-reflection-item">
                     <h2>Building things out in design fidelity can surface problems overlooked in technical specs.</h2>
                     <p>The data team came in with a working prototype that made sense in spec form: collect keywords, return categorized results, let users refine them. It was only when I mocked it up in the Kokai UI that the recategorization step revealed itself as model-serving busywork - useful for training the model, not really for the user. In hindsight, it seems obvious, but it wasn't visible until the flow existed as actual screens. The design pass isn't just execution; it's where you find out whether the workflow holds up.</p>
+                </div>
+                <div class="ctx-reflection-item">
+                    <h2>Designing for model confidence without showing the score.</h2>
+                    <p>Most AI recommendations are presented with uniform certainty, regardless of how confident the underlying model actually is. The design question shouldn't be about whether to show uncertainty, it should be about how to match user trust to what the model is actually doing, without undermining the recommendation itself. Confidence scores are useful, but they place cognitive load onto the user. In this workflow, we used the model's confidence to sort recommendations, surfacing the highest-confidence outputs first, without exposing the underlying scores. The model's confidence shaped the experience without becoming a cognitive burden.</p>
                 </div>
             </div>
         </section>
