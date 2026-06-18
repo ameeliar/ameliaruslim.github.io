@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EGNG0CPLR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4EGNG0CPLR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <title>Google Identity - Amelia Ruslim | Product Designer</title>
+    <link rel="stylesheet" href="../css/style.css?v=20260604-1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css">
+
+    <style>
+    /* ============================================
+       Featured Case Study Cards
+       ============================================ */
+    .featured-studies {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .featured-card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: border-color var(--transition), box-shadow var(--transition);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .featured-card:hover {
+        border-color: var(--color-teal-light);
+        box-shadow: var(--shadow-lg);
+        color: inherit;
+    }
+
+    .featured-card-image {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #f5f7f7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .featured-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .featured-card-body {
+        padding: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .featured-card-eyebrow {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--color-teal);
+    }
+
+    .featured-card-title {
+        font-family: 'Jost', 'Futura', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-text);
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .featured-card-summary {
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: var(--color-text-secondary);
+        margin: 0;
+    }
+
+    .featured-card-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-xs);
+    }
+
+    .featured-metric {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--color-teal);
+        background: var(--color-mint);
+        padding: 4px 10px;
+        border-radius: 100px;
+    }
+
+    .featured-card-link {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--color-teal);
+        margin-top: auto;
+        padding-top: var(--spacing-xs);
+    }
+
+    @media (max-width: 768px) {
+        .featured-studies {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ============================================
+       Milestone Cards
+       ============================================ */
+    .milestone-track {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 var(--content-padding-x);
+        position: relative;
+    }
+
+    .milestone-track::before {
+        content: '';
+        position: absolute;
+        left: calc(var(--content-padding-x) + 13px);
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--color-border);
+    }
+
+    .milestone-card {
+        position: relative;
+        margin-bottom: var(--spacing-lg);
+        padding-left: 44px;
+    }
+
+    .milestone-card::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 22px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--color-teal);
+        border: none;
+        box-shadow: none;
+        z-index: 1;
+    }
+
+    /* Featured milestone dots - larger with pulse */
+    .milestone-card-featured::before {
+        left: -2px;
+        top: 16px;
+        width: 32px;
+        height: 32px;
+        background: var(--color-teal);
+        border: 3px solid white;
+        box-shadow: 0 0 0 2px var(--color-teal);
+        animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Pulsing dot for key milestones (same size as regular shipped dots) */
+    .milestone-card-pulse::before {
+        animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Proposal narrative beat pulse dot */
+    .narrative-beat-pulse::before {
+        width: 20px;
+        height: 20px;
+        left: 4px;
+        top: 20px;
+        background: var(--color-teal);
+        animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes dotPulse {
+        0%, 100% { box-shadow: 0 0 0 0px rgba(46, 204, 170, 0.3); }
+        50% { box-shadow: 0 0 0 8px rgba(46, 204, 170, 0.25); }
+    }
+
+    /* Larger image variant for milestone cards */
+    .milestone-body img.img-milestone-lg {
+        width: 94%;
+        max-width: 546px;
+    }
+
+    /* Side-by-side image pair floating right */
+    .milestone-image-pair {
+        float: right;
+        width: 40%;
+        display: flex;
+        gap: 6px;
+        margin: 0 0 var(--spacing-sm) var(--spacing-md);
+    }
+
+    .milestone-image-pair img {
+        float: none;
+        width: 50%;
+        max-width: none;
+        margin: 0;
+        border-radius: var(--border-radius-sm);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Image overlap inside milestone cards */
+    .milestone-image-overlap {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: var(--spacing-sm) 0 var(--spacing-md);
+    }
+
+    .milestone-image-overlap img {
+        float: none;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        border-radius: var(--border-radius-sm);
+        box-shadow: var(--shadow-md);
+    }
+
+    .milestone-image-overlap .img-overlay-sm {
+        position: absolute;
+        left: -10%;
+        bottom: 0;
+        width: 30%;
+        z-index: 1;
+        box-shadow: var(--shadow-lg);
+        border-radius: var(--border-radius-sm);
+    }
+
+    .milestone-header {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+        cursor: pointer;
+        padding: var(--spacing-md) var(--spacing-lg);
+        background: var(--color-mint);
+        border-radius: var(--border-radius-sm);
+        border: 1px solid transparent;
+        transition: border-color var(--transition), box-shadow var(--transition);
+        user-select: none;
+    }
+
+    .milestone-header:hover {
+        border-color: var(--color-teal-light);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .milestone-card.is-open .milestone-header:hover {
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    .milestone-card-featured.is-open .milestone-header:hover {
+        border-color: var(--color-teal);
+        box-shadow: none;
+    }
+
+    .milestone-header-text {
+        flex: 1;
+    }
+
+    .milestone-badge {
+        display: inline-block;
+        font-size: 0.625rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: white;
+        background: var(--color-teal);
+        padding: 2px 8px;
+        border-radius: 3px;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .milestone-date {
+        font-size: 0.75rem;
+        color: var(--color-text-muted);
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .milestone-title {
+        font-family: 'Jost', 'Futura', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--color-text);
+        margin: 0 0 4px 0;
+        line-height: 1.4;
+    }
+
+    .milestone-summary {
+        font-size: 0.875rem;
+        color: var(--color-text-secondary);
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .milestone-toggle {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 18px;
+        color: var(--color-teal);
+        transition: transform 0.25s ease;
+    }
+
+    .milestone-card.is-open .milestone-toggle {
+        transform: rotate(180deg);
+    }
+
+    .milestone-body {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+        padding: 0 var(--spacing-lg);
+        background: var(--color-mint);
+        border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+        margin-top: -1px;
+    }
+
+    .milestone-card.is-open .milestone-body {
+        max-height: 600px;
+        opacity: 1;
+        padding: 0 var(--spacing-lg) var(--spacing-lg);
+    }
+
+    .milestone-body-inner {
+        padding-top: var(--spacing-md);
+        border-top: 1px solid rgba(19, 111, 100, 0.12);
+    }
+
+    .milestone-body p {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        color: var(--color-text-secondary);
+        margin: 0 0 var(--spacing-md);
+    }
+
+    .milestone-body p:last-child {
+        margin-bottom: 0;
+    }
+
+    .milestone-body img {
+        float: right;
+        width: 45%;
+        max-width: 240px;
+        height: auto;
+        border-radius: var(--border-radius-sm);
+        box-shadow: var(--shadow-md);
+        margin: 0 0 var(--spacing-sm) var(--spacing-md);
+    }
+
+    .milestone-body-inner::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    .milestone-card.is-open .milestone-body {
+        max-height: 1200px;
+    }
+
+    .milestone-metric {
+        display: inline;
+        font-weight: 600;
+        color: var(--color-teal);
+    }
+
+    /* Narrative beat within timeline */
+    .narrative-beat {
+        position: relative;
+        margin-bottom: var(--spacing-lg);
+        padding-left: 44px;
+    }
+
+    .narrative-beat::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 24px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--color-border);
+        z-index: 1;
+    }
+
+    .narrative-beat-content {
+        padding: var(--spacing-md) 0;
+    }
+
+    .narrative-beat-content h3 {
+        font-family: 'Jost', 'Futura', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--color-text);
+        margin: 0 0 var(--spacing-sm);
+    }
+
+    .narrative-beat-content p {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        color: var(--color-text-secondary);
+        margin: 0 0 var(--spacing-md);
+    }
+
+    .narrative-beat-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Linked case study within timeline */
+
+
+    .milestone-card-featured .milestone-header {
+        background: white;
+        border: 2px solid var(--color-teal);
+    }
+
+    .milestone-card-featured .milestone-header:hover {
+        background: var(--color-mint);
+    }
+
+    /* Bold highlight overrides */
+    .outcome-text .quote .highlight {
+        color: var(--color-teal);
+        font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .milestone-track::before {
+            left: calc(var(--spacing-lg) + 13px);
+        }
+        .milestone-track {
+            padding: 0 var(--spacing-lg);
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">WORK</a></li>
+            <li><a href="../about.html">ABOUT</a></li>
+            <li><a href="https://www.linkedin.com/in/ameliaruslim" target="_blank">LINKEDIN</a></li>
+            <li><a href="mailto:hello@ameliar.com">EMAIL</a></li>
+        </ul>
+    </nav>
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="password-gate">
+        <div class="password-container">
+            <div class="password-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            </div>
+            <h2>This case study is protected</h2>
+            <p>Please enter the password to view this project.</p>
+            <form id="password-form" onsubmit="return checkPassword(event)">
+                <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="btn-primary">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message"></p>
+            <a href="../index.html" class="back-link">&larr; Back to portfolio</a>
+        </div>
+    </div>
+
+    <!-- Side Navigation -->
+    <nav id="side-nav" class="side-nav" style="display: none;">
+        <a href="#impact" class="side-nav-item" data-section="impact">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Impact</span>
+        </a>
+        <a href="#case-studies" class="side-nav-item" data-section="case-studies">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Case studies</span>
+        </a>
+        <a href="#timeline" class="side-nav-item" data-section="timeline">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Timeline</span>
+        </a>
+
+    </nav>
+
+    <!-- Protected Content -->
+    <main id="protected-content" class="case-study-page" style="display: none;">
+        <!-- Hero -->
+        <header class="case-study-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <h1>Designing identity for 4 billion accounts &mdash; and protecting the most targeted</h1>
+                    <div class="case-hero-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Company</span>
+                            <span class="meta-value">Google</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Senior Interaction Designer</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Year</span>
+                            <span class="meta-value">2019&ndash;2023</span>
+                        </div>
+                        <div class="meta-row">
+                            <span class="meta-label">Scope</span>
+                            <span class="meta-value">Advanced Protection, Security Settings, Enhanced Safe Browsing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    <img src="../images/google_identity.jpeg" alt="Google Identity and account security">
+                </div>
+            </div>
+        </header>
+
+        <!-- tl;dr -->
+        <section id="impact" class="case-section case-section-full">
+            <span class="case-section-label">tl;dr</span>
+            <p class="case-body-text">As the UX lead for Google's Advanced Protection Program and adjacent account security surfaces, I challenged the program's foundational assumption, shipped features that reduced enrollment friction and protected millions of users, and established design frameworks that still shape how 4 billion users experience account security today.</p>
+        </section>
+
+        <!-- Project Outcomes -->
+        <section class="case-section case-section-full case-section-white">
+            <div class="outcomes-layout">
+                <div class="outcomes-label">
+                    <h2 style="font-family: 'Jost', 'Futura', sans-serif; font-size: 1.75rem; font-weight: 500;">Google Identity at a glance</h2>
+                </div>
+                <div class="outcomes-content">
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">1</span>
+                        <div class="outcome-text">
+                            <p class="quote">The Security Settings redesign drove a <em class="highlight">25% increase in 2SV adoption</em> and a <em class="highlight">40% lift in sign-in method diversification</em>, de-risking Google's Secure by Default rollout. The design framework still governs the page today.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">2</span>
+                        <div class="outcome-text">
+                            <p class="quote">Enhanced Safe Browsing projected <em class="highlight">~40M newly opted-in users</em>, &gt;35% less likely to be phished. The consent research I advocated for shaped the final approach and established a design principle I carried into OpenPass.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">3</span>
+                        <div class="outcome-text">
+                            <p class="quote">The Security Key Wizard and phone-as-a-security-key enablement reduced the enrollment barrier from two physical keys to one. Educational components I designed were <em class="highlight">reused across multiple security flows</em> and featured on Google's external Security Blog.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item outcome-quote">
+                        <span class="outcome-number">4</span>
+                        <div class="outcome-text">
+                            <p class="quote">The enrollment proposal was approved by Google Account Security's senior leadership &ndash; a <em class="highlight">groundbreaking accomplishment</em> given that it challenged the program's founding premise of unphishable protection. The 2025 launch of passkey-based enrollment <em class="highlight">validated my thesis</em>: lower the barrier without compromising protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Case Studies -->
+        <section id="case-studies" class="case-section case-section-full">
+            <span class="case-section-label">Case Studies</span>
+            <h2>Two projects in depth</h2>
+            <p class="case-body-text">My work at Google spanned authentication, enrollment, consent, and settings &ndash; designing identity experiences for 4 billion Google Account users and the high-risk populations within them. These two case studies cover the largest initiatives in detail.</p>
+
+            <div class="featured-studies" style="margin-top: var(--spacing-xl);">
+                <a href="advancedprotection.html" class="featured-card">
+                    <div class="featured-card-image">
+                        <img src="../images/advancedprotection-title.png" alt="Advanced Protection">
+                    </div>
+                    <div class="featured-card-body">
+                        <span class="featured-card-eyebrow">Case Study</span>
+                        <h3 class="featured-card-title">Protecting high risk users with Advanced Protection</h3>
+                        <p class="featured-card-summary">I challenged the assumption Advanced Protection was built on &ndash; that unphishable security required hardware keys &ndash; and proposed a flexible enrollment model where each step independently strengthened a user's security. The paradigm shift was approved by senior leadership and later validated by Google's 2025 passkey-based enrollment.</p>
+                        <div class="featured-card-metrics">
+                            <span class="featured-metric">12x enrollment spike</span>
+                            <span class="featured-metric">Validated by passkey launch</span>
+                        </div>
+                        <span class="featured-card-link">Read case study &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="security.html" class="featured-card">
+                    <div class="featured-card-image" style="border-bottom: 1px solid var(--color-border);">
+                        <img src="../images/security-title.svg" alt="Account Security">
+                    </div>
+                    <div class="featured-card-body">
+                        <span class="featured-card-eyebrow">Case Study</span>
+                        <h3 class="featured-card-title">Rethinking account security at Google</h3>
+                        <p class="featured-card-summary">A redesign that wasn't on anyone's roadmap. With Secure by Default about to auto-enroll 4 billion users into 2SV, the Security tab couldn't clearly explain what they'd been enrolled into. I led the initiative, aligned four teams, and shipped a framework that still governs the page today.</p>
+                        <div class="featured-card-metrics">
+                            <span class="featured-metric">25% 2SV adoption lift</span>
+                            <span class="featured-metric">40% sign-in method lift</span>
+                        </div>
+                        <span class="featured-card-link">Read case study &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline" class="case-section case-section-full" style="padding-bottom: var(--spacing-md);">
+            <span class="case-section-label">Timeline</span>
+            <h2>Four years of identity design at Google</h2>
+            <p class="case-body-text">From my first enrollment launch to the design frameworks still in use today &ndash; a chronological view of what I shipped, proposed, and influenced across Advanced Protection, Security Settings, and Enhanced Safe Browsing. Collectively, these represent systematic friction reduction across the identity and security surface, each demonstrating a specific skill &ndash; scoping, cross-team alignment, advocacy, pattern reuse &ndash; while methodically chipping away at the program's accessibility problem from every angle available.</p>
+        </section>
+
+        <div class="milestone-track">
+
+            <!-- Jan 2020: One-click enrollment -->
+            <div class="milestone-card" data-milestone>
+                <div class="milestone-header" onclick="toggleMilestone(this)">
+                    <div class="milestone-header-text">
+                        <span class="milestone-badge">Shipped</span>
+                        <span class="milestone-date">January 2020</span>
+                        <h3 class="milestone-title">"One-click" enrollment</h3>
+                        <p class="milestone-summary">I launched a phone-based enrollment flow that spiked enrollments 12x &ndash; but 72% of newly enrolled users were getting locked out, and we ultimately deprecated it.</p>
+                    </div>
+                    <div class="milestone-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                </div>
+                <div class="milestone-body">
+                    <div class="milestone-body-inner">
+                        <img src="../images/One-click + SmartLock.png" alt="One-click enrollment flow with Smart Lock app" class="zoomable-image" style="width: 40%; max-width: none; box-shadow: none;">
+                        <p>Six months after joining the team, I launched the "one-click" enrollment flow &ndash; the first version of Advanced Protection that didn't require purchasing physical security keys. Users could enroll with a phone-based "built-in" security key, launched natively on Android and via the redesigned Smart Lock app on iOS.</p>
+                        <p>Enrollments increased by <span class="milestone-metric">12x</span> within two weeks, surpassing a long-awaited 50k threshold with <span class="milestone-metric">60k enrollments</span> one month post-launch. But we quickly discovered that <strong>72% of newly enrolled users were getting locked out</strong> of their accounts &ndash; the enrollment removed friction but didn't adequately prepare users for the authentication requirements that followed. We deprecated the flow three months later.</p>
+                        <p>This failure was instructive. It proved that lowering the barrier could drive adoption, but that enrollment and ongoing usability had to be designed together. The lockout problem became the central design constraint for everything that followed.</p>
+                        <p>During this period I also designed the enrollment path for iOS users via the Smart Lock app, advocating for completing enrollment on the user's iPhone rather than forcing multiple device switches. <span class="milestone-metric">~50% of users</span> directed to Smart Lock successfully proceeded with enrollment.</p>
+                        <p><a href="advancedprotection.html" style="color: var(--color-teal); font-weight: 500;">Full story in the Advanced Protection case study &rarr;</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2021: The strategic pivot -->
+            <div class="narrative-beat">
+                <div class="narrative-beat-content">
+                    <h3>2021 | The strategic case for a different model</h3>
+                    <p>The shipped improvements were meaningful, but I recognized they had a ceiling. As long as Advanced Protection required hardware keys, it would remain a niche program protecting a fraction of the people who needed it. Incremental friction reduction within the existing model wasn't enough &ndash; the model itself was the problem.</p>
+                    <p>I proposed removing the security key requirement entirely and reframing enrollment as a progressive, flexible journey &ndash; a building-block model where each step independently strengthened a user's account security, so even if someone dropped off partway through, they'd be better protected than when they started. This was controversial: it meant accepting some phishability in exchange for dramatically broader coverage. But the alternative was worse &ndash; protecting a small number of users perfectly while leaving the vast majority of high-risk users exposed.</p>
+                    <p>I built the case, presented it to L8 leadership, and initiated a three-day cross-functional workshop spanning four time zones (Tel Aviv, Zurich, Sunnyvale, New York) to pressure-test the direction and align the team. The discussions directly shaped the 2022 product roadmap. No one asked me to organize this &ndash; I saw a strategic gap and filled it.</p>
+                </div>
+            </div>
+
+            <!-- Q1 2022: Security Key Wizard -->
+            <div class="milestone-card" data-milestone>
+                <div class="milestone-header" onclick="toggleMilestone(this)">
+                    <div class="milestone-header-text">
+                        <span class="milestone-badge">Shipped</span>
+                        <span class="milestone-date">Q1 2022</span>
+                        <h3 class="milestone-title">Security Key Wizard</h3>
+                        <p class="milestone-summary">An educational registration flow with type-specific visual animations, designed to be modular. Reused across four identity flows and featured on Google's external Security Blog.</p>
+                    </div>
+                    <div class="milestone-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                </div>
+                <div class="milestone-body">
+                    <div class="milestone-body-inner">
+                        <div class="milestone-image-pair"><img src="../images/sk-wizard.jpg" alt="Security Key Wizard contextual education flow" class="zoomable-image"><img src="../images/AP-promo.jpg" alt="Advanced Protection enrollment prompt within the wizard" class="zoomable-image"></div>
+                        <p>While reviewing a colleague's 2SV settings revamp, I spotted an opportunity nobody had scoped: users didn't understand security keys. UXR had found two distinct comprehension gaps &ndash; users couldn't articulate the <em>benefit</em> of using keys over the friction they caused, and they couldn't explain <em>how signing in with a key actually worked</em>. Some thought the key would replace their password entirely. This was the program's most persistent pain point, and no one had owned a solution.</p>
+                        <p>I designed a guided wizard that addressed both gaps. At registration, the wizard introduced a key type chooser &ndash; showing the user's phone-based built-in keys alongside physical options &ndash; then after registration, provided <em>contextual</em> educational steps with animations specific to the type of key just registered. If you added a USB key with NFC, you'd see NFC sign-in instructions first, then USB. If you added a phone, you'd see the phone-based flow. Users could also access a self-guided "How to use security keys" education page before starting, with illustrations for all four key types.</p>
+                        <p>The wizard had <span class="milestone-metric">immediate impact on Advanced Protection</span> by enabling phone-as-a-security-key enrollment, reducing the requirement from two physical keys to one. For users with 2+ registered keys, the wizard also surfaced an Advanced Protection enrollment prompt &ndash; connecting the 2SV registration flow directly to the program. The educational components were adopted across the <span class="milestone-metric">2SV settings and Advanced Protection enrollment flows</span>, informed Google's broader Secure-by-Default educational strategy, and were featured on Google's external Security Blog. This cross-flow reuse was intentional: the identity and security space at Google had a fragmentation problem, and building shared components was one way to address it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q1 2022: APP Settings -->
+            <div class="milestone-card" data-milestone>
+                <div class="milestone-header" onclick="toggleMilestone(this)">
+                    <div class="milestone-header-text">
+                        <span class="milestone-badge">Shipped</span>
+                        <span class="milestone-date">Q1 2022</span>
+                        <h3 class="milestone-title">Advanced Protection Settings page</h3>
+                        <p class="milestone-summary">The program's first dedicated settings page in its five-year history, giving enrolled users a home to manage their protections.</p>
+                    </div>
+                    <div class="milestone-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                </div>
+                <div class="milestone-body">
+                    <div class="milestone-body-inner">
+                        <img src="../images/ap-final-review.png" alt="Advanced Protection settings page" class="zoomable-image" style="width: 35%; max-width: none;">
+                        <p>Advanced Protection had existed since 2017 without a dedicated place for enrolled users to manage their protections. Everything was buried alongside general 2SV settings &ndash; users couldn't tell which settings belonged to the program and which were standard account security. Nobody had flagged this as a problem; it had just always been that way.</p>
+                        <p>I identified the gap, defined the scope as a leaf page leveraging existing MyAccount patterns, and aligned the Advanced Protection and 2SV teams to <span class="milestone-metric">prevent feature duplication</span> between the two settings surfaces. The page gave enrolled users a home for the first time &ndash; a place to see what the program was doing for them and manage their enrollment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q1 2022: ESB -->
+            <div class="milestone-card" data-milestone>
+                <div class="milestone-header" onclick="toggleMilestone(this)">
+                    <div class="milestone-header-text">
+                        <span class="milestone-badge">Shipped</span>
+                        <span class="milestone-date">Q1 2022</span>
+                        <h3 class="milestone-title">Enhanced Safe Browsing in Google Account</h3>
+                        <p class="milestone-summary">Cross-functional initiative spanning Chrome, Safe Browsing, and Privacy Counsel. Projected ~40M newly opted-in users, &gt;35% less likely to be phished.</p>
+                    </div>
+                    <div class="milestone-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                </div>
+                <div class="milestone-body">
+                    <div class="milestone-body-inner">
+                        <p>Enhanced Safe Browsing was a Chrome-originated feature that needed to be integrated into the Google Account security surface &ndash; requiring alignment across Chrome, Safe Browsing, Privacy Counsel, and the Security Checkup team. The existing consent messaging was vague about what users were agreeing to, and nobody was pushing to fix it.</p>
+                        <p>I advocated for user research on the consent language &ndash; the kind of initiative that's easy to skip when there's launch pressure. The findings fundamentally shaped the final consent approach, ensuring users understood what Enhanced Safe Browsing does before they opted in. The launch projected <span class="milestone-metric">~40 million newly opted-in users</span> who would be <span class="milestone-metric">&gt;35% less likely to be phished</span>, and received significant media coverage.</p>
+                        <p>The principle I took from this work &ndash; that how you ask for consent shapes whether users trust the feature &ndash; became foundational to my OpenPass work at The Trade Desk, where I separated the consent screen from the email entry to reduce cognitive load and provide genuine transparency. Same design judgment, different identity context.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q1 2022: Enrollment proposal approved -->
+            <div class="narrative-beat narrative-beat-pulse">
+                <div class="narrative-beat-content">
+                    <h3>Q1 2022 | Enrollment proposal approved</h3>
+                    <p>After obtaining cross-functional alignment, the guided enrollment proposal was approved by Google Account Security's senior leadership &ndash; a groundbreaking accomplishment given that it challenged the program's founding premise of unphishable protection.</p>
+                    <p>The full enrollment redesign didn't ship during my time on the team due to resourcing constraints. But the direction proved correct: Google's 2025 launch of passkey-based simplified enrollment realized the core thesis I'd championed &ndash; replacing the hardware key barrier with a more accessible authentication method so the program could protect more people. The specific implementation evolved (passkeys instead of PaaSK), but the design insight held: the enrollment barrier was the program's biggest problem, not a necessary tradeoff.</p>
+                    <p><a href="advancedprotection.html" style="color: var(--color-teal); font-weight: 500;">See the full proposal in the Advanced Protection case study &rarr;</a></p>
+                </div>
+            </div>
+
+            <!-- 2022-2023: Security Settings -->
+            <div class="milestone-card milestone-card-pulse" data-milestone>
+                <div class="milestone-header" onclick="toggleMilestone(this)">
+                    <div class="milestone-header-text">
+                        <span class="milestone-badge">Shipped</span>
+                        <span class="milestone-date">2022&ndash;2023</span>
+                        <h3 class="milestone-title">Security Settings redesign</h3>
+                        <p class="milestone-summary">Led a UX initiative to redesign the Security tab for 4B users. The shipped P0 drove 25% increase in 2SV adoption and 40% lift in sign-in method diversification. The framework still governs the page today.</p>
+                    </div>
+                    <div class="milestone-toggle">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+                    </div>
+                </div>
+                <div class="milestone-body">
+                    <div class="milestone-body-inner">
+                        <p>This wasn't on anyone's roadmap. Google was preparing to auto-enroll all 2SV-capable accounts as part of Secure by Default &ndash; meaning 4 billion users would soon land on a Security Settings page that couldn't clearly explain what they'd been enrolled into. The tab's core problem: users couldn't distinguish recovery methods from authentication methods, and the push toward device-first authentication was about to make that confusion worse.</p>
+                        <p>I led the redesign initiative, which required alignment across four teams that didn't typically coordinate: Secure-by-Default, My Google, third-party access, and the Access page team. Each had their own roadmap and design conventions. I identified that the highest-leverage intervention was narrowing to the 2SV onboarding entry point and a suggestive chip pattern &ndash; directly supporting the upcoming auto-enrollment while establishing the framework the team could build on incrementally. This scoping decision also eliminated a planned interim 2SV settings update, reducing duplicated engineering effort across the Google Account Security team.</p>
+                        <p>The framework I established &ndash; renaming "Security Settings" to "Security &amp; sign-in," the <span class="milestone-metric">"How you sign in to Google"</span> consolidated section, the chip-based affordance for adding methods, and inline warning alerts &ndash; still shapes the page 4 billion users land on, three years later.</p>
+                        <p style="margin-top: var(--spacing-sm);"><a href="security.html" style="color: var(--color-teal); font-weight: 500;">Read the full Security Settings case study &rarr;</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /milestone-track -->
+
+
+
+        <!-- Patterns that carried forward -->
+        <section class="case-section case-section-full">
+            <span class="case-section-label">Looking ahead</span>
+            <h2>Patterns that carried forward into OpenPass</h2>
+            <p class="case-body-text">The design principles I developed across these initiatives didn't stay at Google. When I joined The Trade Desk to lead OpenPass &ndash; a consumer authentication product for the open internet &ndash; I applied the same core judgments in a different identity context: separating consent from action to build genuine transparency, designing progressive flows where each step delivers value even if the user doesn't complete the journey, building for users who are trying to do something else and didn't come to think about identity, and creating reusable patterns across fragmented surfaces rather than solving one flow at a time.</p>
+            <p class="case-body-text"><a href="openpass.html" style="color: var(--color-teal); font-weight: 500;">See how these principles shaped OpenPass &rarr;</a></p>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="case-navigation">
+            <a href="../index.html" class="nav-prev">&larr; All Projects</a>
+            <a href="openpass.html" class="nav-next">OpenPass &rarr;</a>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:hello@ameliar.com">hello@ameliar.com</a>
+            <img class="footer-favicon" src="../images/favicon.svg" alt="">
+            <span class="footer-credit">Coded with Claude</span>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox -->
+    <div id="image-lightbox" class="image-lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-image" id="lightbox-img">
+    </div>
+
+    <script>
+    function toggleMilestone(header) {
+        const card = header.closest('.milestone-card');
+        card.classList.toggle('is-open');
+    }
+    </script>
+    <script src="../js/password.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/sidenav.js"></script>
+</body>
+</html>
