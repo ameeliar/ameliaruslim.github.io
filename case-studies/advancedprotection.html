@@ -52,6 +52,10 @@
 
     <!-- Side Navigation -->
     <nav id="side-nav" class="side-nav" style="display: none;">
+        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
+            <span class="side-nav-dot"></span>
+            <span class="side-nav-label">Impact</span>
+        </a>
         <a href="#context" class="side-nav-item" data-section="context">
             <span class="side-nav-dot"></span>
             <span class="side-nav-label">Context</span>
@@ -64,9 +68,9 @@
             <span class="side-nav-dot"></span>
             <span class="side-nav-label">Solution</span>
         </a>
-        <a href="#the-impact" class="side-nav-item" data-section="the-impact">
+        <a href="#learnings" class="side-nav-item" data-section="learnings">
             <span class="side-nav-dot"></span>
-            <span class="side-nav-label">Impact</span>
+            <span class="side-nav-label">Learnings &amp; reflections</span>
         </a>
     </nav>
 
@@ -97,6 +101,40 @@
                 </div>
             </div>
         </header>
+
+        <!-- Impact (tl;dr + project outcomes) -->
+        <section id="the-impact" class="case-section case-section-full case-section-white">
+            <div class="impact-tldr-block">
+                <span class="case-section-label tldr-label">tl;dr</span>
+                <p>After two failed attempts to grow enrollment in Google's strongest security program, I proposed removing the security key requirement entirely. The proposal went against the program's founding mission, but I built alignment across PM, engineering, and cross-functional senior leadership to get it approved. While the full redesign was postponed due to resourcing, the core principles I championed became foundational to how Google approaches account security today. Google's 2025 launch of passkey-based enrollment validated the thesis: lower the barrier without compromising protection.</p>
+            </div>
+            <span class="case-section-label">The Impact</span>
+            <div class="outcomes-layout op-outcomes-tight">
+                <div class="outcomes-label">
+                    <h2>Project outcomes</h2>
+                </div>
+                <div class="outcomes-content">
+                    <div class="outcome-item">
+                        <span class="outcome-number">1</span>
+                        <div class="outcome-text">
+                            <p class="metric">Proposal approved by cross-functional senior leadership: a <strong>groundbreaking accomplishment</strong> given that it went against the program's initial mission to provide unphishable protection to users.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">2</span>
+                        <div class="outcome-text">
+                            <p class="metric">One-click enrollment drove a <strong>12x increase in enrollments</strong> within 2 weeks of launch, surpassing a long-awaited 50k threshold with <strong>60k enrollments</strong> in the first month.</p>
+                        </div>
+                    </div>
+                    <div class="outcome-item">
+                        <span class="outcome-number">3</span>
+                        <div class="outcome-text">
+                            <p class="metric">Core principles I championed, including flexible enrollment, recovery requirements, and personalized security recommendations, became foundational to how Google approaches account security. The 2025 launch of passkey-based enrollment <strong>validated my thesis</strong>: lower the barrier without compromising protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Context Section: Intro -->
         <section id="context" class="case-section case-section-full">
@@ -173,7 +211,7 @@
             <div class="case-section-text">
                 <h4>January 2020 | "One-click" enrollment</h4>
                 <p>Enrollments increased by <strong>12x</strong> just 2 weeks post launch and we finally surpassed a long awaited 50k enrollment threshold with <strong>60k enrollments</strong> 1-month post launch.</p>
-                <p>However shortly after launch, we found that <strong>72%</strong> of our newly enrolled users were getting locked out of their accounts.</p>
+                <p>However shortly after launch, we found that <strong>72%</strong> of our newly enrolled users were getting locked out of their accounts. The phone-based key was easier to set up, but users didn't understand how it worked or how to recover access when something went wrong. We had lowered the barrier to entry without addressing the underlying trust and comprehension gap.</p>
                 <p><em>We paused this enrollment flow 3 months later and ultimately, deprecated it.</em></p>
             </div>
             <div class="case-section-image">
@@ -185,7 +223,7 @@
         <section class="case-section case-section-full case-section-white">
             <span class="case-section-label">The UX Proposal</span>
             <h2>A revised goal</h2>
-            <p>After two unsuccessful attempts at increasing our user base, I went back to the drawing board and proposed a controversial new approach to Advanced Protection's enrollment &ndash; one without a security key requirement.</p>
+            <p>After two unsuccessful attempts at increasing our user base, I went back to the drawing board and proposed a controversial new approach to Advanced Protection's enrollment: one without a security key requirement. This meant challenging the program's foundational identity. I built the case over months, grounding it in two cycles of enrollment failure data and working closely with my engineering and PM partners to ensure the proposal was technically sound before bringing it to senior leadership.</p>
             <div class="goal-statement goal-statement-text">
                 <p>Lower Advanced Protection's high barrier to entry to <em>sustainably</em> increase enrollment rates, allowing Google to protect more users.</p>
             </div>
@@ -256,31 +294,17 @@
             </div>
         </section>
 
-        <!-- Project Outcomes Section -->
-        <section id="the-impact" class="case-section case-section-full case-section-white">
-            <div class="outcomes-layout">
-                <div class="outcomes-label">
-                    <h2>Project outcomes</h2>
+        <!-- Learnings & Reflections -->
+        <section id="learnings" class="case-section case-section-full">
+            <span class="case-section-label">Learnings &amp; reflections</span>
+            <div class="ctx-reflections">
+                <div class="ctx-reflection-item">
+                    <h2>Meet users where they are when encouraging adoption of powerful but intimidating technology.</h2>
+                    <p>Advanced Protection was built for the most at-risk users on the internet, but the enrollment experience assumed those users already understood why they needed it and how to set it up. The security key requirement was the program's strongest feature and its biggest barrier. The lesson that carried forward into every project since: the more powerful the technology, the more the design has to close the gap between what it can do and what users believe they can do with it.</p>
                 </div>
-                <div class="outcomes-content">
-                    <div class="outcome-item outcome-quote">
-                        <span class="outcome-number">1</span>
-                        <div class="outcome-text">
-                            <p class="quote">After obtaining alignment with my product management and engineering partners, we brought the proposal to the Google Account Security team's cross-functional senior leadership. The concept was approved &ndash; a <em class="highlight">groundbreaking accomplishment</em> given that it went against the program's initial mission to provide unphishable protection to users.</p>
-                        </div>
-                    </div>
-                    <div class="outcome-item outcome-quote">
-                        <span class="outcome-number">2</span>
-                        <div class="outcome-text">
-                            <p class="quote">While the full proposal was postponed due to resourcing, core principles I championed like flexible enrollment, recovery requirements, and personalized security recommendations, became foundational to how Google approaches account security today. The 2025 launch of passkey-based enrollment <em class="highlight">validated my thesis</em>: lower the barrier without compromising protection.</p>
-                        </div>
-                    </div>
-                    <div class="outcome-item outcome-quote">
-                        <span class="outcome-number">3</span>
-                        <div class="outcome-text">
-                            <p class="quote">My journey in account security has taught me that we need to <strong>meet users where they are</strong> when trying to encourage their adoption of powerful and intimidating technology.</p>
-                        </div>
-                    </div>
+                <div class="ctx-reflection-item">
+                    <h2>Challenging a program's foundational assumption is a design contribution, not just a proposal.</h2>
+                    <p>Proposing that Advanced Protection drop its security key requirement wasn't a UX tweak. It meant arguing that the program's core identity needed to evolve in order to fulfill its mission. Getting cross-functional alignment on that required building trust with engineering and PM over months, grounding the argument in two cycles of failed enrollment data, and framing the change as an expansion of the mission rather than a retreat from it.</p>
                 </div>
             </div>
         </section>
@@ -288,7 +312,7 @@
         <!-- Navigation -->
         <nav class="case-navigation">
             <a href="security.html" class="nav-prev">&larr; Account Security</a>
-            <a href="../index.html" class="nav-next">All Projects &rarr;</a>
+            <a href="openpass.html" class="nav-next">Next: OpenPass &rarr;</a>
         </nav>
     </main>
 
