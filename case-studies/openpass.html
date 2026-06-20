@@ -212,27 +212,9 @@
         </section>
 
         <!-- Solution -->
-        <section id="the-solution" class="case-section case-section-two-col case-section-two-col-centered case-section-tight-bottom">
-            <div class="case-section-text">
-                <span class="case-section-label">The Solution</span>
-                <h2>Decision 1: Designing consent into the sign-in flow</h2>
-                <p>Leadership consistently asked to cut steps and clicks. But users were dropping off because the sign-in screen included dense legal copy disclosing how OpenPass authenticated users and what publishers would receive. Partners wanted us to truncate the copy, but that would erode the consent and transparency the product depended on.</p>
-                <p>After back-and-forth with Legal, I proposed an alternative: instead of compressing the legal text, introduce a dedicated consent screen after OTP authentication. I also ensured the entire flow was responsive-friendly, since 45% of OpenPass users were on mobile. This added a step, but shifted the design from "users skip through legal text" to "users make an explicit consent decision."</p>
-            </div>
-            <div class="case-image-with-caption">
-                <img src="../images/OP-Consent.png" alt="The new dedicated consent screen after OTP authentication" class="case-image-no-container zoomable-image">
-                <span class="image-caption">The dedicated consent screen, introduced after OTP authentication</span>
-            </div>
-        </section>
-
-        <section class="case-section case-section-full case-section-tight-top">
-            <h3>The outcome</h3>
-            <p>Within 24 hours, <strong>96.5% of users consented</strong> after completing OTP authentication. The result resolved the internal debate about whether to cut steps.</p>
-            <p>This wasn't the first time I'd advocated for changes to the flow. Earlier in 2024, several of my UX proposals were deprioritized for launch. After shipping without them, the team discovered we were <strong>losing approximately 75% of sessions</strong>. Once implemented, <strong>session loss decreased by 25%</strong>.</p>
-        </section>
-
-        <section class="case-section case-section-full case-section-tight-bottom">
-            <h2>Decision 2: Neutralizing the OpenPass brand to amplify publisher trust</h2>
+        <section id="the-solution" class="case-section case-section-full case-section-tight-bottom">
+            <span class="case-section-label">The Solution</span>
+            <h2>Decision 1: Neutralizing the OpenPass brand to amplify publisher trust</h2>
             <p>Users were accessing content from publishers they knew: a music site, a real estate platform, a media brand. It was the OpenPass brand that was unfamiliar.</p>
             <figure class="op-before-after">
                 <img src="../images/OP-Before%2BAfter.png" alt="Before and after comparison: OpenPass-led sign-in vs. publisher-led, neutralized OpenPass branding" class="zoomable-image">
@@ -260,6 +242,24 @@
             </div>
         </section>
 
+        <section class="case-section case-section-two-col case-section-two-col-centered case-section-tight-bottom">
+            <div class="case-section-text">
+                <h2>Decision 2: Designing consent into the sign-in flow</h2>
+                <p>Leadership consistently asked to cut steps and clicks. But users were dropping off because the sign-in screen included dense legal copy disclosing how OpenPass authenticated users and what publishers would receive. Partners wanted us to truncate the copy, but that would erode the consent and transparency the product depended on.</p>
+                <p>After back-and-forth with Legal, I proposed an alternative: instead of compressing the legal text, introduce a dedicated consent screen after OTP authentication. I also ensured the entire flow was responsive-friendly, since 45% of OpenPass users were on mobile. This added a step, but shifted the design from "users skip through legal text" to "users make an explicit consent decision."</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/OP-Consent.png" alt="The new dedicated consent screen after OTP authentication" class="case-image-no-container zoomable-image">
+                <span class="image-caption">The dedicated consent screen, introduced after OTP authentication</span>
+            </div>
+        </section>
+
+        <section class="case-section case-section-full case-section-tight-top">
+            <h3>The outcome</h3>
+            <p>Within 24 hours, <strong>96.5% of users consented</strong> after completing OTP authentication. The result resolved the internal debate about whether to cut steps.</p>
+            <p>This wasn't the first time I'd advocated for changes to the flow. Earlier in 2024, several of my UX proposals were deprioritized for launch. After shipping without them, the team discovered we were <strong>losing approximately 75% of sessions</strong>. Once implemented, <strong>session loss decreased by 25%</strong>.</p>
+        </section>
+
         <section class="case-section case-section-full case-section-tight-bottom">
             <h2>Decision 3: Designing partnership-flexible identity patterns</h2>
             <p>OpenPass's value depends on broad publisher adoption, which means designing patterns that work across many partner contexts with different constraints: existing user bases, legacy auth flows, brand guidelines, and varying tolerance for change.</p>
@@ -278,6 +278,19 @@
                 <li>Already-migrated users sign in via OTP without re-consenting</li>
             </ul>
             <p>This pattern became a template for similar partnerships, giving OpenPass a system for handling the messy middle of identity migration while maintaining a consistent trust framework across every integration.</p>
+        </section>
+
+        <!-- Passkey adoption -->
+        <section class="case-section case-section-two-col case-section-two-col-centered">
+            <div class="case-section-text">
+                <h2>Decision 4: Preparing for passwordless authentication</h2>
+                <p>As part of OpenPass's authentication roadmap, I designed the passkey adoption flow, offering returning users a faster, more secure sign-in using their device's fingerprint, Face ID, or screen lock. The device and browser handle the authentication itself; my design challenge was the moment before and after.</p>
+                <p>The adoption prompt avoids technical jargon entirely: "fingerprint, Face ID, or screen lock" translates an unfamiliar auth method into actions users perform every day to unlock their phones. After successful device authentication, users land on the same consent screen I'd designed for the standard flow, maintaining the separation between authentication and data-sharing agreement.</p>
+            </div>
+            <div class="case-image-with-caption">
+                <img src="../images/OP-passkey.png" alt="Passkey adoption prompt and consent screen after authentication" class="case-image-no-container zoomable-image">
+                <span class="image-caption">The passkey adoption prompt and consent screen after authentication</span>
+            </div>
         </section>
 
         <!-- Learnings & Reflections -->
