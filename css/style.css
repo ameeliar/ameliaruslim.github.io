@@ -2504,6 +2504,13 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     color: var(--color-teal);
 }
 
+/* Advanced Protection impact: bold body-colored treatment for the emphasized phrases */
+.case-ap-impact .outcome-text .quote .highlight {
+    color: var(--color-text);
+    font-weight: 700;
+    font-style: normal;
+}
+
 .outcome-text .quote-attribution {
     font-size: 0.875rem;
     color: var(--color-text-muted);
