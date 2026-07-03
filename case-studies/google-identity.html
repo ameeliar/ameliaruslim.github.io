@@ -148,6 +148,14 @@
         padding-left: 44px;
     }
 
+    .milestone-card a {
+        color: #0F4F47;
+        text-decoration: underline;
+    }
+    .milestone-card a:hover {
+        color: #072A26;
+    }
+
     .milestone-card::before {
         content: '';
         position: absolute;
@@ -206,7 +214,7 @@
         width: 40%;
         display: flex;
         gap: 6px;
-        margin: 0 0 var(--spacing-sm) var(--spacing-md);
+        margin: 0 var(--spacing-md) var(--spacing-sm) var(--spacing-md);
     }
 
     .milestone-image-pair img {
@@ -668,7 +676,7 @@
                         <span class="milestone-badge">Shipped</span>
                         <span class="milestone-date">Q1 2022</span>
                         <h3 class="milestone-title">Security Key Wizard</h3>
-                        <p class="milestone-summary">An educational registration flow with type-specific visual animations, designed to be modular. Reused across four identity flows and featured on Google's external Security Blog.</p>
+                        <p class="milestone-summary">An educational registration flow with type-specific visual animations, designed to be modular. Reused across two identity flows and featured on <a href="https://security.googleblog.com/2021/08/simplifying-titan-security-key-options.html" target="_blank" rel="noopener">Google's external Security Blog</a>.</p>
                     </div>
                     <div class="milestone-toggle">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
@@ -678,7 +686,7 @@
                     <div class="milestone-body-inner">
                         <div class="milestone-image-pair"><img src="../images/sk-wizard.jpg" alt="Security Key Wizard contextual education flow" class="zoomable-image"><img src="../images/AP-promo.jpg" alt="Advanced Protection enrollment prompt within the wizard" class="zoomable-image"></div>
                         <p>While reviewing a colleague's 2SV settings revamp, I spotted an opportunity nobody had scoped: users didn't understand security keys. UXR found they couldn't articulate the benefit of keys or explain how signing in with one actually worked.</p>
-                        <p>I designed a guided wizard with a key type chooser and contextual educational steps with animations specific to each key type. The wizard enabled phone-as-a-security-key enrollment (reducing the requirement from two physical keys to one) and surfaced Advanced Protection enrollment prompts for eligible users. The educational components were adopted across <span class="milestone-metric">2SV settings and Advanced Protection enrollment flows</span> and featured on Google's external Security Blog.</p>
+                        <p>I designed a guided wizard with a key type chooser and contextual educational steps with animations specific to each key type. The wizard enabled phone-as-a-security-key enrollment (reducing the requirement from two physical keys to one) and surfaced Advanced Protection enrollment prompts for eligible users. The educational components were adopted across <span class="milestone-metric">2SV settings and Advanced Protection enrollment flows</span> and featured on <a href="https://security.googleblog.com/2021/08/simplifying-titan-security-key-options.html" target="_blank" rel="noopener">Google's external Security Blog</a>.</p>
                     </div>
                 </div>
             </div>
