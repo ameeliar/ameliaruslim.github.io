@@ -1737,6 +1737,11 @@ a[href="case-studies/advancedprotection.html"] .card-image img {
     border-radius: 0;
 }
 
+.case-image-no-container.with-shadow {
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius-sm);
+}
+
 /* Solution segment: text on left, sticky prototype iframe on right */
 .solution-segment {
     max-width: var(--max-width);
